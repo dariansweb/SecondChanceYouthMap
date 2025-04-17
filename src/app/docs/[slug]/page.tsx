@@ -1,15 +1,11 @@
-// src/app/docs/[slug]/page.tsx
-
 import { getDoc } from "@/lib/parseMarkdown";
-import DocsSidebar from "@/components/DocsSidebar.";
+import DocsSidebar from "@/components/DocsSidebar";
 
-interface DocPageProps {
-  params: {
-    slug: string;
-  };
-}
+type Props = {
+  params: { slug: string };
+};
 
-export default async function DocPage({ params }: DocPageProps) {
+export default async function DocPage({ params }: Props) {
   const { htmlContent } = await getDoc(params.slug);
 
   return (
