@@ -1,5 +1,5 @@
 import { getDoc } from "@/lib/parseMarkdown";
-import DocsSidebar from "@/components/DocsSidebar";
+import DocsSidebar from "@/components/DocsSidebar.";
 
 type Props = {
   params: { slug: string };
