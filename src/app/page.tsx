@@ -10,6 +10,10 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 font-sans">
+      <p className="text-xs text-center text-slate-400 mt-2">
+        Disclaimer: This is a personal civic tech project and is not an official
+        product of DHS or DYS.
+      </p>
       <div className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center mb-16">
           <h1 className="text-4xl font-extrabold text-blue-800 mb-4">

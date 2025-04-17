@@ -239,6 +239,10 @@ export default function IntakePage() {
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 p-6">
+      <p className="text-xs text-center text-slate-400 mt-2">
+        Disclaimer: This is a personal civic tech project and is not an official
+        product of DHS or DYS.
+      </p>
       <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm text-slate-600">
         {steps.map((step, index) => (
           <div key={index} className="flex flex-col items-center w-20">
