@@ -2,17 +2,11 @@ import { getDoc } from "@/lib/parseMarkdown";
 import DocsSidebar from "@/components/DocsSidebar";
 import { notFound } from "next/navigation";
 
-// Update the Props type to make searchParams optional
-type Props = {
-  params: {
-    slug: string;
-  };
-  // Make searchParams optional with '?'
-  searchParams?: { [key: string]: string | string[] | undefined };
-};
-
-// Remove searchParams from the destructuring if you're not using it
-export default async function DocPage({ params }: Props) {
+export default async function DocPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   try {
     const { htmlContent } = await getDoc(params.slug);
 
