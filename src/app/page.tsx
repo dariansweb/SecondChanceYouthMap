@@ -75,9 +75,27 @@ export default function HomePage() {
         </section>
       </div>
 
-      <footer className="text-center text-sm text-slate-500 py-10 border-t border-slate-200 mt-20">
-        © {new Date().getFullYear()} Second Chance Youth Map · Built with 💙 by
-        DYS & ChatGPT
+      <footer className="text-center text-sm text-slate-500 mt-12 py-6 border-t border-slate-200">
+        <p>
+          Built independently by <strong>Darian Ross</strong> — IT Support,
+          Arkansas DHS.
+        </p>
+        <p>
+          Inspired by the mission and practices of the{" "}
+          <a
+            href="https://humanservices.arkansas.gov/divisions-shared-services/youth-services/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline"
+          >
+            Division of Youth Services
+          </a>{" "}
+          and juvenile justice reform across the region.
+        </p>
+        <p className="mt-2">
+          This application is not an official DHS product and is offered as an
+          open-source civic tech prototype.
+        </p>
       </footer>
     </main>
   );
