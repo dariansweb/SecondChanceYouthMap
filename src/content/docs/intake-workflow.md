@@ -1,3 +1,6 @@
+---
+title: Intake Workflow
+---
 # 🧭 Intake Workflow
 
 This document outlines the standard intake workflow developed for the **Second Chance Youth Map** project. It combines legal requirements, best practices, and insights from Arkansas and neighboring states.

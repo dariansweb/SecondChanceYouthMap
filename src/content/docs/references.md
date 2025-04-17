@@ -1,3 +1,7 @@
+---
+title: references
+---
+
 # 📚 References & Further Reading
 
 The following sources, frameworks, and initiatives inspired the structure, logic, and purpose of the **Second Chance Youth Map** project.

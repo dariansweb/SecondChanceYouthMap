@@ -1,3 +1,7 @@
+---
+title: custody diversion paths
+---
+
 # ⚖️ Custody vs. Diversion Pathways
 
 This document explores the two primary directions youth may be routed after intake: **state custody** or **diversion programming**. Each pathway has different requirements, implications, and support needs.

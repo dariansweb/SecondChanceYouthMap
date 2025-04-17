@@ -1,3 +1,7 @@
+---
+title: education workflows
+---
+
 # 🎓 Educational Planning & Support
 
 When a youth enters the juvenile justice system, their education doesn't stop — it simply changes location. This document outlines how to preserve educational continuity through intake, diversion, custody, and reentry.

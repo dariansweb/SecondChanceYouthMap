@@ -7,7 +7,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 export async function getDoc(slug: string) {
-  console.log("Reading markdown for slug:", slug); // Add this
+  console.log("Reading markdown for slug:", slug); 
 
   const filePath = path.join(process.cwd(), "src/content/docs", `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, "utf8");

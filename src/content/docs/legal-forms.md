@@ -1,3 +1,7 @@
+---
+title: legal forms
+---
+
 # 📝 Legal Forms & Confidentiality
 
 This section outlines the legal, ethical, and procedural frameworks that govern juvenile intake documentation. It also provides guidance on form use, privacy safeguards, and inter-agency data sharing.

@@ -1,3 +1,7 @@
+---
+title: risk assessments
+---
+
 # 📊 Risk Assessments
 
 Risk assessment is a foundational component of the juvenile intake process. It helps ensure youth are placed in the **least restrictive environment** appropriate to their needs, safety risk, and support system.
