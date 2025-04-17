@@ -13,6 +13,41 @@ const steps = [
   "Review & Submit",
 ];
 
+type FormData = {
+  firstName: string;
+  lastName: string;
+  dob: string;
+  gender: string;
+  raceEthnicity: string;
+  gradeLevel: string;
+  language: string;
+  school: string;
+  intakeDate: string;
+  referralType: string;
+  offense: string;
+  offenseDate: string;
+  severity: string;
+  riskScore: number;
+  riskToolUsed: string;
+  contacts: Array<{
+    name: string;
+    role: string;
+    organization: string;
+    email: string;
+    notes: string;
+  }>;
+  schoolStatus: string;
+  hasIEP504: string;
+  estimatedCredits: number;
+  truancyNotes: string;
+  learningStyleNotes: string;
+  recommendation: string;
+  recommendationReason: string;
+  restitution: string;
+  courtDate: string;
+  recommendationNotes: string;
+};
+
 const initialFormData: FormData = {
   firstName: "",
   lastName: "",
@@ -960,7 +995,7 @@ export default function IntakePage() {
                 </button>
 
                 <button
-                  onClick={generatePdf}
+                  onClick={() => generatePdf(formData)}
                   className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded text-sm font-semibold w-full sm:w-auto"
                 >
                   📄 Download PDF
