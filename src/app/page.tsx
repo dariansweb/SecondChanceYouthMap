@@ -19,6 +19,9 @@ export default function HomePage() {
           <h1 className="text-4xl font-extrabold text-blue-800 mb-4">
             Second Chance Youth Map
           </h1>
+          <p className="text-2xl font-semibold text-slate-700 mb-4">
+            🌟 Empowering Juvenile Justice with Data, Direction, and Dignity.
+          </p>
           <p className="text-lg text-slate-600">
             A modern intake and decision tool for youth justice — combining the
             best practices of seven states into one transparent, compassionate,
@@ -69,10 +72,17 @@ export default function HomePage() {
           </ul>
         </section>
 
-        <section className="text-center">
+        <section className="flex flex-col sm:flex-row justify-center gap-4 text-center mt-8">
+          <Link
+            href="/docs"
+            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+          >
+            📘 View Documentation
+          </Link>
+
           <Link
             href="/intake"
-            className="inline-block bg-blue-700 text-white text-lg px-6 py-3 rounded-lg hover:bg-blue-800 transition"
+            className="inline-flex items-center justify-center gap-2 bg-blue-700 text-white hover:bg-blue-800 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
           >
             🚀 Begin Intake Survey
           </Link>
