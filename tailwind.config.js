@@ -4,7 +4,12 @@ import typography from "@tailwindcss/typography";
 const config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "sans-serif"],
+        serif: ["var(--font-crimson)", "serif"],
+      },
+    },
   },
   plugins: [typography],
   darkMode: "class",

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/crimson-pro": "^5.2.5",
+    "@fontsource/inter": "^5.2.5",
     "@tailwindcss/typography": "^0.5.16",
     "gray-matter": "^4.0.3",
     "html2pdf.js": "^0.10.3",
