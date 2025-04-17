@@ -1,9 +1,10 @@
-// components/DocsSidebar.jsx
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
+  { href: "/", label: "🏠 Home" },
   { href: "/docs", label: "📘 Introduction" },
   { href: "/docs/intake-workflow", label: "🧭 Intake Workflow" },
   { href: "/docs/risk-assessments", label: "📊 Risk Assessments" },
@@ -15,35 +16,53 @@ const links = [
 
 export default function DocsSidebar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Close sidebar on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <aside className="md:w-64 w-full bg-white border-r border-slate-200 shadow-sm">
-      <div className="md:hidden flex justify-between items-center p-4 border-b border-slate-200">
-        <h2 className="text-base font-semibold text-slate-700">Docs Menu</h2>
-        <button
-          onClick={() => setOpen(!open)}
-          className="text-slate-600 hover:text-blue-600 text-lg focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          ☰
-        </button>
-      </div>
-
-      <nav
-        className={`${
-          open ? "block" : "hidden"
-        } md:block px-4 md:px-6 py-4 md:py-6 space-y-3`}
+    <>
+      {/* Mobile toggle */}
+      <button
+        onClick={() => setOpen(!open)}
+        className="md:hidden fixed top-4 left-4 z-50 bg-blue-600 text-white px-3 py-2 rounded shadow-md"
       >
-        {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="block text-sm text-slate-700 hover:text-blue-600 transition font-medium"
-          >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
-    </aside>
+        ☰ Docs
+      </button>
+
+      {/* Overlay */}
+      {open && (
+        <div
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 bg-black/30 z-40 md:hidden"
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={`fixed md:relative top-0 left-0 z-50 w-64 bg-white md:bg-transparent shadow-lg md:shadow-none h-full md:h-auto overflow-y-auto transition-transform transform ${
+          open ? "translate-x-0" : "-translate-x-full"
+        } md:translate-x-0`}
+      >
+        <nav className="space-y-2 p-4 text-sm md:p-0 md:pt-6">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`block px-3 py-2 rounded font-medium hover:bg-blue-100 ${
+                pathname === link.href
+                  ? "bg-blue-100 text-blue-700"
+                  : "text-slate-700"
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </aside>
+    </>
   );
 }
