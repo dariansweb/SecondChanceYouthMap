@@ -1,15 +1,18 @@
 import { getDoc } from "@/lib/parseMarkdown";
 import DocsSidebar from "@/components/DocsSidebar";
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
+
+interface PageProps {
+  params: { slug: string };
+  searchParams: Record<string, string | string[] | undefined>;
+}
 
 export default async function DocPage({
   params,
-}: {
-  params: { slug: string };
-}) {
+}: PageProps): Promise<JSX.Element> {
   try {
     const { htmlContent } = await getDoc(params.slug);
-
+    
     if (!htmlContent) {
       notFound();
     }
@@ -26,7 +29,7 @@ export default async function DocPage({
       </div>
     );
   } catch (error) {
-    console.error("Error loading doc:", error);
+    console.error('Error loading doc:', error);
     notFound();
   }
 }
