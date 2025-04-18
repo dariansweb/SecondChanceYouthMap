@@ -1,80 +1,89 @@
 export default function ReferencesPage() {
   return (
-    <main className="bg-gray-50 min-h-screen pb-16">
-      {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-16 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold flex justify-center items-center gap-4">
-          📚 References & Source Materials
-        </h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto">
-          Citations, models, laws, and research behind the design of the SCYM
-          platform.
+    <div className="bg-slate-50 text-slate-700 min-h-screen pb-20">
+      <header className="bg-blue-900 text-white py-16 px-6 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">📚 References</h1>
+        <p className="text-lg max-w-3xl mx-auto">
+          Our work stands on the shoulders of those who mapped the territory
+          first. Here are the models, documents, and laws that inspired us.
         </p>
-      </section>
+      </header>
 
-      {/* Content Section */}
-      <section className="max-w-4xl mx-auto px-6 py-12 space-y-10 text-slate-700">
-        {/* Source Systems */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-800 flex items-center gap-2">
-            📖 Source Documents & Systems
+      <main className="max-w-4xl mx-auto px-6 pt-12 space-y-12 text-sm">
+        {/* State Systems */}
+        <section>
+          <h2 className="text-xl font-bold text-blue-800 mb-2">
+            📍 State-Level Systems & Models
           </h2>
-          <ul className="list-disc pl-6 mt-3 space-y-1">
+          <ul className="list-disc list-inside space-y-2">
             <li>
-              <strong>Arkansas:</strong> SAVRY Intake Model, 90-day treatment
-              windows, DYS guidance materials
+              Arkansas Division of Youth Services – Risk-Based Commitment
+              Framework (SAVRY)
             </li>
             <li>
-              <strong>Texas:</strong> JCMS (Juvenile Case Management System),
-              Diversion Referral Forms
+              Missouri Juvenile Justice System – The Missouri Model for youth
+              rehabilitation
             </li>
             <li>
-              <strong>Missouri:</strong> Missouri Model — Short-Term,
-              Youth-Centered Treatment Approach
+              Texas Juvenile Justice Department – JCMS data management and
+              referral system
             </li>
             <li>
-              <strong>Louisiana:</strong> MDT (Multi-Disciplinary Team)
-              frameworks, Family Involvement Protocols
+              Louisiana Office of Juvenile Justice – Family MDT protocols and
+              aftercare transitions
             </li>
             <li>
-              <strong>Oklahoma:</strong> Real-time data entry dashboards, Bed
-              tracking, Diversion triggers
+              Oklahoma Juvenile Affairs – Bed tracking and diversion scoring
+              tools
             </li>
           </ul>
-        </div>
+        </section>
 
-        {/* Legal Standards */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-800 flex items-center gap-2">
-            📄 Legal and Educational Regulations
+        {/* Federal Policies */}
+        <section>
+          <h2 className="text-xl font-bold text-blue-800 mb-2">
+            📜 Federal Laws & Resources
           </h2>
-          <ul className="list-disc pl-6 mt-3 space-y-1">
-            <li>FERPA — Family Educational Rights and Privacy Act</li>
-            <li>HIPAA — Health Insurance Portability and Accountability Act</li>
-            <li>IDEA — Individuals with Disabilities Education Act</li>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Family Educational Rights and Privacy Act (FERPA)</li>
+            <li>Individuals with Disabilities Education Act (IDEA)</li>
+            <li>Health Insurance Portability and Accountability Act (HIPAA)</li>
+            <li>McKinney-Vento Homeless Assistance Act</li>
+            <li>Every Student Succeeds Act (ESSA)</li>
+          </ul>
+        </section>
+
+        {/* Reports and Whitepapers */}
+        <section>
+          <h2 className="text-xl font-bold text-blue-800 mb-2">
+            🧠 Research & Thought Leadership
+          </h2>
+          <ul className="list-disc list-inside space-y-2">
             <li>
-              28 CFR Part 31 — Federal regulations on juvenile justice planning
+              “Reclaiming Futures” – National evidence-based diversion model
             </li>
             <li>
-              JJDPA — Juvenile Justice and Delinquency Prevention Act (core
-              protections & system improvements)
+              Annie E. Casey Foundation – Juvenile detention alternatives
+              initiative
+            </li>
+            <li>
+              Vera Institute of Justice – Youth incarceration trends and equity
+              research
+            </li>
+            <li>
+              National Center for Youth Opportunity – Community-based
+              alternatives
             </li>
           </ul>
-        </div>
+        </section>
 
-        {/* System Design */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-800 flex items-center gap-2">
-            🧠 Design Influences
-          </h2>
-          <p className="mt-2">
-            This tool was inspired by open-source ideals, modern UX for
-            government, and a belief that justice systems deserve software that
-            is transparent, human-centered, and built with compassion at its
-            core.
-          </p>
-        </div>
-      </section>
-    </main>
+        {/* Closing Note */}
+        <section className="text-center text-slate-500 italic pt-8 border-t border-slate-200">
+          We honor the ongoing work of youth advocates, researchers, probation
+          officers, educators, and community leaders across the country. This
+          platform exists because of your decades of work.
+        </section>
+      </main>
+    </div>
   );
 }

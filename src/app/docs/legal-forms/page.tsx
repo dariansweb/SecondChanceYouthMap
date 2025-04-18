@@ -1,74 +1,107 @@
+import Link from "next/link";
+
 export default function LegalFormsPage() {
   return (
-    <main className="bg-gray-50 min-h-screen pb-16">
-      {/* Hero Section */}
-      <section className="bg-blue-900 text-white py-16 text-center">
-        <h1 className="text-4xl sm:text-5xl font-extrabold flex justify-center items-center gap-4">
+    <div className="bg-slate-50 text-slate-700 min-h-screen pb-20">
+      <header className="bg-blue-900 text-white py-16 px-6 text-center">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
           📝 Legal Forms & Privacy
         </h1>
-        <p className="mt-4 text-lg max-w-2xl mx-auto">
-          Ensuring that every intake honors confidentiality, parental rights,
-          and federal protections.
+        <p className="text-lg max-w-3xl mx-auto">
+          Legal compliance isn&apos;t optional — it&apos;s structural integrity.
+          Our tools are built with those laws in mind.
         </p>
-      </section>
+      </header>
 
-      {/* Content Section */}
-      <section className="max-w-4xl mx-auto px-6 py-12 space-y-10 text-slate-700">
-        {/* Core Compliance Standards */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-800 flex items-center gap-2">
-            📜 Core Compliance Standards
+      <main className="max-w-5xl mx-auto px-6 pt-12 space-y-16">
+        {/* Core Laws */}
+        <section>
+          <h2 className="text-2xl font-bold text-blue-800 mb-4">
+            📚 Core Privacy and Education Laws
           </h2>
-          <ul className="list-disc pl-6 mt-3 space-y-1">
+          <ul className="list-disc list-inside space-y-3 text-sm">
             <li>
-              <strong>FERPA</strong>: Family Educational Rights and Privacy Act
-              — protects school records
+              <strong>FERPA</strong> (Family Educational Rights and Privacy
+              Act): Controls the sharing of school records. Youth must sign
+              release forms to share with probation or court officials.
             </li>
             <li>
-              <strong>HIPAA</strong>: Health Insurance Portability and
-              Accountability Act — protects health data
+              <strong>HIPAA</strong> (Health Insurance Portability and
+              Accountability Act): Protects therapy, medication, and
+              health-related services. Consent forms are required.
             </li>
             <li>
-              <strong>IDEA</strong>: Individuals with Disabilities Education Act
-              — ensures appropriate accommodations
+              <strong>IDEA</strong> (Individuals with Disabilities Education
+              Act): Ensures continuation of services if the youth has an IEP.
+            </li>
+            <li>
+              <strong>JJDPA</strong> (Juvenile Justice and Delinquency
+              Prevention Act): Requires procedural protections during intake and
+              custody placement.
             </li>
           </ul>
-        </div>
+        </section>
 
-        {/* Consent Requirements */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-800 flex items-center gap-2">
-            ✍️ Consent & Disclosure
+        {/* Digital Forms */}
+        <section>
+          <h2 className="text-2xl font-bold text-blue-800 mb-4">
+            📄 Forms Included in This System
           </h2>
-          <p className="mt-2">
-            Certain sections of the intake form require documented consent —
-            especially when sensitive health, mental health, or education
-            services are discussed or recommended. Signature fields may be
-            physical or digital.
-          </p>
-          <p className="mt-2">
-            Youths and guardians must be informed about how their data will be
-            used, stored, and protected.
-          </p>
-        </div>
+          <div className="grid sm:grid-cols-2 gap-6 text-sm">
+            <div className="bg-white border rounded p-4 shadow">
+              <h3 className="font-semibold text-blue-700 mb-2">
+                ✔️ Consent to Share School Records
+              </h3>
+              Covers IEPs, credit summaries, attendance records
+            </div>
+            <div className="bg-white border rounded p-4 shadow">
+              <h3 className="font-semibold text-blue-700 mb-2">
+                ✔️ Therapy and Case Notes Release
+              </h3>
+              Optional but critical when building a support plan
+            </div>
+            <div className="bg-white border rounded p-4 shadow">
+              <h3 className="font-semibold text-blue-700 mb-2">
+                ✔️ Intake Packet Authorization
+              </h3>
+              Signatures from guardian, case worker, or supervising agency
+            </div>
+            <div className="bg-white border rounded p-4 shadow">
+              <h3 className="font-semibold text-blue-700 mb-2">
+                ✔️ Digital Signature Declaration
+              </h3>
+              Ensures all digital forms are acknowledged with a valid timestamp
+              and guardian verification
+            </div>
+          </div>
+        </section>
 
-        {/* Court-Ready Documents */}
-        <div>
-          <h2 className="text-2xl font-bold text-blue-800 flex items-center gap-2">
-            🧾 Court-Ready Documents
+        {/* Best Practices */}
+        <section>
+          <h2 className="text-2xl font-bold text-blue-800 mb-4">
+            🔐 Security & Best Practices
           </h2>
-          <ul className="list-disc pl-6 mt-3 space-y-1">
-            <li>Intake Summary PDF</li>
-            <li>Consent & Privacy Acknowledgment</li>
-            <li>School Record Transfer Form</li>
-            <li>Risk Tool Transparency Notice</li>
-          </ul>
-          <p className="mt-2">
-            These are exported in secure format and submitted to the appropriate
-            court or supervision agency.
+          <p>
+            All submitted data must be encrypted in transit and at rest. Intake
+            forms should be stored in compliant systems and only accessible to
+            authorized personnel. Every county or district must establish a
+            chain of custody for the form.
           </p>
+        </section>
+
+        <section className="text-center italic text-slate-500 pt-6 border-t border-slate-200">
+          “You cannot build trust without protecting the stories people entrust
+          you with.”
+        </section>
+        <div className="mt-8">
+          <Link
+            href="/docs/references"
+            className="inline-block bg-blue-700 text-white text-sm px-4 py-2 rounded hover:bg-blue-800 transition"
+          >
+            📚 Continue to References
+          </Link>
         </div>
-      </section>
-    </main>
+      </main>
+    </div>
   );
 }
