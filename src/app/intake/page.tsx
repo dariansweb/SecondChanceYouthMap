@@ -14,6 +14,13 @@ const steps = [
 ];
 
 type FormData = {
+  pronouns: string;
+  guardianName: string; // Ensure this property is defined
+  guardianRelationship: string;
+  county: string;
+  birthplace: string;
+  citizenship: string;
+  hasIEP: string;
   firstName: string;
   lastName: string;
   dob: string;
@@ -23,6 +30,8 @@ type FormData = {
   language: string;
   school: string;
   intakeDate: string;
+
+  // Section: Offense & Risk
   referralType: string;
   offense: string;
   offenseDate: string;
@@ -36,7 +45,14 @@ type FormData = {
     email: string;
     notes: string;
   }>;
+  phone: string;
+  tags: string[];
+  region: string;
+
   schoolStatus: string;
+  suspensionNotes: string;
+  schoolContact: string;
+  specialPrograms: string;  
   hasIEP504: string;
   estimatedCredits: number;
   truancyNotes: string;
@@ -46,18 +62,36 @@ type FormData = {
   restitution: string;
   courtDate: string;
   recommendationNotes: string;
+  evals: {
+    psychological: boolean;
+    substance: boolean;
+    family: boolean;
+  };
+  placementRegion: string;
+  willingToComply: string;
 };
 
 const initialFormData: FormData = {
+  pronouns: "",
   firstName: "",
   lastName: "",
   dob: "",
   gender: "",
   raceEthnicity: "",
   gradeLevel: "",
-  language: "",
   school: "",
+  suspensionNotes: "",
+  schoolContact: "",
+  specialPrograms: "",  
+  guardianName: "",
+  guardianRelationship: "",
+  county: "",
+  birthplace: "",
+  language: "",
+  citizenship: "",
+  hasIEP: "",
   intakeDate: "",
+  // Section: Offense & Risk
   referralType: "",
   offense: "",
   offenseDate: "",
@@ -69,12 +103,23 @@ const initialFormData: FormData = {
   hasIEP504: "",
   estimatedCredits: 0,
   truancyNotes: "",
+  phone: "",
+  tags: [],
+  region: "",
+
   learningStyleNotes: "",
   recommendation: "",
   recommendationReason: "",
   restitution: "",
   courtDate: "",
   recommendationNotes: "",
+  evals: {
+    psychological: false,
+    substance: false,
+    family: false,
+  },
+  placementRegion: "",
+  willingToComply: "",
 };
 
 export default function IntakePage() {
@@ -208,6 +253,9 @@ export default function IntakePage() {
     organization: "",
     email: "",
     notes: "",
+    phone: "", // Added phone property
+    region: "", // Added region property
+    tags: [] as string[], // Added tags property
   });
 
   const handleAddContact = () => {
@@ -223,6 +271,9 @@ export default function IntakePage() {
       organization: "",
       email: "",
       notes: "",
+      phone: "",
+      region: "",
+      tags: [],
     });
   };
 
@@ -274,6 +325,7 @@ export default function IntakePage() {
           {/* Form Fields for Youth Information */}
           {stepIndex === 0 && (
             <form className="grid gap-6">
+              {/* Basic Details */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
@@ -281,7 +333,7 @@ export default function IntakePage() {
                   </label>
                   <input
                     type="text"
-                    className="w-full border border-slate-300 rounded px-3 py-2 focus:outline-blue-500"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
                     placeholder="John"
                     value={formData.firstName}
                     onChange={(e) =>
@@ -309,6 +361,21 @@ export default function IntakePage() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
+                    Preferred Pronouns
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    placeholder="he/him, she/her, they/them"
+                    value={formData.pronouns}
+                    onChange={(e) =>
+                      setFormData({ ...formData, pronouns: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
                     Date of Birth
                   </label>
                   <input
@@ -320,7 +387,10 @@ export default function IntakePage() {
                     }
                   />
                 </div>
+              </div>
 
+              {/* Demographic & Academic */}
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
                     Gender Identity
@@ -339,9 +409,7 @@ export default function IntakePage() {
                     <option value="other">Other</option>
                   </select>
                 </div>
-              </div>
 
-              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
                     Race / Ethnicity
@@ -366,7 +434,9 @@ export default function IntakePage() {
                     <option value="other">Other</option>
                   </select>
                 </div>
+              </div>
 
+              <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
                     Grade Level
@@ -388,8 +458,92 @@ export default function IntakePage() {
                     <option value="other">Other</option>
                   </select>
                 </div>
+
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
+                    Current School
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    placeholder="Central Junior High"
+                    value={formData.school}
+                    onChange={(e) =>
+                      setFormData({ ...formData, school: e.target.value })
+                    }
+                  />
+                </div>
               </div>
 
+              {/* Guardian and Jurisdiction */}
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
+                    Legal Guardian Name
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    placeholder="Jane Smith"
+                    value={formData.guardianName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, guardianName: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
+                    Relationship to Youth
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    placeholder="Mother, Grandfather, Caseworker"
+                    value={formData.guardianRelationship}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        guardianRelationship: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
+                    County of Jurisdiction
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    placeholder="Washington County"
+                    value={formData.county}
+                    onChange={(e) =>
+                      setFormData({ ...formData, county: e.target.value })
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
+                    Birthplace (City, State)
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    placeholder="Memphis, TN"
+                    value={formData.birthplace}
+                    onChange={(e) =>
+                      setFormData({ ...formData, birthplace: e.target.value })
+                    }
+                  />
+                </div>
+              </div>
+
+              {/* Language & Access */}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
@@ -408,21 +562,44 @@ export default function IntakePage() {
 
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
-                    Current School
+                    Citizenship Status
                   </label>
-                  <input
-                    type="text"
+                  <select
                     className="w-full border border-slate-300 rounded px-3 py-2"
-                    placeholder="Springdale Middle School"
-                    value={formData.school}
+                    value={formData.citizenship}
                     onChange={(e) =>
-                      setFormData({ ...formData, school: e.target.value })
+                      setFormData({ ...formData, citizenship: e.target.value })
                     }
-                  />
+                  >
+                    <option value="">Select</option>
+                    <option value="us">U.S. Citizen</option>
+                    <option value="permanent">Permanent Resident</option>
+                    <option value="undocumented">Undocumented</option>
+                    <option value="other">Other</option>
+                  </select>
                 </div>
               </div>
 
+              {/* Support Indicators */}
               <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block font-medium text-sm text-slate-700 mb-1">
+                    Does youth have an IEP / Special Education Plan?
+                  </label>
+                  <select
+                    className="w-full border border-slate-300 rounded px-3 py-2"
+                    value={formData.hasIEP}
+                    onChange={(e) =>
+                      setFormData({ ...formData, hasIEP: e.target.value })
+                    }
+                  >
+                    <option value="">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="unsure">Unsure</option>
+                  </select>
+                </div>
+
                 <div>
                   <label className="block font-medium text-sm text-slate-700 mb-1">
                     Intake Date
@@ -673,6 +850,72 @@ export default function IntakePage() {
                       }
                     />
                   </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Contact Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                      placeholder="555-123-4567"
+                      className="w-full border border-slate-300 rounded px-3 py-2"
+                      value={contactInput.phone}
+                      onChange={(e) =>
+                        setContactInput({
+                          ...contactInput,
+                          phone: e.target.value,
+                        })
+                      }
+                    />
+                    <p className="text-xs text-slate-500 mt-1">
+                      Format: 555-123-4567
+                    </p>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Contact Tags
+                    </label>
+                    <select
+                      multiple
+                      className="w-full border border-slate-300 rounded px-3 py-2"
+                      value={contactInput.tags || []}
+                      onChange={(e) => {
+                        const selected = Array.from(
+                          e.target.selectedOptions,
+                          (option) => option.value
+                        );
+                        setContactInput({ ...contactInput, tags: selected });
+                      }}
+                    >
+                      <option value="court">Court</option>
+                      <option value="school">School</option>
+                      <option value="residential">Residential Provider</option>
+                      <option value="guardian">Guardian</option>
+                      <option value="legal">Legal Representative</option>
+                      <option value="medical">Medical / Mental Health</option>
+                      <option value="caseworker">Caseworker</option>
+                    </select>
+                    <p className="text-xs text-slate-500 mt-1">
+                      Hold Ctrl (or Cmd) to select multiple.
+                    </p>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-slate-700 mb-1">
+                      Region or State of Contact
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="e.g., Arkansas, Pulaski County"
+                      className="w-full border border-slate-300 rounded px-3 py-2"
+                      value={contactInput.region}
+                      onChange={(e) =>
+                        setContactInput({
+                          ...contactInput,
+                          region: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
 
                   <div className="text-right">
                     <div className="text-right">
@@ -828,6 +1071,54 @@ export default function IntakePage() {
                   }
                 />
               </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Suspension / Discipline Records
+                </label>
+                <textarea
+                  rows={3}
+                  placeholder="E.g., Suspended for 5 days due to fighting in October. In-school suspension twice this year."
+                  className="w-full border border-slate-300 rounded px-3 py-2"
+                  value={formData.suspensionNotes}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      suspensionNotes: e.target.value,
+                    })
+                  }
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  School Contact Person
+                </label>
+                <input
+                  type="text"
+                  placeholder="E.g., Ms. Lisa Watson, School Counselor"
+                  className="w-full border border-slate-300 rounded px-3 py-2"
+                  value={formData.schoolContact}
+                  onChange={(e) =>
+                    setFormData({ ...formData, schoolContact: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Special Program Participation
+                </label>
+                <input
+                  type="text"
+                  placeholder="E.g., ESL, Vocational Carpentry, Gifted & Talented, Life Skills Program"
+                  className="w-full border border-slate-300 rounded px-3 py-2"
+                  value={formData.specialPrograms}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      specialPrograms: e.target.value,
+                    })
+                  }
+                />
+              </div>
             </form>
           )}
 
@@ -928,6 +1219,109 @@ export default function IntakePage() {
                     })
                   }
                 />
+              </div>
+              {/* New Section: Evaluation Checklist */}
+              <div className="border border-slate-200 rounded-md p-4 bg-slate-50">
+                <h3 className="font-semibold text-slate-700 mb-2">
+                  Evaluations Needed
+                </h3>
+                <div className="grid sm:grid-cols-2 gap-2 text-sm text-slate-700">
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={formData.evals.psychological}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          evals: {
+                            ...formData.evals,
+                            psychological: e.target.checked,
+                          },
+                        })
+                      }
+                    />
+                    Psychological Evaluation
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={formData.evals.substance}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          evals: {
+                            ...formData.evals,
+                            substance: e.target.checked,
+                          },
+                        })
+                      }
+                    />
+                    Substance Use Screening
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={formData.evals.family}
+                      onChange={(e) =>
+                        setFormData({
+                          ...formData,
+                          evals: {
+                            ...formData.evals,
+                            family: e.target.checked,
+                          },
+                        })
+                      }
+                    />
+                    Family Risk Assessment
+                  </label>
+                </div>
+              </div>
+
+              {/* Preferred Placement Region */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Preferred Placement Region
+                </label>
+                <select
+                  className="w-full border border-slate-300 rounded px-3 py-2"
+                  value={formData.placementRegion}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      placementRegion: e.target.value,
+                    })
+                  }
+                >
+                  <option value="">Select Region</option>
+                  <option value="central">Central</option>
+                  <option value="northwest">Northwest</option>
+                  <option value="northeast">Northeast</option>
+                  <option value="southwest">Southwest</option>
+                  <option value="southeast">Southeast</option>
+                  <option value="unknown">Unknown</option>
+                </select>
+              </div>
+
+              {/* Youth Willing to Comply */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1">
+                  Is the Youth Willing to Comply with Conditions?
+                </label>
+                <select
+                  className="w-full border border-slate-300 rounded px-3 py-2"
+                  value={formData.willingToComply}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      willingToComply: e.target.value,
+                    })
+                  }
+                >
+                  <option value="">Select</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                  <option value="unknown">Unknown</option>
+                </select>
               </div>
             </form>
           )}
