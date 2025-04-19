@@ -25,7 +25,7 @@ export default function HomePage() {
           <p className="text-lg text-slate-600">
             A modern intake and decision tool for youth justice — combining the
             best practices of seven states into one transparent, compassionate,
-            and data-driven app.
+            and data-driven platform.
           </p>
         </header>
 
@@ -34,17 +34,43 @@ export default function HomePage() {
             🧭 What is This?
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            This project is the result of deep research across Arkansas and its
-            surrounding states to create a unified and replicable model for
-            juvenile intake, diversion, and custody planning.
+            Second Chance Youth Map is more than a form — it&apos;s a reflection of
+            the philosophies, workflows, and language shared across juvenile
+            justice systems. Designed for intake officers, data teams, and civic
+            reformers, this tool brings together **documentation**, **state
+            policy comparison**, and **shared vocabulary**.
           </p>
           <p className="mt-4">
-            Youth enter the system at a crossroads. This app guides intake
-            officers and staff to document every necessary piece — risk scores,
-            educational needs, guardian info, caseworkers, and more — while
-            dynamically suggesting whether a youth’s pathway should be
-            Diversion, Probation, or State Custody.
+            It offers dynamic guidance during intake, and it invites users to
+            explore a comprehensive glossary of justice terms, and a cross-state
+            **Matrix** of decision points like Diversion, Risk Tools, Education
+            Support, and Custody Planning.
           </p>
+        </section>
+
+        <section className="mb-16">
+          <h2 className="text-2xl font-semibold text-blue-700 mb-4">
+            📚 What&apos;s New?
+          </h2>
+          <ul className="list-disc list-inside text-slate-700 space-y-2">
+            <li>
+              <strong>🧾 Glossary of Juvenile Justice Terms</strong> — A
+              searchable, categorized library of key acronyms, systems, and
+              program names used across juvenile agencies.
+            </li>
+            <li>
+              <strong>📊 Matrix of State Practices</strong> — Compare diversion
+              eligibility, risk assessments, education plans, and more, across
+              Arkansas, Texas, Missouri, Louisiana, Oklahoma, Mississippi, and
+              Tennessee.
+            </li>
+            <li>
+              <strong>📝 Intake Prototype</strong> — A sample survey-style
+              intake form capturing every field a modern system should consider
+              — from education and custody history to risk tools and family
+              supports.
+            </li>
+          </ul>
         </section>
 
         <section className="mb-16">
@@ -54,20 +80,27 @@ export default function HomePage() {
           <ul className="list-disc list-inside text-slate-700 space-y-2">
             <li>
               <strong>Arkansas</strong>: Risk-based commitments (SAVRY), 90-day
-              treatment window
+              treatment windows
             </li>
             <li>
-              <strong>Texas</strong>: JCMS system, structured diversion forms
+              <strong>Texas</strong>: JCMS system + Risk/Needs Assessment
+              (RANA/RAI)
             </li>
             <li>
-              <strong>Missouri</strong>: The Missouri Model – short-term
-              therapeutic programming
+              <strong>Missouri</strong>: The Missouri Model — therapeutic
+              environments
             </li>
             <li>
-              <strong>Louisiana</strong>: Family engagement + MDT decision trees
+              <strong>Louisiana</strong>: Family Team Meetings & diversion-first
+              decision trees
             </li>
             <li>
-              <strong>Oklahoma</strong>: Real-time data entry and bed tracking
+              <strong>Oklahoma</strong>: Real-time bed tracking and digital data
+              entry
+            </li>
+            <li>
+              <strong>Mississippi & Tennessee</strong>: Informal adjustments and
+              family-linked diversion routes
             </li>
           </ul>
         </section>
@@ -85,6 +118,20 @@ export default function HomePage() {
             className="inline-flex items-center justify-center gap-2 bg-blue-700 text-white hover:bg-blue-800 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
           >
             🚀 Begin Intake Survey
+          </Link>
+
+          <Link
+            href="/matrix"
+            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+          >
+            📊 Explore Matrix
+          </Link>
+
+          <Link
+            href="/glossary"
+            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+          >
+            📚 Browse Glossary
           </Link>
         </section>
       </div>
