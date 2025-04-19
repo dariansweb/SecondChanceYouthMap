@@ -1,4 +1,5 @@
 "use client";
+
 import GlossaryRichText from "@/components/GlossaryRichText";
 import { useState } from "react";
 
@@ -23,10 +24,15 @@ const confidenceColors: Record<string, string> = {
 type Props = {
   entry: MatrixEntry;
   visibleStates: string[];
+  onOpenModal?: (entry: MatrixEntry) => void;
 };
 
-export default function MatrixCard({ entry, visibleStates }: Props) {
-  const [open, setOpen] = useState(false);
+export default function MatrixCard({
+  entry,
+  visibleStates,
+  onOpenModal,
+}: Props) {
+  const [open] = useState(false);
 
   const formatValue = (value: string | boolean | number) => {
     if (typeof value === "boolean") return value ? "Yes" : "No";
@@ -39,6 +45,8 @@ export default function MatrixCard({ entry, visibleStates }: Props) {
       className="
     group
     relative
+    flex flex-col
+    h-full
     rounded-xl
     bg-white
     text-slate-800
@@ -114,13 +122,33 @@ export default function MatrixCard({ entry, visibleStates }: Props) {
           );
         })}
       </div>
-
-      <button
-        onClick={() => setOpen(!open)}
-        className="mt-4 text-sm font-medium text-blue-600 hover:underline"
+      <div
+        className="
+    group relative flex flex-col h-full
+    rounded-xl bg-white text-slate-800
+    border border-slate-200 shadow-sm p-5
+    transition-all duration-300 hover:shadow-xl
+    hover:border-blue-500 hover:scale-[1.015]
+    focus-within:ring-2 focus-within:ring-blue-400
+  "
       >
-        {open ? "Hide Details" : "Show Details"}
-      </button>
+        {/* <button
+          onClick={() => setOpen(!open)}
+          className="w-full inline-block text-sm px-4 py-2 rounded-md border border-blue-600 text-blue-700 font-semibold hover:bg-blue-600 hover:text-white transition-colors shadow-sm"
+        >
+          {open ? "Hide Details" : "Show Details"}
+        </button> */}
+        {onOpenModal && (
+          <div className="mt-auto pt-4">
+            <button
+              onClick={() => onOpenModal?.(entry)}
+              className="w-full inline-block text-sm px-4 py-2 rounded-md border border-blue-600 text-blue-700 font-semibold hover:bg-blue-600 hover:text-white transition-colors shadow-sm"
+            >
+              View Full Details
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

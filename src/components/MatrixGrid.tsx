@@ -3,11 +3,15 @@
 import { useEffect, useState } from "react";
 import MatrixCard from "./MatrixCard";
 import MatrixFilterPanel from "./MatrixFilterPanel";
+import MatrixModal from "./MatrixModal";
 import { MatrixDataset, MatrixData } from "@/lib/loadMatrixData";
 
 export default function MatrixGrid() {
   const [data, setData] = useState<MatrixData[]>(MatrixDataset);
   const [filteredData, setFilteredData] = useState<MatrixData[]>([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedEntry, setSelectedEntry] = useState<MatrixData | null>(null);
+
   const [selectedStates, setSelectedStates] = useState<string[]>([
     "Arkansas",
     "Texas",
@@ -39,6 +43,40 @@ export default function MatrixGrid() {
     }
     fetchData();
   }, []);
+  <MatrixModal
+    isOpen={modalOpen}
+    onClose={() => setModalOpen(false)}
+    entry={
+      selectedEntry
+        ? {
+            ...selectedEntry,
+            confidence:
+              typeof selectedEntry.confidence === "boolean"
+                ? {
+                    value: selectedEntry.confidence ? "high" : "low",
+                    notes: "",
+                    source: "",
+                    confidence: selectedEntry.confidence ? "high" : "low",
+                  }
+                : typeof selectedEntry.confidence === "object" &&
+                  selectedEntry.confidence !== null &&
+                  "value" in selectedEntry.confidence
+                ? {
+                    value: String(selectedEntry.confidence.value),
+                    notes: selectedEntry.confidence.notes || "",
+                    source: selectedEntry.confidence.source || "",
+                    confidence: String(selectedEntry.confidence.confidence),
+                  }
+                : {
+                    value: "",
+                    notes: "",
+                    source: "",
+                    confidence: "",
+                  },
+          }
+        : null
+    }
+  />;
 
   useEffect(() => {
     const filtered = data
@@ -78,6 +116,14 @@ export default function MatrixGrid() {
 
   const decisionPoints = [...new Set(data.map((entry) => entry.decisionPoint))];
 
+  function handleOpenModal(entry: MatrixData): void {
+    console.log("Opening modal for entry:", entry);
+    // Here you can implement logic to open a modal and display the details of the entry.
+    // For example, you might set a state variable to the selected entry and use it to render a modal.
+    setSelectedEntry(entry);
+    setModalOpen(true);
+  }
+
   return (
     <>
       <MatrixFilterPanel
@@ -112,9 +158,45 @@ export default function MatrixGrid() {
                   confidence: entry.confidence as "low" | "medium" | "high",
                 }}
                 visibleStates={selectedStates}
+                onOpenModal={handleOpenModal}
               />
             ))}
           </section>
+
+          <MatrixModal
+            isOpen={modalOpen}
+            onClose={() => setModalOpen(false)}
+            entry={
+              selectedEntry
+                ? {
+                    ...selectedEntry,
+                    confidence:
+                      typeof selectedEntry.confidence === "boolean"
+                        ? {
+                            value: selectedEntry.confidence ? "high" : "low",
+                            notes: "",
+                            source: "",
+                            confidence: selectedEntry.confidence ? "high" : "low",
+                          }
+                        : typeof selectedEntry.confidence === "object" &&
+                          selectedEntry.confidence !== null &&
+                          "value" in selectedEntry.confidence
+                        ? {
+                            value: String(selectedEntry.confidence.value),
+                            notes: selectedEntry.confidence.notes || "",
+                            source: selectedEntry.confidence.source || "",
+                            confidence: String(selectedEntry.confidence.confidence),
+                          }
+                        : {
+                            value: "",
+                            notes: "",
+                            source: "",
+                            confidence: "",
+                          },
+                  }
+                : null
+            }
+          />
         </>
       )}
     </>
