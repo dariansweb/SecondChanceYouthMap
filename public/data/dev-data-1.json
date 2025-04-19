@@ -1,0 +1,146 @@
+[
+  {
+    "decisionPoint": "Risk Tool Used",
+    "Arkansas": {
+      "value": "SAVRY",
+      "notes": "Mandated by Act 189 of 2019. Used at intake and disposition.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": "RAI / RANA",
+      "notes": "County systems use Risk and Needs Assessment (RANA) and Risk Assessment Instrument (RAI).",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": "YLS/CMI",
+      "notes": "Common across circuits for risk stratification.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "medium"
+    },
+    "Louisiana": {
+      "value": "SAVRY or Local Tools",
+      "notes": "Use of SAVRY or screening tools at front door for diversion eligibility.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": "YLS/CMI",
+      "notes": "Used statewide; mandatory under OJA policy.",
+      "source": "oksenate.gov",
+      "confidence": "high"
+    }
+  },
+  {
+    "decisionPoint": "Diversion Allowed at Intake?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Allowed if agreed upon by intake officer, youth, parent, and prosecutor when necessary.",
+      "source": "codes.findlaw.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "First Offender Programs enabled by Family Code \u00a752.031.",
+      "source": "versustexas.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "Grants provided to circuits to encourage diversion.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Supports informal adjustment agreements; funds allocated for diversion.",
+      "source": "ojj.la.gov",
+      "confidence": "high"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Diversion permitted via deferred prosecution agreements.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "high"
+    }
+  },
+  {
+    "decisionPoint": "State Custody Minimum Days",
+    "Arkansas": {
+      "value": 90,
+      "notes": "Per Arkansas law, DYS commitments begin at 90 days minimum.",
+      "source": "law.justia.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": 60,
+      "notes": "Typical minimum stay for state custody is 60 days.",
+      "source": "tjjd.texas.gov",
+      "confidence": "medium"
+    },
+    "Missouri": {
+      "value": 30,
+      "notes": "Missouri often uses short-term programs as first interventions.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": 60,
+      "notes": "Many placements start at 60 days; varies by parish.",
+      "source": "ojj.la.gov",
+      "confidence": "low"
+    },
+    "Oklahoma": {
+      "value": 45,
+      "notes": "Short-term diagnostic programs run about 45 days initially.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Education Continuity Plan Required?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Arkansas mandates that detained youth receive uninterrupted education, with joint coordination between facilities and school districts. Education liaisons must request records within 48 hours, and schools are notified upon entry and release.",
+      "source": "law.justia.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Texas uses Juvenile Justice Alternative Education Programs (JJAEPs) for expelled youth, requiring full-day education services per Texas Education Code §37.011.",
+      "source": "codes.findlaw.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "DYS operates year-round schools inside residential programs and includes vocational training. Education is core to rehabilitation in Missouri's model.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "medium"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Case managers assemble education portfolios before reentry, including school records and vocational certificates. Schools must re-enroll youth upon release.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Facilities work with JOLTS to track education continuity. Education liaisons request transcripts and verify placement in appropriate educational programs.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "medium"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "DCS assigns Education Specialists to build IEPs and ensure credit transfer for each committed youth. Intake forms document prior education data for continuity planning.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "Reentry includes planning for educational continuity, with youth receiving credit-bearing instruction at Oakley Training School. Local education agencies are notified prior to return.",
+      "source": "mdhs.ms.gov",
+      "confidence": "medium"
+    }
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "decisionPoint": "Education Continuity Plan Required?",
+  "Arkansas": {
+    "value": true,
+    "notes": "Arkansas mandates that detained youth receive uninterrupted education, with joint coordination between facilities and school districts. Education liaisons must request records within 48 hours, and schools are notified upon entry and release.",
+    "source": "law.justia.com",
+    "confidence": "high"
+  },
+  "Texas": {
+    "value": true,
+    "notes": "Texas uses Juvenile Justice Alternative Education Programs (JJAEPs) for expelled youth, requiring full-day education services per Texas Education Code §37.011.",
+    "source": "codes.findlaw.com",
+    "confidence": "high"
+  },
+  "Missouri": {
+    "value": true,
+    "notes": "DYS operates year-round schools inside residential programs and includes vocational training. Education is core to rehabilitation in Missouri's model.",
+    "source": "childrens.nebraska.gov",
+    "confidence": "medium"
+  },
+  "Louisiana": {
+    "value": true,
+    "notes": "Case managers assemble education portfolios before reentry, including school records and vocational certificates. Schools must re-enroll youth upon release.",
+    "source": "ojj.la.gov",
+    "confidence": "medium"
+  },
+  "Oklahoma": {
+    "value": true,
+    "notes": "Facilities work with JOLTS to track education continuity. Education liaisons request transcripts and verify placement in appropriate educational programs.",
+    "source": "www2.tulsacounty.org",
+    "confidence": "medium"
+  },
+  "Tennessee": {
+    "value": true,
+    "notes": "DCS assigns Education Specialists to build IEPs and ensure credit transfer for each committed youth. Intake forms document prior education data for continuity planning.",
+    "source": "digitaltennessee.tnsos.gov",
+    "confidence": "high"
+  },
+  "Mississippi": {
+    "value": true,
+    "notes": "Reentry includes planning for educational continuity, with youth receiving credit-bearing instruction at Oakley Training School. Local education agencies are notified prior to return.",
+    "source": "mdhs.ms.gov",
+    "confidence": "medium"
+  }
+}

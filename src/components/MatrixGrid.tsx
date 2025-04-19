@@ -5,7 +5,6 @@ import MatrixCard from "./MatrixCard";
 import MatrixFilterPanel from "./MatrixFilterPanel";
 import { MatrixDataset, MatrixData } from "@/lib/loadMatrixData";
 
-
 export default function MatrixGrid() {
   const [data, setData] = useState<MatrixData[]>(MatrixDataset);
   const [filteredData, setFilteredData] = useState<MatrixData[]>([]);
@@ -108,7 +107,10 @@ export default function MatrixGrid() {
             {filteredData.map((entry, index) => (
               <MatrixCard
                 key={index}
-                entry={entry}
+                entry={{
+                  ...entry,
+                  confidence: entry.confidence as "low" | "medium" | "high",
+                }}
                 visibleStates={selectedStates}
               />
             ))}
