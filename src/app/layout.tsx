@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FormProvider } from "@/context/FormContext";
 import { Inter, Crimson_Pro } from "next/font/google";
+import { GlossaryProvider } from "@/context/GlossaryContext";
 import "./globals.css";
 
 const inter = Inter({
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${crimson.variable} antialiased bg-gray-50 text-slate-800`}
       >
-        <FormProvider>{children}</FormProvider>
+        <GlossaryProvider>
+          <FormProvider>{children}</FormProvider>
+        </GlossaryProvider>
       </body>
     </html>
   );

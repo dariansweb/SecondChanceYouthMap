@@ -1,0 +1,239 @@
+[
+  {
+    "term": "SAVRY",
+    "definition": "Structured Assessment of Violence Risk in Youth — a validated risk assessment tool used by juvenile justice systems to assess a youth’s likelihood of reoffending.",
+    "category": "Assessment Tool",
+    "state": "Arkansas",
+    "source": "humanservices.arkansas.gov"
+  },
+  {
+    "term": "YLS/CMI",
+    "definition": "Youth Level of Service / Case Management Inventory — a widely used structured tool for assessing risk and needs in youth involved with the justice system.",
+    "category": "Assessment Tool",
+    "state": "Missouri, Oklahoma",
+    "source": "childrens.nebraska.gov"
+  },
+  {
+    "term": "RAI",
+    "definition": "Risk Assessment Instrument — a screening tool used at intake in many states to determine whether a youth should be detained or released.",
+    "category": "Screening Tool",
+    "state": "Texas",
+    "source": "tjjd.texas.gov"
+  },
+  {
+    "term": "RANA",
+    "definition": "Risk and Needs Assessment — a structured assessment used by Texas juvenile probation departments to guide supervision and service decisions.",
+    "category": "Assessment Tool",
+    "state": "Texas",
+    "source": "tjjd.texas.gov"
+  },
+  {
+    "term": "JCMS",
+    "definition": "Juvenile Case Management System — Texas’s statewide database that connects juvenile probation departments and tracks cases through every stage.",
+    "category": "Digital System",
+    "state": "Texas",
+    "source": "tjjd.texas.gov"
+  },
+  {
+    "term": "JOLTS",
+    "definition": "Juvenile On-Line Tracking System — Oklahoma’s centralized database for managing juvenile records, from referral through release.",
+    "category": "Digital System",
+    "state": "Oklahoma",
+    "source": "www2.tulsacounty.org"
+  },
+  {
+    "term": "Evening Reporting Center",
+    "definition": "A community-based program offering structured after-school supervision for court-involved youth as an alternative to detention.",
+    "category": "Diversion Program",
+    "state": "Louisiana",
+    "source": "ojj.la.gov"
+  },
+  {
+    "term": "First Offender Program",
+    "definition": "A diversion program for youth with minor offenses, allowing them to avoid formal charges by completing counseling or community service.",
+    "category": "Diversion Program",
+    "state": "Texas",
+    "source": "versustexas.com"
+  },
+  {
+    "term": "TFACTS",
+    "definition": "Tennessee Family and Child Tracking System — the state’s integrated database for child welfare and juvenile justice information.",
+    "category": "Digital System",
+    "state": "Tennessee",
+    "source": "digitaltennessee.tnsos.gov"
+  },
+  {
+    "term": "JJAEP",
+    "definition": "Juvenile Justice Alternative Education Program — an academic setting for students expelled from school, where they continue coursework during their suspension.",
+    "category": "Education Program",
+    "state": "Texas",
+    "source": "codes.findlaw.com"
+  },
+
+  {
+    "term": "Individualized Education Program (IEP)",
+    "definition": "A formal plan developed for students with disabilities under IDEA, outlining specific educational goals and the services the school will provide. Juvenile facilities must ensure continued provision of these services while in custody and upon reentry.",
+    "category": "Education"
+  },
+  {
+    "term": "Juvenile Justice Alternative Education Program (JJAEP)",
+    "definition": "Programs in Texas and similar states that provide educational services to youth expelled for serious misbehavior. Operates separately from traditional schools but must meet full academic standards.",
+    "category": "Education"
+  },
+  {
+    "term": "Education Re-enrollment",
+    "definition": "The process of returning a youth to their home school or another educational setting after detention or placement. States like Louisiana mandate that schools re-enroll adjudicated youth without delay.",
+    "category": "Reentry"
+  },
+  {
+    "term": "Vocational Training Certificate",
+    "definition": "Credential awarded for completion of hands-on trade education. These certificates are often included in a youth’s reentry packet to assist with employment or school reintegration.",
+    "category": "Reentry"
+  },
+  {
+    "term": "Family Team Meeting",
+    "definition": "A collaborative meeting model where probation, family, service providers, and sometimes judges jointly plan a youth’s case strategy. Emphasized in Tennessee and Missouri as part of family-centered approaches.",
+    "category": "Family"
+  },
+  {
+    "term": "Reentry Transition Plan",
+    "definition": "A forward-looking strategy prepared before a youth exits custody, detailing their next school, support services, vocational opportunities, and family coordination points.",
+    "category": "Reentry"
+  },
+  {
+    "term": "Mental Health Screening",
+    "definition": "A behavioral health check (often using tools like MAYSI-2) administered at intake to identify acute or chronic mental health needs and determine service referrals.",
+    "category": "Mental Health"
+  },
+  {
+    "term": "Substance Abuse Counselor",
+    "definition": "A treatment provider trained to assess and assist youth with substance dependency or misuse, often assigned through diversion or as part of a probation plan.",
+    "category": "Substance Use"
+  },
+  {
+    "term": "Case Planning Document",
+    "definition": "A structured outline listing needs identified at intake (e.g., trauma, education gaps, substance use) alongside assigned services. Common in Louisiana and Missouri models.",
+    "category": "Custody Planning"
+  },
+  {
+    "term": "Delinquency Pathway",
+    "definition": "The progressive sequence of risk factors, unmet needs, and environmental triggers that can contribute to repeated juvenile offenses. Used in structured decision-making to inform diversion vs. commitment.",
+    "category": "Justice"
+  },
+
+  {
+    "term": "Screening Protocol",
+    "definition": "A structured process used at intake to determine the youth’s risk level, service needs, and eligibility for diversion. Common tools include the SAVRY, RAI, YASI, and MAYSI-2, which guide decisions about detention, diversion, or further processing.",
+    "source": "aecf.org, mdhs.ms.gov, humanservices.arkansas.gov",
+    "state": ""
+  },
+  {
+    "term": "Detention Hearing",
+    "definition": "A court proceeding (usually within 24–72 hours of arrest) where a judge reviews whether a youth should remain in detention or be released. Often includes a probable cause review and recommendation for assessments.",
+    "source": "childrens.nebraska.gov",
+    "state": ""
+  },
+  {
+    "term": "Adjudication",
+    "definition": "The juvenile justice equivalent of a trial where a judge determines whether the youth committed the alleged offense. If adjudicated, the youth proceeds to disposition.",
+    "source": "codes.findlaw.com",
+    "state": ""
+  },
+  {
+    "term": "Informal Adjustment",
+    "definition": "A non-court resolution agreement involving the youth, family, and intake officer. Conditions may include counseling, school attendance, or community service. Used in lieu of formal court processing.",
+    "source": "codes.findlaw.com, mdhs.ms.gov",
+    "state": ""
+  },
+  {
+    "term": "Formal Adjustment",
+    "definition": "A structured agreement initiated when informal efforts aren’t viable. Often includes documentation, supervision, and may involve the prosecutor. Serves as a bridge between informal handling and adjudication.",
+    "source": "ojj.la.gov",
+    "state": ""
+  },
+  {
+    "term": "Community Supervision",
+    "definition": "Also known as probation, this allows the youth to remain in the community under the guidance of an officer, while meeting court-ordered conditions such as therapy, check-ins, or school attendance.",
+    "source": "tjjd.texas.gov, oksenate.gov",
+    "state": ""
+  },
+  {
+    "term": "Court-Ordered Treatment",
+    "definition": "Mandated services such as substance abuse counseling, trauma-informed therapy, or educational programs. Treatment is tailored to the youth’s risk profile and may be a condition of probation or a disposition alternative.",
+    "source": "humanservices.arkansas.gov, ojj.la.gov",
+    "state": ""
+  },
+  {
+    "term": "Graduated Sanctions",
+    "definition": "A tiered set of consequences applied progressively in response to a youth’s behavior. Encourages proportional responses, from verbal warnings to increased supervision or detention.",
+    "source": "childrens.nebraska.gov",
+    "state": ""
+  },
+  {
+    "term": "Caseworker",
+    "definition": "A professional responsible for managing the youth’s case plan, coordinating services, monitoring progress, and facilitating communication among courts, families, and providers.",
+    "source": "ojj.la.gov, arcourts.gov",
+    "state": ""
+  },
+  {
+    "term": "Disposition Hearing",
+    "definition": "The final stage of juvenile court proceedings where the judge decides the outcome for an adjudicated youth—probation, diversion, residential treatment, or commitment.",
+    "source": "law.justia.com, humanservices.arkansas.gov",
+    "state": ""
+  },
+  {
+    "term": "Diversion Program",
+    "definition": "A non-judicial resolution for youth who commit low-level offenses, allowing them to avoid formal court proceedings by fulfilling agreed-upon conditions such as counseling, community service, or restitution. Completion typically results in case dismissal and no juvenile record.",
+    "category": "Legal Pathway"
+  },
+  {
+    "term": "Graduated Response",
+    "definition": "A structured discipline framework where sanctions escalate in response to repeated violations, promoting consistency while avoiding harsh penalties for minor infractions. Often includes interventions like extra supervision, counseling, or short-term detention.",
+    "category": "Supervision Strategy"
+  },
+  {
+    "term": "Youth Parole",
+    "definition": "The supervised release of youth from state custody, often with requirements such as school attendance, therapy, or regular check-ins. Successful parole may reduce long-term confinement and promote community reintegration.",
+    "category": "Custody & Reentry"
+  },
+  {
+    "term": "Placement Review",
+    "definition": "A periodic evaluation of whether a youth’s residential or custodial placement remains appropriate. It assesses behavior, treatment progress, and risk factors to determine if the youth can be stepped down to a less restrictive setting.",
+    "category": "Custody & Reentry"
+  },
+  {
+    "term": "Trauma-Informed Care",
+    "definition": "An approach to juvenile services that recognizes the prevalence and impact of trauma in youths’ lives. Staff are trained to avoid re-traumatization and to support healing through safe, empathetic interactions.",
+    "category": "Clinical Framework"
+  },
+  {
+    "term": "Restorative Justice",
+    "definition": "A model of justice emphasizing accountability, restitution, and healing rather than punishment. In juvenile contexts, it often includes youth writing apologies, meeting with victims, or performing community service to repair harm.",
+    "category": "Legal Pathway"
+  },
+  {
+    "term": "Crisis Response",
+    "definition": "Immediate intervention protocols for youth in acute distress, such as those exhibiting suicidal ideation or aggressive behavior. May involve mobile response teams, crisis stabilization units, or emergency mental health evaluations.",
+    "category": "Mental Health & Safety"
+  },
+  {
+    "term": "Wraparound Services",
+    "definition": "A holistic service delivery model that wraps youth and their families in a network of supports—mental health, education, housing, and legal—tailored to their specific needs and coordinated through a central case plan.",
+    "category": "Case Management"
+  },
+  {
+    "term": "Status Offense",
+    "definition": "A non-criminal act that is only considered an offense because of the youth's age—like truancy, curfew violation, or running away. These offenses are typically handled through diversion or counseling.",
+    "category": "Legal Definition"
+  },
+  {
+    "term": "Aftercare",
+    "definition": "Post-custody support services that assist youth in transitioning back into the community. Often includes counseling, educational planning, mentoring, and probation-like supervision to reduce recidivism.",
+    "category": "Custody & Reentry"
+  },
+  {
+    "term": "Informal Adjustment",
+    "definition": "An agreement between a youth, their family, and intake or probation officers to resolve a case outside formal court proceedings. May include behavioral conditions, community service, or program participation, signed by all parties.",
+    "category": "Legal Pathway"
+  }
+]

@@ -1,5 +1,5 @@
 "use client";
-
+import GlossaryRichText from "@/components/GlossaryRichText";
 import { useState } from "react";
 
 type StateValue = {
@@ -35,7 +35,24 @@ export default function MatrixCard({ entry, visibleStates }: Props) {
   };
 
   return (
-    <div className="rounded-lg shadow-md bg-white text-slate-800 p-4 border border-gray-200 transition-all">
+    <div
+      className="
+    group
+    relative
+    rounded-xl
+    bg-white
+    text-slate-800
+    border border-slate-200
+    shadow-sm
+    p-5
+    transition-all duration-300
+    hover:shadow-xl
+    hover:border-blue-500
+    hover:scale-[1.015]
+    focus-within:ring-2
+    focus-within:ring-blue-400
+  "
+    >
       <h2 className="text-xl font-semibold mb-4 text-slate-800">
         {entry.decisionPoint}
       </h2>
@@ -64,9 +81,11 @@ export default function MatrixCard({ entry, visibleStates }: Props) {
 
               {open && (
                 <div className="mt-2 ml-2 text-sm text-slate-600 bg-slate-100 p-2 rounded space-y-1">
-                  <p>
-                    <span className="font-medium">Notes:</span> {val.notes}
-                  </p>
+                  <span className="text-sm text-slate-600">
+                    <strong>Notes:</strong>{" "}
+                    <GlossaryRichText text={val.notes} />
+                  </span>
+
                   <p>
                     <span className="font-medium">Source:</span>{" "}
                     <a

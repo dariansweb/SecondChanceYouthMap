@@ -29,7 +29,20 @@ export default function MatrixFilterPanel({
   onDecisionChange,
 }: MatrixFilterPanelProps) {
   return (
-    <div className="mb-8 space-y-4">
+    <div
+      className="
+    mb-8
+    space-y-4
+    rounded-xl
+    border border-slate-200
+    bg-white
+    shadow-md
+    p-6
+    transition-all
+    hover:shadow-lg
+    hover:border-blue-400
+  "
+    >
       {/* 🔍 Search Field */}
       <div>
         <label className="block font-semibold mb-1 text-slate-700">

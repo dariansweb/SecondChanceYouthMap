@@ -12,6 +12,11 @@ const links = [
   { href: "/docs/education-support", label: "🎓 Education Support" },
   { href: "/docs/legal-forms", label: "📝 Legal Forms & Privacy" },
   { href: "/docs/references", label: "📚 References" },
+
+  // Tools
+  { section: "Tools & Resources" },
+  { href: "/matrix", label: "🧮 Matrix Comparison" },
+  { href: "/glossary", label: "🔤 Glossary" },
 ];
 
 export default function DocsSidebar() {
@@ -48,19 +53,32 @@ export default function DocsSidebar() {
         } md:translate-x-0`}
       >
         <nav className="space-y-2 p-4 text-sm md:p-0 md:pt-6">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`block px-3 py-2 rounded font-medium hover:bg-blue-100 ${
-                pathname === link.href
-                  ? "bg-blue-100 text-blue-700"
-                  : "text-slate-700"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((item, index) => {
+            if ("section" in item) {
+              return (
+                <div
+                  key={index}
+                  className="pt-4 pb-1 px-3 text-xs uppercase tracking-wider text-slate-500"
+                >
+                  {item.section}
+                </div>
+              );
+            }
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`block px-3 py-2 rounded font-medium hover:bg-blue-100 ${
+                  pathname === item.href
+                    ? "bg-blue-100 text-blue-700"
+                    : "text-slate-700"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
       </aside>
     </>
