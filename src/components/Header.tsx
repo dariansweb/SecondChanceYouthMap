@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navItems = [
-  { href: "/", label: "🏠 Home" },
   { href: "/docs", label: "📘 Docs" },
   { href: "/matrix", label: "📊 Matrix" },
   { href: "/glossary", label: "📚 Glossary" },
@@ -20,7 +19,7 @@ export default function Header() {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-lg text-lg font-extrabold tracking-wide shadow-sm border border-blue-200">
-            SCYM
+            <Link href="/">SCYM</Link>
           </div>
           <span className="text-xs text-slate-500 hidden sm:inline">
             Second Chance Youth Map
