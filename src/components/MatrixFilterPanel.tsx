@@ -4,6 +4,7 @@ type MatrixFilterPanelProps = {
   states: string[];
   selectedStates: string[];
   onToggleState: (state: string) => void;
+
   searchQuery: string;
   onSearchChange: (query: string) => void;
   onSortToggle: () => void;
