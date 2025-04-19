@@ -1,5 +1,3 @@
-// src/app/docs/intake-workflow/page.tsx
-
 import Link from "next/link";
 
 export default function IntakeWorkflowPage() {
@@ -11,143 +9,145 @@ export default function IntakeWorkflowPage() {
           <span>🧭</span> Intake Workflow
         </h1>
         <p className="max-w-3xl mx-auto text-lg sm:text-xl font-light">
-          The <em>Second Chance Youth Map</em> intake flow is built on a blend of best
-          practices, legal mandates, and decades of learned wisdom. What you’re
-          reading here isn’t just a form — it’s the <strong>first path a youth takes toward transformation.</strong>
+          The <em>Second Chance Youth Map</em> intake flow is grounded in best practices across seven states — designed to guide, not just gather.
         </p>
       </header>
 
       {/* MAIN CONTENT */}
       <div className="max-w-5xl mx-auto px-6 py-10">
         <section className="space-y-12 leading-relaxed text-base">
+
+          {/* STEP 1 */}
           <div>
             <h2 className="text-2xl font-semibold text-blue-700">
               🚨 Step 1: Youth Encounter / Referral
             </h2>
             <p className="mt-2">
-              Intake begins with a trigger — a referral, arrest, or school citation. The youth is at a crossroads,
-              and how their journey begins will deeply shape their trajectory.
+              A youth enters the system via a catalyst — arrest, school report, or self-disclosure. At this initial threshold, accurate documentation is critical.
             </p>
             <ul className="list-disc pl-6 mt-2">
-              <li>Arrest, citation, school referral, or probation violation</li>
-              <li>
-                Initial data collected:
+              <li>Referral types: arrest, citation, probation violation, school-based, self-report</li>
+              <li>Initial data includes:
                 <ul className="list-disc pl-6 mt-1">
-                  <li>Youth’s full name, date of birth, demographics</li>
-                  <li>Referral type and source agency</li>
-                  <li>Current school status</li>
+                  <li>Full name, date of birth, demographics</li>
+                  <li>Referral type and originating agency</li>
+                  <li>Intake date and intake officer</li>
                 </ul>
               </li>
             </ul>
             <p className="mt-2 italic text-sm text-slate-500">
-              Arkansas and Oklahoma highlight the importance of referral accuracy, as early mistakes can derail the
-              entire diversion process.
+              Both Arkansas and Tennessee stress the importance of early referral precision to avoid misclassification and barriers to diversion.
             </p>
           </div>
 
+          {/* STEP 2 */}
           <div>
             <h2 className="text-2xl font-semibold text-blue-700">
               📋 Step 2: Intake Form Completion
             </h2>
             <p className="mt-2">
-              This form isn’t merely a checklist — it’s a diagnostic intake tool that drives downstream decisions.
-              Missouri’s youth services model stresses <strong>therapeutic alignment</strong> and tailoring services
-              from the very first contact.
+              This isn’t just form-filling — it’s a structured diagnostic. Inputs shape what comes next. Texas and Louisiana provided blueprints for intake modularity and flexibility.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mt-4">
               <div className="bg-white p-4 rounded shadow-sm border border-slate-200">
-                Offense details & context
+                Offense type, date, severity, and contextual notes
               </div>
               <div className="bg-white p-4 rounded shadow-sm border border-slate-200">
-                Risk assessment tool results (SAVRY, RAI, etc.)
+                Risk assessment score + tool used (SAVRY, RAI, YASI, etc.)
               </div>
               <div className="bg-white p-4 rounded shadow-sm border border-slate-200">
-                Educational profile (IEP/504, credits, attendance)
+                Contacts: Guardians, school staff, case managers, judges
               </div>
               <div className="bg-white p-4 rounded shadow-sm border border-slate-200">
-                Key stakeholders (guardian, school rep, case manager)
+                Education: Current status, credits, IEP/504, truancy
               </div>
             </div>
             <p className="mt-4 italic text-sm text-slate-500">
-              Texas and Louisiana&apos;s structured intake models were foundational in shaping this structure.
+              Dynamic fields adjust based on risk, legal history, and support needs.
             </p>
           </div>
 
+          {/* STEP 3 */}
           <div>
             <h2 className="text-2xl font-semibold text-blue-700">
               🧠 Step 3: Risk Assessment Integration
             </h2>
             <p className="mt-2">
-              Every state we studied uses structured decision-making tools to increase fairness. But these tools must
-              be viewed as guides — not gospel. <strong>Judgment and nuance matter.</strong>
+              Each state utilizes some form of structured risk or needs assessment — but tools vary. SCYM allows intake officers to log the tool used and record the resulting tier or score.
             </p>
             <ul className="list-disc pl-6 mt-2">
-              <li>SAVRY (Arkansas): Structured for violent-risk prediction</li>
-              <li>RAI (Oklahoma): Used at intake to avoid over-detention</li>
-              <li>YLS/CMI (Louisiana): Focused on service pairing</li>
+              <li>SAVRY (AR) – violence risk & structured reoffense prediction</li>
+              <li>RAI (TX, OK) – intake triage & detention mitigation</li>
+              <li>YLS/CMI (MO, LA) – services alignment & intervention planning</li>
+              <li>YASI (MS) – youth strengths and needs inventory</li>
             </ul>
             <p className="mt-2 text-sm text-slate-500">
-              Risk tiering aligns with diversion or custody tracks. No single score should determine a youth’s fate.
+              Scores guide the “track” — diversion, probation, or commitment — but do not dictate outcomes alone.
             </p>
           </div>
 
+          {/* STEP 4 */}
           <div>
             <h2 className="text-2xl font-semibold text-blue-700">
-              ⚖️ Step 4: Recommendation & Legal Review
+              ⚖️ Step 4: Recommendation & MDT Review
             </h2>
             <p className="mt-2">
-              After form completion, the intake officer proposes a pathway. Multidisciplinary Teams (MDTs) or
-              Juvenile Judges then review, adjust, or affirm the recommendation.
+              The form culminates in a proposed pathway. A multidisciplinary team (MDT) or judge uses the full record to validate or modify that recommendation.
             </p>
             <ul className="list-disc pl-6 mt-2">
-              <li>Diversion (restorative or treatment-based)</li>
-              <li>Probation (supervised or community-based)</li>
-              <li>State Custody (90-day assessment period)</li>
+              <li>Diversion (restorative, outpatient, or informal adjustment)</li>
+              <li>Probation (community-based with supports)</li>
+              <li>State Custody (with 90-day assessment or long-term commitment)</li>
+              <li>Detention (short-term holding, if necessary)</li>
             </ul>
-            <p className="mt-2 italic text-sm text-slate-500">
-              Louisiana’s MDT framework ensures decisions are vetted by education, mental health, legal, and probation
-              experts — not just one department.
+            <p className="mt-2 text-sm italic text-slate-500">
+              Justification notes, next court date, restitution need, and youth willingness are included.
             </p>
           </div>
 
+          {/* STEP 5 */}
           <div>
             <h2 className="text-2xl font-semibold text-blue-700">
               🏫 Step 5: Education Continuity Planning
             </h2>
             <p className="mt-2">
-              Every youth has a right to uninterrupted learning. Missouri, Texas, and Arkansas emphasize tracking
-              credits, ensuring IEP/504 follow-through, and re-enrolling quickly after placement.
+              A robust education snapshot travels with the youth. SCYM captures enrollment status, academic progress, truancy indicators, and support programs to ensure no learning is lost.
             </p>
             <ul className="list-disc pl-6 mt-2">
-              <li>Credits earned or lost during time away</li>
-              <li>IEP and learning accommodations history</li>
-              <li>Truancy and dropout risk indicators</li>
+              <li>IEP/504 status, earned credits, and truancy history</li>
+              <li>Learning style and classroom support needs</li>
+              <li>Participation in ESL, vocational, or special programs</li>
+              <li>Suspension dates and recent discipline notes (optional)</li>
             </ul>
             <p className="mt-2 text-sm text-slate-500">
-              Oklahoma pioneered real-time educational dashboards that follow youth between community and custody.
+              Mississippi and Missouri emphasize real-time academic data in placement planning.
             </p>
           </div>
 
+          {/* STEP 6 */}
           <div>
             <h2 className="text-2xl font-semibold text-blue-700">
               📝 Step 6: Final Review & Submission
             </h2>
             <p className="mt-2">
-              The completed form is exported as a standardized PDF packet that becomes part of the youth’s official
-              record — reviewed by:
+              The completed form is automatically converted into a PDF summary, routed to all necessary stakeholders:
             </p>
             <ul className="list-disc pl-6 mt-2">
               <li>Juvenile Court Judge</li>
-              <li>Probation Officer</li>
-              <li>Educational Liaison</li>
-              <li>Case Management Supervisor</li>
+              <li>Probation Officer / Caseworker</li>
+              <li>Education Liaison</li>
+              <li>Behavioral or Health Coordinator</li>
             </ul>
+            <p className="mt-2 text-sm text-slate-500">
+              Forms are exportable and secure — available for recordkeeping, hearings, or team reviews.
+            </p>
           </div>
 
+          {/* FINAL THOUGHT */}
           <div className="pt-6 border-t border-slate-200 mt-10">
             <p className="text-sm text-slate-500 italic">
-              This intake system reflects the best practices of multiple states — blended to support flexibility,
-              reduce bias, and promote clarity.
+              This intake system reflects the convergence of seven state systems —
+              unified into one modern workflow that prioritizes fairness, flexibility, and follow-through.
             </p>
           </div>
 

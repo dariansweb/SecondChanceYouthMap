@@ -10,9 +10,9 @@ export default function DocsHome() {
             📘 Second Chance Youth Map Docs
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Explore the philosophy, models, and design logic behind the SCYM
-            platform. Built from real practices. Designed for youth. Open for
-            everyone.
+            Explore the foundations, flow, and features behind SCYM — a
+            cross-state juvenile justice toolkit that blends real-world practice
+            with modern design, transparency, and second chances.
           </p>
         </section>
 
@@ -21,32 +21,42 @@ export default function DocsHome() {
             {
               title: "🧭 Intake Workflow",
               href: "/docs/intake-workflow",
-              desc: "Step-by-step breakdown of the full intake process, from referral to recommendation.",
+              desc: "Every step of the youth intake journey — now with fields pulled directly from 7+ state systems.",
             },
             {
               title: "📊 Risk Assessments",
               href: "/docs/risk-assessments",
-              desc: "SAVRY, RAI, YLS/CMI — tools, scoring tiers, and decision impact explained.",
+              desc: "SAVRY, RAI, YASI, YLS/CMI — explained with scoring impact and contextual usage across jurisdictions.",
             },
             {
               title: "⚖️ Custody vs. Diversion",
               href: "/docs/custody-diversion-paths",
-              desc: "How youth are routed and why. Decision criteria, pathways, and MDT logic.",
+              desc: "Which path, why, and when — including MDT logic and structured pathway decisions.",
             },
             {
               title: "🎓 Education Support",
               href: "/docs/education-support",
-              desc: "Maintaining IEPs, credit continuity, and academic lifelines through every path.",
+              desc: "IEPs, truancy, grade recovery, learning style insights — how school data supports justice decisions.",
             },
             {
               title: "📝 Legal Forms & Privacy",
               href: "/docs/legal-forms",
-              desc: "FERPA, HIPAA, IDEA, court compliance. Consent forms and safeguards.",
+              desc: "FERPA, HIPAA, IDEA, and court orders. Consent, sharing, and safeguarding sensitive youth data.",
             },
             {
               title: "📚 References",
               href: "/docs/references",
-              desc: "Citations, laws, tools, and inspiration that shaped this system.",
+              desc: "The citations, models, and research that fuel the philosophy and structure of SCYM.",
+            },
+            {
+              title: "📚 Matrix: State Comparisons",
+              href: "/matrix",
+              desc: "Explore how Arkansas, Texas, Louisiana, and more approach decisions — side by side.",
+            },
+            {
+              title: "📖 Glossary of Terms",
+              href: "/glossary",
+              desc: "Tap into plain-language definitions for tools, acronyms, roles, and programs used across systems.",
             },
           ].map((doc) => (
             <Link
