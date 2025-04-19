@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 import MatrixCard from "./MatrixCard";
 import MatrixFilterPanel from "./MatrixFilterPanel";
-import { MatrixData } from "@/lib/loadMatrixData";
+import { MatrixDataset, MatrixData } from "@/lib/loadMatrixData";
+
 
 export default function MatrixGrid() {
-  const [data, setData] = useState<MatrixData[]>([]);
+  const [data, setData] = useState<MatrixData[]>(MatrixDataset);
   const [filteredData, setFilteredData] = useState<MatrixData[]>([]);
   const [selectedStates, setSelectedStates] = useState<string[]>([
     "Arkansas",
@@ -19,6 +20,7 @@ export default function MatrixGrid() {
   ]);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortAsc, setSortAsc] = useState(true);
+  const [selectedDecision, setSelectedDecision] = useState<string>("");
 
   const allStates: string[] = [
     "Arkansas",
@@ -42,7 +44,7 @@ export default function MatrixGrid() {
   useEffect(() => {
     const filtered = data
       .filter((entry) => {
-        return selectedStates.some((state) => {
+        const inSelectedStates = selectedStates.some((state) => {
           const stateVal = entry[state as keyof MatrixData];
           return (
             typeof stateVal === "object" &&
@@ -50,10 +52,16 @@ export default function MatrixGrid() {
             "value" in stateVal
           );
         });
+
+        const matchesSearch = entry.decisionPoint
+          .toLowerCase()
+          .includes(searchQuery.toLowerCase());
+
+        const matchesDecision =
+          !selectedDecision || entry.decisionPoint === selectedDecision;
+
+        return inSelectedStates && matchesSearch && matchesDecision;
       })
-      .filter((entry) =>
-        entry.decisionPoint.toLowerCase().includes(searchQuery.toLowerCase())
-      )
       .sort((a, b) =>
         sortAsc
           ? a.decisionPoint.localeCompare(b.decisionPoint)
@@ -61,13 +69,15 @@ export default function MatrixGrid() {
       );
 
     setFilteredData(filtered);
-  }, [data, selectedStates, searchQuery, sortAsc]);
+  }, [data, selectedStates, searchQuery, selectedDecision, sortAsc]);
 
   const toggleState = (state: string) => {
     setSelectedStates((prev) =>
       prev.includes(state) ? prev.filter((s) => s !== state) : [...prev, state]
     );
   };
+
+  const decisionPoints = [...new Set(data.map((entry) => entry.decisionPoint))];
 
   return (
     <>
@@ -79,6 +89,9 @@ export default function MatrixGrid() {
         onSearchChange={setSearchQuery}
         onSortToggle={() => setSortAsc(!sortAsc)}
         sortAsc={sortAsc}
+        decisionPoints={decisionPoints}
+        selectedDecision={selectedDecision}
+        onDecisionChange={setSelectedDecision}
       />
 
       {filteredData.length === 0 ? (

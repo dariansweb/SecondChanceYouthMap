@@ -9,6 +9,11 @@ type MatrixFilterPanelProps = {
   onSearchChange: (query: string) => void;
   onSortToggle: () => void;
   sortAsc: boolean;
+
+  // NEW:
+  decisionPoints: string[];
+  selectedDecision: string;
+  onDecisionChange: (value: string) => void;
 };
 
 export default function MatrixFilterPanel({
@@ -19,10 +24,13 @@ export default function MatrixFilterPanel({
   onSearchChange,
   onSortToggle,
   sortAsc,
+  decisionPoints = [],
+  selectedDecision,
+  onDecisionChange,
 }: MatrixFilterPanelProps) {
   return (
     <div className="mb-8 space-y-4">
-      {/* Search Field */}
+      {/* 🔍 Search Field */}
       <div>
         <label className="block font-semibold mb-1 text-slate-700">
           Search Decision Points
@@ -36,7 +44,26 @@ export default function MatrixFilterPanel({
         />
       </div>
 
-      {/* State Checkboxes */}
+      {/* 🔽 Filter by Decision Point */}
+      <div>
+        <label className="block font-semibold mb-1 text-slate-700">
+          Filter by Decision Point
+        </label>
+        <select
+          value={selectedDecision}
+          onChange={(e) => onDecisionChange(e.target.value)}
+          className="w-full px-3 py-2 border border-slate-300 rounded shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <option value="">All Decision Points</option>
+          {decisionPoints?.map((dp) => (
+            <option key={dp} value={dp}>
+              {dp}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* 🗺️ State Checkboxes */}
       <div>
         <label className="block font-semibold mb-1 text-slate-700">
           Filter by State
@@ -58,13 +85,13 @@ export default function MatrixFilterPanel({
         </div>
       </div>
 
-      {/* Sort Button */}
+      {/* 🔃 Sort Button */}
       <div>
         <button
           onClick={onSortToggle}
           className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition focus:outline-none focus:ring-2 focus:ring-blue-300"
         >
-          Sort {sortAsc ? "Z → A" : "A → Z"}
+          Sort {sortAsc ? "A → Z" : "Z → A"}
         </button>
       </div>
     </div>

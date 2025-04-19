@@ -1,0 +1,497 @@
+[
+  {
+    "decisionPoint": "Risk Tool Used",
+    "Arkansas": {
+      "value": "SAVRY",
+      "notes": "Mandated by Act 189 of 2019. Used at intake and disposition.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": "RAI / RANA",
+      "notes": "County systems use Risk and Needs Assessment (RANA) and Risk Assessment Instrument (RAI).",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": "YLS/CMI",
+      "notes": "Common across circuits for risk stratification.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "medium"
+    },
+    "Louisiana": {
+      "value": "SAVRY or Local Tools",
+      "notes": "Use of SAVRY or screening tools at front door for diversion eligibility.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": "YLS/CMI",
+      "notes": "Used statewide; mandatory under OJA policy.",
+      "source": "oksenate.gov",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": "Discretionary risk review + education/family assessment",
+      "notes": "Tennessee integrates risk data into child welfare tracking via TFACTS, and emphasizes family team meetings to guide intake outcomes.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "medium"
+    },
+    "Mississippi": {
+      "value": "YASI",
+      "notes": "Youth Assessment and Screening Instrument (YASI) used within 3 days for all youth admitted to state custody.",
+      "source": "mdhs.ms.gov",
+      "confidence": "high"
+    }
+  },
+  {
+    "decisionPoint": "Diversion Allowed at Intake?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Allowed if agreed upon by intake officer, youth, parent, and prosecutor when necessary.",
+      "source": "codes.findlaw.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "First Offender Programs enabled by Family Code \u00a752.031.",
+      "source": "versustexas.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "Grants provided to circuits to encourage diversion.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Supports informal adjustment agreements; funds allocated for diversion.",
+      "source": "ojj.la.gov",
+      "confidence": "high"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Diversion permitted via deferred prosecution agreements.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "25% of intakes were diverted; 7% handled by informal adjustment. YASI screening used.",
+      "source": "mdhs.ms.gov",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "Intake officers and probation staff may conduct preliminary inquiries and divert eligible youth early in the process. Family team meetings support decisions.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Education Continuity Plan Required?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Arkansas mandates that detained youth receive uninterrupted education, with joint coordination between facilities and school districts. Education liaisons must request records within 48 hours, and schools are notified upon entry and release.",
+      "source": "law.justia.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Texas uses Juvenile Justice Alternative Education Programs (JJAEPs) for expelled youth, requiring full-day education services per Texas Education Code §37.011.",
+      "source": "codes.findlaw.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "DYS operates year-round schools inside residential programs and includes vocational training. Education is core to rehabilitation in Missouri's model.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "medium"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Case managers assemble education portfolios before reentry, including school records and vocational certificates. Schools must re-enroll youth upon release.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Facilities work with JOLTS to track education continuity. Education liaisons request transcripts and verify placement in appropriate educational programs.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "medium"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "DCS assigns Education Specialists to build IEPs and ensure credit transfer for each committed youth. Intake forms document prior education data for continuity planning.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "Reentry includes planning for educational continuity, with youth receiving credit-bearing instruction at Oakley Training School. Local education agencies are notified prior to return.",
+      "source": "mdhs.ms.gov",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Family Engagement Required at Intake?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Parents are expected to attend intake interviews and are part of any diversion agreement. Written consent is required and guardian contact info is logged in the system.",
+      "source": "bobbydigbylaw.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Parents or guardians must consent to participation in First Offender Programs. Intake officers notify guardians as part of legal requirements.",
+      "source": "versustexas.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "The Missouri Model includes family engagement as a core element. Intake encourages family therapy and logs support networks to guide diversion or placement.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Family participation is codified in individualized service plans. OJJ requires signatures from youth and family on plans for counseling and service compliance.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Family members must be notified at admission and diversion agreements are co-signed by the youth and guardian. JOLTS logs include guardian contact information.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "Child and Family Team Meetings are standard practice after intake. These meetings guide case planning with youth, family, and caseworkers present.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "Diversion agreements require guardian involvement and signatures. Family contact is recorded and tracked as part of the intake and monitoring process.",
+      "source": "codes.findlaw.com",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Minimum Custody Duration or Commitment Type",
+    "Arkansas": {
+      "value": "3–6 months typical; max 6 months advised",
+      "notes": "Treatment plans target 3–6 months for most commitments. 45-day diagnostic period at Alexander Intake Center precedes placement. DYS uses risk-based criteria, discouraging commitment of low-risk youth.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": "Only for felonies; no misdemeanors",
+      "notes": "State commitment prohibited for most misdemeanors. Duration varies by offense, but most local diversion programs cap at 3–4 months.",
+      "source": "versustexas.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": "4–6 months typical; retention until age 18",
+      "notes": "The 'Missouri Model' emphasizes short residential stays in therapeutic facilities. DYS retains custody jurisdiction until 18, but actual stays are 4–6 months, followed by community aftercare.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": "60–90 day programs for most cases",
+      "notes": "Uses regional reception centers and evening reporting programs for short-term intervention. Commitment time tied to needs and risk screening scores.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": "90-day Reach program or group home",
+      "notes": "OJA offers short-term structured placements, including the 90-day 'Reach' residential program. YLS/CMI assessment guides custody decision.",
+      "source": "oksenate.gov",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": "4–5 months for hardware secure; indeterminate",
+      "notes": "DCS uses risk level and program fit to guide commitment duration. Historically, short-term secure stays were 4–5 months. Some remain longer based on evaluation.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "medium"
+    },
+    "Mississippi": {
+      "value": "YASI-based commitment to Oakley Training School",
+      "notes": "Custody duration varies. Youth receive full assessment within 3 days of entry. Prioritizes non-custodial options; only higher-risk youth sent to Oakley.",
+      "source": "mdhs.ms.gov",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Reentry or Aftercare Planning Mandated?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Arkansas DYS requires transition planning before discharge. This includes housing, education, and family reunification goals. Written notice of discharge is sent to youth and guardians.",
+      "source": "codes.findlaw.com",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Local probation departments manage reentry via JCMS. Educational and treatment updates are shared with the school and family at release.",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "Reentry planning begins at intake. Each youth receives a transition plan tailored to housing, school, and community services. Staff maintain contact post-release.",
+      "source": "childrensdefense.org",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "OJJ policy requires that education records and vocational certifications be assembled prior to release. Schools are required to re-enroll adjudicated youth promptly.",
+      "source": "ojj.la.gov",
+      "confidence": "high"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Youth in group homes or secure placements are transitioned using reentry plans that include counseling, family contact, and education referrals.",
+      "source": "oksenate.gov",
+      "confidence": "medium"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "DCS Education Specialists and Reentry Coordinators ensure IEP credits transfer. Each youth has a projected exit plan including home school notification.",
+      "source": "law.justia.com",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "All youth exiting Oakley Training School receive reentry case plans. Local Youth Courts review these plans post-discharge to ensure reintegration.",
+      "source": "mdhs.ms.gov",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Mental Health Screening at Intake?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Arkansas uses the MAYSI-2 screening tool system-wide. All youth entering detention or commitment receive a mental health and trauma screen within 48 hours.",
+      "source": "craigheadcountyar.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "All youth undergo mental health and trauma screening at intake; TJJD’s Front-End Diversion Initiative is specifically designed to divert youth with behavioral health needs.",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "Mental health and trauma screens are embedded into the early phases of Missouri DYS intake. Screening results guide placement and treatment services.",
+      "source": "childrensdefense.org",
+      "confidence": "medium"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Mental health screening is a core part of Louisiana’s front-end diversion and detention decision tools. Co-located social workers help connect families to services immediately.",
+      "source": "ojj.la.gov",
+      "confidence": "high"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Mental health needs are flagged during intake through the Youth Level of Service/Case Management Inventory (YLS/CMI). Those with acute needs are referred to immediate services.",
+      "source": "oksenate.gov",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "Tennessee DCS applies family team meetings and structured trauma screening tools to determine needs early. Youth with high scores are referred to therapeutic programs.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "Uses the Youth Assessment and Screening Instrument (YASI) across counties to flag mental and behavioral health issues. Screening within 72 hours is mandated at Oakley Training School.",
+      "source": "mdhs.ms.gov",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Substance Use Screening at Intake?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Substance use screening is part of the comprehensive intake at DYS’s Central Intake Unit, including psychological and chemical dependency assessments.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Youth in custody are assessed for substance abuse through standardized forms in JCMS. Referrals are made for services where needed.",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "All youth receive diagnostic assessments within 30 days, which include screenings for drug and alcohol use. Missouri’s DYS facilities offer outpatient substance abuse counseling.",
+      "source": "childrensdefense.org",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "Substance abuse screening is included in Louisiana’s front-end screening process. Youth can be referred to evening reporting centers for outpatient programs.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Substance use needs are identified through YLS/CMI results and flagged in JOLTS. Specialized services are contracted for follow-up.",
+      "source": "www2.tulsacounty.org",
+      "confidence": "medium"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "Substance use assessments are included in the youth’s initial evaluation. TFACTS allows cross-referencing referrals for co-occurring disorders.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "medium"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "YASI includes a section on drug and alcohol risk. Youth at Oakley Training School are assessed for chemical dependency within 3 days.",
+      "source": "mdhs.ms.gov",
+      "confidence": "high"
+    }
+  },
+  {
+    "decisionPoint": "Initial Pathway: Diversion vs. Custody",
+    "Arkansas": {
+      "value": "Diversion first",
+      "notes": "Act 189 of 2019 mandates use of SAVRY and diverts low-risk youth whenever possible. Custody is reserved for moderate/high-risk only.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": "Diversion preferred",
+      "notes": "Family Code §52.031 allows for First Offender Programs. Many youth receive informal supervision in lieu of detention.",
+      "source": "versustexas.com",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": "Diversion with grant support",
+      "notes": "Local circuits receive grants to encourage alternatives to commitment. Diversion may include informal supervision or teen court.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": "Front-door screening",
+      "notes": "OJJ’s front-end SAVRY screens determine if diversion is appropriate. Community-based programs are prioritized.",
+      "source": "ojj.la.gov",
+      "confidence": "high"
+    },
+    "Oklahoma": {
+      "value": "Deferred prosecution",
+      "notes": "Juvenile officers may offer deferred prosecution agreements. Intake includes a structured YLS/CMI and diversion criteria.",
+      "source": "oksenate.gov",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": "Team-based diversion",
+      "notes": "Child and Family Team Meetings (CFTM) help determine diversion eligibility. DCS integrates social supports early.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "medium"
+    },
+    "Mississippi": {
+      "value": "County-led diversion",
+      "notes": "Youth Courts review YASI results to determine informal adjustments. 25% of intakes diverted; 7% handled via adjustment.",
+      "source": "mdhs.ms.gov",
+      "confidence": "high"
+    }
+  },
+  {
+    "decisionPoint": "Substance Use Screening at Intake?",
+    "Arkansas": {
+      "value": true,
+      "notes": "Substance use screening is part of the comprehensive intake at DYS’s Central Intake Unit, including psychological and chemical dependency assessments.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Youth in custody are assessed for substance abuse through standardized forms in JCMS. Referrals are made for services where needed.",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "All youth receive diagnostic assessments within 30 days, including screenings for drug and alcohol use. Some programs integrate these results into service planning.",
+      "source": "childrensdefense.org",
+      "confidence": "medium"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "OJJ integrates substance use screenings into broader health assessments. Evening Reporting Centers often include referrals for treatment as part of diversion.",
+      "source": "ojj.la.gov",
+      "confidence": "medium"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "Chemical dependency needs are flagged during YLS/CMI screening and followed up during facility intake.",
+      "source": "oksenate.gov",
+      "confidence": "medium"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "DCS incorporates substance abuse assessments as part of the multidisciplinary team’s intake and service plan.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "high"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "YASI includes questions to identify substance abuse issues at intake. Oakley Training School has mandatory screening.",
+      "source": "mdhs.ms.gov",
+      "confidence": "medium"
+    }
+  },
+  {
+    "decisionPoint": "Delinquency Pathways – Diversion Eligibility Determined by Risk?",
+    "Arkansas": {
+      "value": true,
+      "notes": "SAVRY risk assessments guide diversion eligibility. Youth scoring low-risk are prioritized for diversion under Act 189.",
+      "source": "humanservices.arkansas.gov",
+      "confidence": "high"
+    },
+    "Texas": {
+      "value": true,
+      "notes": "Most counties use RAI or RANA to determine diversion eligibility. Youth with low scores may enter First Offender Programs.",
+      "source": "tjjd.texas.gov",
+      "confidence": "high"
+    },
+    "Missouri": {
+      "value": true,
+      "notes": "Each circuit uses risk assessments and informal intake conferences. DYS funds short-term diversion programs tied to assessment scores.",
+      "source": "childrens.nebraska.gov",
+      "confidence": "high"
+    },
+    "Louisiana": {
+      "value": true,
+      "notes": "SAVRY and brief risk tools guide referrals to OJJ-funded diversion programs. Risk score is required before formal detention.",
+      "source": "ojj.la.gov",
+      "confidence": "high"
+    },
+    "Oklahoma": {
+      "value": true,
+      "notes": "YLS/CMI guides eligibility for deferred prosecution or community-based programs. Youth and guardians sign a diversion agreement.",
+      "source": "oksenate.gov",
+      "confidence": "high"
+    },
+    "Tennessee": {
+      "value": true,
+      "notes": "DCS uses family team meetings to explore non-custodial options for low-risk youth based on screening results.",
+      "source": "digitaltennessee.tnsos.gov",
+      "confidence": "medium"
+    },
+    "Mississippi": {
+      "value": true,
+      "notes": "Youth Court officers use YASI results to direct 25% of youth into diversion or informal adjustments.",
+      "source": "mdhs.ms.gov",
+      "confidence": "high"
+    }
+  }
+]
