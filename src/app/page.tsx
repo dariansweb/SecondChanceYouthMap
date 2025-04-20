@@ -175,7 +175,7 @@ export default function HomePage() {
             📚 Browse Glossary
           </Link>
           <Link
-            href="/dashboard"
+            href="/dashboard/charts/diversion"
             className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
           >
             🔎 Explore Full Dashboard
