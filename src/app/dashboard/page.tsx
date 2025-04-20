@@ -11,7 +11,6 @@ import ConfidenceTrendChart from "@/components/dashboard/ConfidenceTrendChart";
 import RiskToolHeatmap from "@/components/dashboard/RiskToolHeatmap";
 import TopSourcesChart from "@/components/dashboard/TopSourcesChart";
 
-
 export default function DashboardPage() {
   const [showModal, setShowModal] = useState(false);
 
@@ -38,15 +37,127 @@ export default function DashboardPage() {
 
       {/* Chart Grid */}
       <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-        <DiversionChart />
-        <RiskToolUsageChart />
-        <EducationNeedsChart />
-        <RecommendationPieChart />
-        <ConfidenceChart />
-        <ConfidenceTrendChart />
-        <RiskToolHeatmap />
-        <TopSourcesChart />
+        {/* Diversion Chart */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <DiversionChart />
+          <p className="text-sm text-slate-600 mt-3">
+            How often youth are diverted instead of placed on probation or into
+            custody.
+          </p>
+          <Link
+            href="/dashboard/charts/diversion"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Risk Tool Usage Chart */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <RiskToolUsageChart />
+          <p className="text-sm text-slate-600 mt-3">
+            Which tools states use during intake — and how consistently
+            they&apos;re applied.
+          </p>
+          <Link
+            href="/dashboard/charts/risk-tools"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Education Needs */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <EducationNeedsChart />
+          <p className="text-sm text-slate-600 mt-3">
+            Rates of IEP and truancy flags at youth intake — signs of unmet
+            educational need.
+          </p>
+          <Link
+            href="/dashboard/charts/education"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Recommendation Pie */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <RecommendationPieChart />
+          <p className="text-sm text-slate-600 mt-3">
+            What decision is made after intake: diversion, probation, custody,
+            or evaluation.
+          </p>
+          <Link
+            href="/dashboard/charts/recommendations"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Confidence by State */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <ConfidenceChart />
+          <p className="text-sm text-slate-600 mt-3">
+            How confident we are in each state&apos;s documented juvenile
+            justice policies.
+          </p>
+          <Link
+            href="/dashboard/charts/confidence"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Confidence Trend */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <ConfidenceTrendChart />
+          <p className="text-sm text-slate-600 mt-3">
+            A longitudinal look at how state transparency and documentation has
+            evolved.
+          </p>
+          <Link
+            href="/dashboard/charts/confidence"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Risk Tool Heatmap */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <RiskToolHeatmap />
+          <p className="text-sm text-slate-600 mt-3">
+            Confidence levels in tool usage across states — based on public
+            evidence.
+          </p>
+          <Link
+            href="/dashboard/charts/risk-tools"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
+
+        {/* Top Sources */}
+        <div className="bg-white p-4 rounded-md shadow-sm border border-slate-200">
+          <TopSourcesChart />
+          <p className="text-sm text-slate-600 mt-3">
+            Which states had the most verifiable, cited documentation during
+            research.
+          </p>
+          <Link
+            href="/dashboard/charts/sources"
+            className="text-blue-600 text-sm underline hover:text-blue-800 mt-1 inline-block"
+          >
+            Learn more →
+          </Link>
+        </div>
       </div>
+
       {/* 🔮 Modal Overlay */}
       {showModal && (
         <div className="fixed  inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
