@@ -1,105 +1,108 @@
-"use client";
-
 import ChartArticleLayout from "@/components/layout/ChartArticleLayout";
 import RiskToolUsageChart from "@/components/dashboard/RiskToolUsageChart";
 import RiskToolHeatmap from "@/components/dashboard/RiskToolHeatmap";
 
 export default function RiskToolsPage() {
   return (
-      <ChartArticleLayout title="Risk Tool Usage & Heatmap Across States">
-        {/* INTRO */}
-        <p>
-          Risk tools are not just forms — they are gatekeepers. They influence
-          who is diverted, detained, or sent deeper into the juvenile justice
-          system. In the SCYM analysis of seven Southern states, we found
-          significant differences in both <strong>what tools</strong> are used
-          and <strong>how consistently</strong> they are applied.
-        </p>
+    <ChartArticleLayout title="Risk Tool Usage & Heatmap Across States">
+      {/* INTRO */}
+      <p className="mb-4">
+        Risk tools are not just paperwork — they are decision-making instruments
+        that influence who is diverted, detained, or sent deeper into the juvenile
+        justice system. In SCYM&apos;s multi-state study of southern juvenile systems,
+        we found not just variations in <strong>which tools</strong> are used,
+        but striking inconsistency in <strong>how</strong> they are applied.
+      </p>
 
-        <p className="mt-4">
-          Tools like <strong>SAVRY</strong> (Structured Assessment of Violence
-          Risk in Youth), <strong>RAI</strong> (Risk Assessment Instrument), and{" "}
-          <strong>YLS/CMI</strong> (Youth Level of Service / Case Management
-          Inventory) were common, but rarely universal. Some counties within a
-          state applied tools differently — or not at all. Some relied on{" "}
-          <em>&ldquo;professional judgment&rdquo;</em> while others automated
-          detention eligibility.
-        </p>
+      <p className="mb-4">
+        Instruments like <strong>SAVRY</strong> (Structured Assessment of Violence
+        Risk in Youth), <strong>RAI</strong> (Risk Assessment Instrument), and
+        <strong>YLS/CMI</strong> (Youth Level of Service / Case Management Inventory)
+        are designed to reduce subjectivity — but only when used faithfully. Some
+        counties automated detention eligibility. Others still rely solely on
+        <em>“professional judgment.”</em> The result is a system where outcomes may
+        depend more on geography than on need.
+      </p>
 
-        {/* CHART 1: Risk Tool Usage */}
-        <div className="my-10">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4">
-            📊 Risk Tool Usage Across States
-          </h2>
-          <RiskToolUsageChart />
-        </div>
+      {/* CHART 1 */}
+      <div className="my-10">
+        <h2 className="text-xl font-semibold text-blue-700 mb-4">
+          📊 Risk Tool Usage Across States
+        </h2>
+        <RiskToolUsageChart />
+      </div>
 
-        <p>
-          As shown above, Arkansas prioritizes the <strong>SAVRY</strong>, which
-          was integrated into its risk-based commitment system by legislative
-          design. Texas, on the other hand, uses a broader <strong>RAI</strong>{" "}
-          approach, often embedded within its JCMS (Juvenile Case Management
-          System). Missouri and Louisiana have shifted toward case-by-case
-          evaluations, sometimes favoring therapeutic alignment over strict
-          scoring.
-        </p>
+      <p className="mb-4">
+        Arkansas integrates the <strong>SAVRY</strong> into law via Act 189,
+        using it to determine whether a youth should be committed to DYS. Only
+        those assessed as moderate or high risk may be considered for custody —
+        making the SAVRY not just a guide, but a gatekeeper. Texas favors the
+        RAI within its Juvenile Case Management System (JCMS), applied at county
+        discretion. Louisiana and Missouri, meanwhile, emphasize therapeutic alignment
+        over strict scoring — sometimes allowing risk evaluation to emerge from
+        a multidisciplinary team process rather than a tool.
+      </p>
 
-        <p className="mt-4 text-sm italic text-slate-500">
-          “A tool should never replace human discernment, but it should inform
-          it. When tools are ignored or inconsistently applied, equity erodes.”
-        </p>
+      <p className="mt-4 text-sm italic text-slate-500">
+        “A tool should never replace human discernment, but it should inform it.
+        When tools are ignored or inconsistently applied, equity erodes.”
+      </p>
 
-        <hr className="my-12 border-slate-300" />
+      <hr className="my-12 border-slate-300" />
 
-        {/* NARRATIVE: Heatmap Context */}
-        <p>
-          But the presence of a tool isn’t the whole story. SCYM also tracks how{" "}
-          <strong>confident</strong> we are that each tool is in use — based on
-          public documentation, state publications, training manuals, and intake
-          handbooks. Confidence here reflects research clarity, not tool
-          efficacy.
-        </p>
+      {/* HEATMAP CONTEXT */}
+      <p className="mb-4">
+        But presence alone isn&apos;t enough. SCYM developed a parallel framework to
+        assess <strong>confidence</strong> in each state&apos;s use of risk tools —
+        based on what&apos;s public: training manuals, court documents, intake guidelines,
+        and agency reports. Confidence reflects transparency, not effectiveness.
+        A missing tool may not mean it&apos;s unused — but it does mean it&apos;s undocumented,
+        unverified, and unauditable.
+      </p>
 
-        <p className="mt-4">
-          Some states publicly post their full tools and scoring systems. Others
-          mention their use in court memos or agency PowerPoints. A few — like
-          Mississippi — had <em>almost no traceable data</em> outside of vague
-          mention in court diversion programs.
-        </p>
+      <p className="mb-4">
+        Some states publish their full screening tools. Others mention them only
+        in brief references or internal memos. Mississippi, for example, showed
+        almost no publicly accessible evidence of tool usage — not in legislation,
+        not in court guidance, not in agency reports.
+      </p>
 
-        {/* CHART 2: Risk Tool Heatmap */}
-        <div className="my-10">
-          <h2 className="text-xl font-semibold text-blue-700 mb-4">
-            🔥 Risk Tool Confidence Heatmap
-          </h2>
-          <RiskToolHeatmap />
-        </div>
+      {/* CHART 2 */}
+      <div className="my-10">
+        <h2 className="text-xl font-semibold text-blue-700 mb-4">
+          🔥 Risk Tool Confidence Heatmap
+        </h2>
+        <RiskToolHeatmap />
+      </div>
 
-        <p>
-          This heatmap offers a powerful visual comparison: not only which tools
-          are present, but how <strong>reliable</strong> our data is about their
-          use. It highlights the fragmentation of policy knowledge across state
-          lines, and the opportunity for unified reform through transparency.
-        </p>
+      <p className="mb-4">
+        This heatmap visualizes not just adoption, but the opacity of the system.
+        A green square signals documentation and public access. Medium means the tool
+        is mentioned but not shared. Low reflects anecdotal or outdated reference.
+        A dash (—) means no confirmation at all.
+      </p>
 
-        <p className="mt-4 text-sm italic text-slate-500">
-          A <strong>green high-confidence</strong> square means public
-          verification exists. A <strong>medium</strong> rating means tools are
-          cited but not accessible. A <strong>low</strong> rating suggests
-          anecdotal use or outdated references. A <strong>dash (—)</strong>{" "}
-          means no tool was confirmed.
-        </p>
+      <p className="mt-4 text-sm italic text-slate-500">
+        What we don&apos;t know can hurt kids. What we can&apos;t verify, we can&apos;t improve.
+      </p>
 
-        <hr className="my-12 border-slate-300" />
+      <hr className="my-12 border-slate-300" />
 
-        {/* CLOSING NOTE */}
-        <p>
-          Inconsistent tool use can lead to detention disparities. A youth in
-          Arkansas may be scored with SAVRY and diverted, while a youth in
-          neighboring Mississippi may face secure custody with no formal tool
-          used at all. SCYM believes transparency in tool adoption is the first
-          step toward system alignment and youth-centered fairness.
-        </p>
-      </ChartArticleLayout>
+      {/* CLOSING */}
+      <p className="mb-4">
+        Inconsistent application of tools isn&apos;t a small detail — it shapes lives.
+        One youth in Arkansas may receive a structured assessment, leading to
+        diversion. A youth in Mississippi may face secure detention based solely
+        on officer discretion. These are not anomalies — they are system truths.
+      </p>
+
+      <p className="font-semibold text-blue-700">
+        At SCYM, we believe that transparency is the first step toward equity.
+        A tool that is buried or ignored cannot be held accountable.
+        Uniform access and honest application of risk instruments
+        must be part of the path forward — because real reform requires both heart
+        and infrastructure.
+      </p>
+    </ChartArticleLayout>
   );
 }

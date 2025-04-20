@@ -18,7 +18,9 @@ export default function ChartArticleLayout({ title, children }: Props) {
         </p>
       </header>
 
-      <div className="prose prose-slate max-w-none">{children}</div>
+      <div className="prose prose-slate max-w-none overflow-x-hidden">
+        {children}
+      </div>
 
       <footer className="mt-20 text-center text-slate-500 text-sm italic border-t pt-6">
         “This dashboard article is part of an ongoing civic-tech effort to
