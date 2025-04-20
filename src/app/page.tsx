@@ -1,6 +1,8 @@
 // 🔥 ChatGPT Solo Mode: Activated
 import { Metadata } from "next";
 import Link from "next/link";
+import DiversionChart from "@/components/dashboard/DiversionChart";
+import RiskToolUsageChart from "@/components/dashboard/RiskToolUsageChart";
 
 export const metadata: Metadata = {
   title: "SecondChanceYouthMap",
@@ -34,8 +36,8 @@ export default function HomePage() {
             🧭 What is This?
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Second Chance Youth Map is more than a form — it&apos;s a reflection of
-            the philosophies, workflows, and language shared across juvenile
+            Second Chance Youth Map is more than a form — it&apos;s a reflection
+            of the philosophies, workflows, and language shared across juvenile
             justice systems. Designed for intake officers, data teams, and civic
             reformers, this tool brings together **documentation**, **state
             policy comparison**, and **shared vocabulary**.
@@ -69,6 +71,13 @@ export default function HomePage() {
               intake form capturing every field a modern system should consider
               — from education and custody history to risk tools and family
               supports.
+            </li>
+            <li>
+              <strong>📈 SCYM Insights Dashboard</strong> — Live data
+              visualizations drawn from policy analysis, including diversion
+              trends, risk tool usage, education flags like truancy & IEPs,
+              recommendation types, and confidence scores — all rendered
+              beautifully in real time.
             </li>
           </ul>
         </section>
@@ -104,8 +113,40 @@ export default function HomePage() {
             </li>
           </ul>
         </section>
+        {/* ✨ Dashboard Highlights */}
+        <section className="mt-20 px-6 max-w-5xl mx-auto">
+          <h2 className="text-2xl font-semibold text-blue-700 mb-4 text-center">
+            📈 Real-Time Insights from Across the Region
+          </h2>
+          <p className="text-center text-slate-600 mb-6 max-w-2xl mx-auto">
+            Tap into trends in diversion, risk tools, education supports, and
+            custody decisions — all modeled from real practices in Arkansas,
+            Texas, Missouri, Louisiana, Oklahoma, Mississippi, and Tennessee.
+          </p>
 
-        <section className="flex flex-col sm:flex-row justify-center gap-4 text-center mt-8">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
+            <div className="bg-white p-4 rounded shadow border border-slate-200">
+              <h3 className="text-blue-800 font-semibold mb-2 text-sm">
+                📊 Diversion vs. Custody
+              </h3>
+              <div className="h-[300px]">
+                <DiversionChart />
+              </div>
+            </div>
+            <div className="bg-white p-4 rounded shadow border border-slate-200">
+              <h3 className="text-blue-800 font-semibold mb-2 text-sm">
+                🧪 Risk Tool Usage
+              </h3>
+              <div className="h-[300px]">
+                <RiskToolUsageChart />
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-8"></div>
+        </section>
+
+        <section className="flex flex-col sm:flex-row justify-center gap-4 text-center mt-24">
           <Link
             href="/docs"
             className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
@@ -132,6 +173,12 @@ export default function HomePage() {
             className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
           >
             📚 Browse Glossary
+          </Link>
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+          >
+            🔎 Explore Full Dashboard
           </Link>
         </section>
       </div>

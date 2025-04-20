@@ -1,0 +1,64 @@
+[
+  {
+    "decisionPoint": "Referral",
+    "Arkansas": {
+      "tool": "SAVRY",
+      "confidence": "High"
+    },
+    "Oklahoma": {
+      "tool": "RAI",
+      "confidence": "Medium"
+    },
+    "Louisiana": {
+      "tool": "YLS/CMI",
+      "confidence": "High"
+    },
+    "Texas": {
+      "tool": "RAI",
+      "confidence": "Low"
+    },
+    "Missouri": {
+      "tool": "SAVRY",
+      "confidence": "Medium"
+    },
+    "Mississippi": {
+      "tool": "YASI",
+      "confidence": "Low"
+    },
+    "Tennessee": {
+      "tool": "Other",
+      "confidence": "Medium"
+    }
+  },
+  {
+    "decisionPoint": "Disposition",
+    "Arkansas": {
+      "tool": "SAVRY",
+      "confidence": "High"
+    },
+    "Oklahoma": {
+      "tool": "RAI",
+      "confidence": "Low"
+    },
+    "Louisiana": {
+      "tool": "YLS/CMI",
+      "confidence": "Medium"
+    },
+    "Texas": {
+      "tool": "RAI",
+      "confidence": "Medium"
+    },
+    "Missouri": {
+      "tool": "YASI",
+      "confidence": "Low"
+    },
+    "Mississippi": {
+      "tool": "Other",
+      "confidence": "High"
+    },
+    "Tennessee": {
+      "tool": "SAVRY",
+      "confidence": "Low"
+    }
+  }
+]
