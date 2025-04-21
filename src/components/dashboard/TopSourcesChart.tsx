@@ -73,7 +73,7 @@ const TopSourcesChart = () => {
   };
 
   return (
-    <div className="bg-white p-4 rounded shadow border border-slate-200">
+    <div className="w-full overflow-x-auto bg-white rounded shadow p-4">
       <h3 className="text-lg font-semibold text-blue-700 mb-3">
         📖 Top Cited Sources by State
       </h3>

@@ -77,7 +77,7 @@ export default function StateConfidenceChart() {
   };
 
   return (
-    <div className="bg-white p-6 rounded shadow border border-slate-200">
+    <div className="w-full overflow-x-auto bg-white rounded shadow p-4">
       <h2 className="text-lg font-bold text-slate-700 mb-4">
         📊 Confidence Levels by State
       </h2>

@@ -22,9 +22,9 @@ const COLORS = ["#2563eb", "#10b981", "#f59e0b", "#6366f1", "#e11d48"];
 
 export default function RiskToolUsageChart() {
   return (
-    <div className="bg-white p-4 rounded shadow border border-slate-200">
+    <div className="w-full overflow-x-auto bg-white rounded shadow p-4">
       <h3 className="text-blue-800 font-semibold mb-3 text-lg">
-        🧠 Risk Assessment Tool Usage
+        🧠 Risk Assessment Usage
       </h3>
       <motion.div>
         <ResponsiveContainer width="100%" height={300}>

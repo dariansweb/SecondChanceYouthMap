@@ -58,7 +58,7 @@ export default function RiskToolHeatmap() {
   const stateNames = Object.keys(usage);
 
   return (
-    <div className="bg-white p-6 rounded shadow border border-slate-200 overflow-x-auto">
+    <div className="w-full overflow-x-auto bg-white rounded shadow p-4">
       <h2 className="text-lg font-bold text-slate-700 mb-4">
         🧠 Risk Tool Usage & Confidence by State
       </h2>

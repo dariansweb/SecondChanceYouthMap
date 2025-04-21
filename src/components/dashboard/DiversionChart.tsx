@@ -28,6 +28,7 @@ export default function DiversionChart() {
       <h3 className="text-blue-800 font-semibold mb-3 text-lg">
         ⚖️ Diversion vs Custody by State
       </h3>
+      <div className="w-full overflow-x-auto bg-white rounded shadow p-4">      
       <motion.div>
         <ResponsiveContainer width="100%" height={300}>
         <BarChart data={diversionStats}>
@@ -40,6 +41,7 @@ export default function DiversionChart() {
         </BarChart>
         </ResponsiveContainer>
       </motion.div>
+      </div>
     </div>
   );
 }

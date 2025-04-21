@@ -74,7 +74,7 @@ const options = {
 
 export default function ConfidenceTrendChart() {
   return (
-    <div className="bg-white rounded shadow p-4">
+    <div className="w-full overflow-x-auto bg-white rounded shadow p-4">
       <motion.div>
         <Line data={data} options={options} />
       </motion.div>

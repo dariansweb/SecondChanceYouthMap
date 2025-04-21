@@ -48,7 +48,7 @@ const options = {
     },
     tooltip: {
       callbacks: {
-        label: (ctx: TooltipItem<'bar'>) => `${ctx.dataset.label}: ${ctx.raw}`,
+        label: (ctx: TooltipItem<"bar">) => `${ctx.dataset.label}: ${ctx.raw}`,
       },
     },
   },
@@ -68,9 +68,11 @@ export default function EducationNeedsChart() {
       <h2 className="text-xl font-semibold text-blue-700 mb-4 flex items-center gap-2">
         🎓 Truancy & IEP Plans by State
       </h2>
-      <motion.div>
-        <Bar data={data} options={options} />
-      </motion.div>
+      <div className="w-full overflow-x-auto">
+        <motion.div>
+          <Bar data={data} options={options} />
+        </motion.div>
+      </div>
     </div>
   );
 }

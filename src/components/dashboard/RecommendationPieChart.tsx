@@ -32,7 +32,7 @@ export default function RecommendationPieChart() {
       <h3 className="text-lg font-semibold text-blue-700 mb-4">
         🥧 Recommendation Outcomes
       </h3>
-      <div className="max-w-[300px] mx-auto">
+      <div className="w-full overflow-x-auto bg-white rounded shadow p-4">
         <motion.div>
           <Pie data={recommendationData} />
         </motion.div>
