@@ -7,6 +7,7 @@ const navItems = [
   { href: "/docs", label: "📘 Docs" },
   { href: "/matrix", label: "📊 Matrix" },
   { href: "/glossary", label: "📚 Glossary" },
+  { href: "/voices", label: "🗣️ Voices" },
   { href: "/intake", label: "🚀 Intake" },
 ];
 
