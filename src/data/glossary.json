@@ -65,11 +65,10 @@
   {
     "term": "JJAEP",
     "definition": "Juvenile Justice Alternative Education Program — an academic setting for students expelled from school, where they continue coursework during their suspension.",
-    "category": "Education Program",
+    "category": "Education",
     "state": "Texas",
     "source": "codes.findlaw.com"
   },
-
   {
     "term": "Individualized Education Program (IEP)",
     "definition": "A formal plan developed for students with disabilities under IDEA, outlining specific educational goals and the services the school will provide. Juvenile facilities must ensure continued provision of these services while in custody and upon reentry.",
@@ -120,7 +119,6 @@
     "definition": "The progressive sequence of risk factors, unmet needs, and environmental triggers that can contribute to repeated juvenile offenses. Used in structured decision-making to inform diversion vs. commitment.",
     "category": "Justice"
   },
-
   {
     "term": "Screening Protocol",
     "definition": "A structured process used at intake to determine the youth’s risk level, service needs, and eligibility for diversion. Common tools include the SAVRY, RAI, YASI, and MAYSI-2, which guide decisions about detention, diversion, or further processing.",
@@ -170,12 +168,6 @@
     "state": ""
   },
   {
-    "term": "Caseworker",
-    "definition": "A professional responsible for managing the youth’s case plan, coordinating services, monitoring progress, and facilitating communication among courts, families, and providers.",
-    "source": "ojj.la.gov, arcourts.gov",
-    "state": ""
-  },
-  {
     "term": "Disposition Hearing",
     "definition": "The final stage of juvenile court proceedings where the judge decides the outcome for an adjudicated youth—probation, diversion, residential treatment, or commitment.",
     "source": "law.justia.com, humanservices.arkansas.gov",
@@ -184,7 +176,7 @@
   {
     "term": "Diversion Program",
     "definition": "A non-judicial resolution for youth who commit low-level offenses, allowing them to avoid formal court proceedings by fulfilling agreed-upon conditions such as counseling, community service, or restitution. Completion typically results in case dismissal and no juvenile record.",
-    "category": "Legal Pathway"
+    "category": "Legal"
   },
   {
     "term": "Graduated Response",
@@ -209,12 +201,12 @@
   {
     "term": "Restorative Justice",
     "definition": "A model of justice emphasizing accountability, restitution, and healing rather than punishment. In juvenile contexts, it often includes youth writing apologies, meeting with victims, or performing community service to repair harm.",
-    "category": "Legal Pathway"
+    "category": "Legal"
   },
   {
     "term": "Crisis Response",
     "definition": "Immediate intervention protocols for youth in acute distress, such as those exhibiting suicidal ideation or aggressive behavior. May involve mobile response teams, crisis stabilization units, or emergency mental health evaluations.",
-    "category": "Mental Health & Safety"
+    "category": "Mental Health"
   },
   {
     "term": "Wraparound Services",
@@ -224,7 +216,7 @@
   {
     "term": "Status Offense",
     "definition": "A non-criminal act that is only considered an offense because of the youth's age—like truancy, curfew violation, or running away. These offenses are typically handled through diversion or counseling.",
-    "category": "Legal Definition"
+    "category": "Legal"
   },
   {
     "term": "Aftercare",
@@ -232,8 +224,303 @@
     "category": "Custody & Reentry"
   },
   {
-    "term": "Informal Adjustment",
-    "definition": "An agreement between a youth, their family, and intake or probation officers to resolve a case outside formal court proceedings. May include behavioral conditions, community service, or program participation, signed by all parties.",
-    "category": "Legal Pathway"
+    "term": "Intake Officer",
+    "definition": "A designated juvenile justice official responsible for conducting the initial assessment of a youth's case, including gathering documentation, administering risk tools, and making recommendations for diversion, detention, or services.",
+    "category": "Intake & Assessment",
+    "source": "full-research.txt — cross-referenced from multiple state intake manuals"
+  },
+  {
+    "term": "Initial Detention Screening",
+    "definition": "A structured process to evaluate whether a youth should be held in secure detention pending a court hearing. Often includes a validated risk assessment to guide the decision.",
+    "category": "Risk & Detention",
+    "source": "full-research.txt — risk tool implementation guides"
+  },
+  {
+    "term": "Intake Packet",
+    "definition": "A compiled set of forms and assessments completed at the point of intake, including behavioral screenings, educational background, risk assessment scores, and legal history.",
+    "category": "Intake & Assessment",
+    "source": "full-research.txt — Arkansas and Missouri intake procedures"
+  },
+  {
+    "term": "Diversion Eligibility Criteria",
+    "definition": "Policy-based conditions that determine whether a youth qualifies for informal handling rather than formal court processing, often based on risk level, offense type, or prior history.",
+    "category": "Diversion Program",
+    "source": "full-research.txt — eligibility matrices from multiple states"
+  },
+  {
+    "term": "Probable Cause Review",
+    "definition": "A legal determination, usually at the detention hearing, where a judge or officer evaluates whether there is sufficient evidence to continue holding the youth pending adjudication.",
+    "category": "Court Process",
+    "source": "full-research.txt — juvenile hearing procedures"
+  },
+  {
+    "term": "Predisposition Report (PDR)",
+    "definition": "A comprehensive document compiled before disposition, outlining the youth's risk level, personal history, service needs, and recommended outcomes.",
+    "category": "Court Process",
+    "source": "full-research.txt — Arkansas and Louisiana court planning phases"
+  },
+  {
+    "term": "Dispositional Matrix",
+    "definition": "A structured grid that matches a youth’s risk level and offense severity to recommended interventions or placement levels, often used to guide fair and consistent decisions.",
+    "category": "Sentencing & Disposition",
+    "source": "full-research.txt — Missouri and Texas commitment frameworks"
+  },
+  {
+    "term": "Service Referral Pathway",
+    "definition": "The logic model or process by which youth are referred to outside services after intake, such as counseling, educational support, or substance use treatment.",
+    "category": "Case Management",
+    "source": "full-research.txt — flowcharts in state reentry and diversion programs"
+  },
+  {
+    "term": "Clinical Override",
+    "definition": "A decision made by a mental health professional to override the result of a risk tool based on clinical observations, diagnosis, or urgent concern.",
+    "category": "Mental Health",
+    "source": "full-research.txt — SAVRY and YLS/CMI override guidance"
+  },
+  {
+    "term": "Policy Mapping Confidence",
+    "definition": "A SCYM-specific rating of how verifiable a state’s juvenile justice practices are based on publicly available documentation.",
+    "category": "Research & Transparency",
+    "source": "SCYM confidence chart methodology"
+  },
+  {
+    "term": "Transparency Signal",
+    "definition": "The presence of accessible, official state documents related to youth justice operations — such as toolkits, intake manuals, or diversion policy guides.",
+    "category": "Research & Transparency",
+    "source": "full-research.txt — heatmap documentation"
+  },
+  {
+    "term": "Cross-System Collaboration",
+    "definition": "A cooperative model between juvenile justice, education, mental health, and community organizations to provide holistic support to justice-involved youth.",
+    "category": "Systems Integration",
+    "source": "full-research.txt — Missouri and Louisiana service coordination language"
+  },
+  {
+    "term": "Administrative Hold",
+    "definition": "A temporary detainment of a youth for non-criminal reasons, often used when waiting for placement, mental health assessment, or transport to another jurisdiction.",
+    "category": "Detention",
+    "source": "full-research.txt — Missouri intake protocols"
+  },
+  {
+    "term": "Risk Override Justification",
+    "definition": "A written explanation required when staff choose to override the score of a risk assessment tool, typically based on clinical judgment or safety concerns.",
+    "category": "Risk & Assessment",
+    "source": "full-research.txt — SAVRY override procedures"
+  },
+  {
+    "term": "Youth Case Management System (JCMS)",
+    "definition": "A digital case tracking system used by juvenile probation officers in Texas and other states to log assessments, decisions, and case progress.",
+    "category": "Data Systems",
+    "source": "full-research.txt — Texas JCMS reference"
+  },
+  {
+    "term": "Delinquent Act",
+    "definition": "An offense committed by a youth that would be considered a crime if committed by an adult, forming the legal basis for court referral or adjudication.",
+    "category": "Legal",
+    "source": "full-research.txt — juvenile offense definitions"
+  },
+  {
+    "term": "Intake Disposition",
+    "definition": "The final administrative recommendation made at the intake stage — such as dismissal, diversion, formal court petition, or referral to services.",
+    "category": "Intake & Assessment",
+    "source": "full-research.txt — Arkansas DYS documentation"
+  },
+  {
+    "term": "IEP Flag",
+    "definition": "An internal note during intake or assessment indicating that a youth has an active Individualized Education Program (IEP) for special education needs.",
+    "category": "Education",
+    "source": "full-research.txt — intake form fields across multiple states"
+  },
+  {
+    "term": "Mental Health Screening Protocol",
+    "definition": "A standardized set of questions or tools used to assess a youth’s behavioral health needs during or shortly after intake.",
+    "category": "Mental Health",
+    "source": "full-research.txt — intake packet references"
+  },
+  {
+    "term": "Service Saturation",
+    "definition": "A condition in which local diversion or community support programs have reached maximum capacity, limiting options for non-custodial placement.",
+    "category": "Program Capacity",
+    "source": "full-research.txt — Louisiana and Texas reports"
+  },
+  {
+    "term": "Pre-Disposition Supervision",
+    "definition": "Monitoring or programming applied to a youth before the court has issued a final legal disposition, often as an alternative to secure detention.",
+    "category": "Court Process",
+    "source": "full-research.txt — court procedural timelines"
+  },
+  {
+    "term": "Local Circuit Variability",
+    "definition": "A term describing the uneven application of tools, diversion options, or procedures across counties or circuits within a single state.",
+    "category": "Systems Integration",
+    "source": "full-research.txt — policy variation across Arkansas and Missouri"
+  },
+  {
+    "term": "Behavioral Health Screening",
+    "definition": "An early assessment that identifies signs of mental illness, trauma, or substance use in youth at intake. Often a trigger for clinical referral or follow-up services.",
+    "category": "Mental Health",
+    "source": "full-research.txt — Arkansas and Louisiana intake protocols"
+  },
+  {
+    "term": "Trauma-Informed Intake",
+    "definition": "An approach to youth screening that recognizes the prevalence and impact of trauma, aiming to reduce re-traumatization and tailor interventions accordingly.",
+    "category": "Mental Health",
+    "source": "full-research.txt — Missouri and Texas DYS training guides"
+  },
+  {
+    "term": "DSM Criteria",
+    "definition": "Diagnostic standards from the Diagnostic and Statistical Manual of Mental Disorders, used by clinicians to assess and diagnose behavioral health issues in youth.",
+    "category": "Mental Health",
+    "source": "full-research.txt — clinical override criteria and mental health screening"
+  },
+  {
+    "term": "Substance Use Assessment",
+    "definition": "A specialized screening that identifies the extent and pattern of drug or alcohol use in justice-involved youth, often used for treatment referral.",
+    "category": "Mental Health",
+    "source": "full-research.txt — intake packet inclusion across multiple states"
+  },
+  {
+    "term": "Community-Based Alternative",
+    "definition": "A non-custodial program such as mentoring, counseling, or job training, designed to serve as an alternative to detention or residential placement.",
+    "category": "Diversion Program",
+    "source": "full-research.txt — diversion planning documents"
+  },
+  {
+    "term": "Family Engagement Protocol",
+    "definition": "A structured method for including families in the assessment, planning, and service delivery for justice-involved youth.",
+    "category": "Community Services",
+    "source": "full-research.txt — best practices across multiple state DYS programs"
+  },
+  {
+    "term": "Crisis Stabilization Referral",
+    "definition": "An urgent referral to a licensed provider for youth in acute psychological distress, often used in lieu of detention following an intake mental health flag.",
+    "category": "Mental Health",
+    "source": "full-research.txt — intake response pathways"
+  },
+  {
+    "term": "Youth Advocacy Organization",
+    "definition": "A nonprofit or local coalition that provides support, mentoring, legal aid, or policy advocacy on behalf of youth in or at risk of entering the justice system.",
+    "category": "Community Services",
+    "source": "full-research.txt — community partnerships section"
+  },
+  {
+    "term": "Screening-to-Service Pipeline",
+    "definition": "The structured path from intake assessment to service referral, including how data is used to activate mental health, educational, or family-based supports.",
+    "category": "Systems Integration",
+    "source": "full-research.txt — Arkansas and Texas DYS reform strategies"
+  },
+  {
+    "term": "DYS",
+    "definition": "Department of Youth Services — the state agency responsible for oversight, custody, and rehabilitation of adjudicated youth.",
+    "category": "Agency & Acronyms",
+    "source": "full-research.txt — referenced across all state frameworks"
+  },
+  {
+    "term": "JPO",
+    "definition": "Juvenile Probation Officer — supervises youth on probation, manages compliance, referrals, and court reporting.",
+    "category": "Roles & Staff",
+    "source": "full-research.txt — used across intake and supervision sections"
+  },
+  {
+    "term": "JDAC",
+    "definition": "Juvenile Detention Alternative Coordinator — supports implementation of detention reform models like JDAI and helps reduce unnecessary detention.",
+    "category": "Roles & Staff",
+    "source": "full-research.txt — Missouri and Arkansas reform projects"
+  },
+  {
+    "term": "JDAI",
+    "definition": "Juvenile Detention Alternatives Initiative — a national model that promotes the reduction of secure detention through risk-based decision-making and community alternatives.",
+    "category": "Agency & Acronyms",
+    "source": "full-research.txt — referenced in policy alignment sections"
+  },
+  {
+    "term": "DCFS",
+    "definition": "Department of Children and Family Services — handles child welfare, foster care, and cross-over youth connected to both dependency and delinquency systems.",
+    "category": "Agency & Acronyms",
+    "source": "full-research.txt — Louisiana and Arkansas context"
+  },
+  {
+    "term": "Circuit Judge",
+    "definition": "A judge assigned to a juvenile or family circuit who presides over detention, adjudication, and disposition hearings.",
+    "category": "Roles & Staff",
+    "source": "full-research.txt — referenced across court flow diagrams"
+  },
+  {
+    "term": "Intake Coordinator",
+    "definition": "A designated staff person who oversees initial screening and routing decisions at the point of youth system entry.",
+    "category": "Roles & Staff",
+    "source": "full-research.txt — Arkansas and Missouri intake process notes"
+  },
+  {
+    "term": "Caseworker",
+    "definition": "A service coordinator who manages referrals, contacts families, and ensures progress reports are submitted for court and agency review.",
+    "category": "Roles & Staff",
+    "source": "full-research.txt — service coordination and diversion pathways"
+  },
+  {
+    "term": "Pre-Adjudication Services",
+    "definition": "Support, monitoring, or programming offered to youth prior to formal adjudication, often as part of a diversion strategy.",
+    "category": "Court Process",
+    "source": "full-research.txt — intake disposition and supervision models"
+  },
+  {
+    "term": "Community-Based Liaison",
+    "definition": "A point person who connects youth and families to local service providers and ensures compliance with treatment or mentoring programs.",
+    "category": "Roles & Staff",
+    "source": "full-research.txt — referenced in post-intake coordination plans"
+  },
+  {
+    "term": "Referral",
+    "definition": "The formal process of a youth being reported or transferred to juvenile justice authorities, often from schools, police, or child welfare.",
+    "category": "Timeline & Entry",
+    "source": "full-research.txt — intake entry flow models"
+  },
+  {
+    "term": "Preliminary Hearing",
+    "definition": "The initial court appearance where charges are reviewed, detention is reassessed, and legal representation is established.",
+    "category": "Court Process",
+    "source": "full-research.txt — Arkansas and Texas judicial workflows"
+  },
+  {
+    "term": "Disposition",
+    "definition": "The court's final decision after adjudication, which may include probation, commitment, diversion, or dismissal.",
+    "category": "Legal",
+    "source": "full-research.txt — decision trees and outcome matrices"
+  },
+  {
+    "term": "Status Offense",
+    "definition": "An offense that would not be considered a crime if committed by an adult, such as truancy, running away, or curfew violations.",
+    "category": "Legal",
+    "source": "full-research.txt — policy documents on eligibility for diversion"
+  },
+  {
+    "term": "Pending Placement",
+    "definition": "A status used when a youth has been committed to a program but is awaiting available space or facility assignment.",
+    "category": "Disposition & Custody",
+    "source": "full-research.txt — intake notes on delays and capacity"
+  },
+  {
+    "term": "Case Closure",
+    "definition": "The formal end of a youth's supervision, custody, or service plan, following successful completion of court-ordered conditions.",
+    "category": "Timeline & Exit",
+    "source": "full-research.txt — supervision and aftercare policy references"
+  },
+  {
+    "term": "Consent Decree",
+    "definition": "An agreement allowing a youth to avoid adjudication by completing conditions set by the court, such as community service or counseling.",
+    "category": "Legal",
+    "source": "full-research.txt — Missouri and national juvenile court resources"
+  },
+  {
+    "term": "Time to Disposition",
+    "definition": "The number of days between referral and the court's final decision. Used as a key metric for system efficiency and fairness.",
+    "category": "Timeline & Metrics",
+    "source": "full-research.txt — timeline visualization and performance tracking"
+  },
+  {
+    "term": "Reentry Planning",
+    "definition": "The structured process of preparing a youth for return to the community, school, or family life after residential placement or detention.",
+    "category": "Reentry",
+    "source": "full-research.txt — Arkansas and Louisiana reentry frameworks"
   }
 ]

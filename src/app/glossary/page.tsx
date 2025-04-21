@@ -9,11 +9,15 @@ export default function GlossaryPage() {
   const [query, setQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
 
+  const sortedGlossary = [...glossary].sort((a, b) =>
+    a.term.localeCompare(b.term)
+  );
+
   const categories = [
     ...new Set(glossary.map((g) => g.category).filter(Boolean)),
-  ];
+  ].sort((a = "", b = "") => a.localeCompare(b));
 
-  const filtered = glossary.filter((entry) => {
+  const filtered = sortedGlossary.filter((entry) => {
     const matchesQuery = entry.term.toLowerCase().includes(query.toLowerCase());
     const matchesCategory = categoryFilter
       ? entry.category === categoryFilter
