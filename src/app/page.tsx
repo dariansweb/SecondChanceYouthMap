@@ -48,6 +48,14 @@ export default function HomePage() {
             **Matrix** of decision points like Diversion, Risk Tools, Education
             Support, and Custody Planning.
           </p>
+          <div className="text-center mt-8">
+            <Link
+              href="/docs"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+            >
+              📘 View Documentation
+            </Link>
+          </div>
         </section>
 
         <section className="mb-16">
@@ -125,7 +133,16 @@ export default function HomePage() {
               family-linked diversion routes
             </li>
           </ul>
+          <div className="text-center mt-8">
+            <Link
+              href="/matrix"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+            >
+              📊 Explore Matrix
+            </Link>
+          </div>
         </section>
+
         {/* ✨ Dashboard Highlights */}
         <section className="mt-20 px-6 max-w-5xl mx-auto">
           <h2 className="text-2xl font-semibold text-blue-700 mb-4 text-center">
@@ -137,35 +154,17 @@ export default function HomePage() {
             Texas, Missouri, Louisiana, Oklahoma, Mississippi, and Tennessee.
           </p>
 
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-2">
-            <div className="bg-white p-4 rounded shadow border border-slate-200">
-              <h3 className="text-blue-800 font-semibold mb-2 text-sm">
-                📊 Diversion vs. Custody
-              </h3>
-              <div className="h-[300px]">
-                <DiversionChart />
-              </div>
-            </div>
-            <div className="bg-white p-4 rounded shadow border border-slate-200">
-              <h3 className="text-blue-800 font-semibold mb-2 text-sm">
-                🧪 Risk Tool Usage
-              </h3>
-              <div className="h-[300px]">
-                <RiskToolUsageChart />
-              </div>
-            </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/dashboard/"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
+            >
+              🔎 Explore Full Dashboard
+            </Link>
           </div>
-
-          <div className="text-center mt-8"></div>
         </section>
 
         <section className="flex flex-col sm:flex-row justify-center gap-4 text-center mt-24">
-          <Link
-            href="/docs"
-            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
-          >
-            📘 View Documentation
-          </Link>
 
           <Link
             href="/intake"
@@ -174,29 +173,10 @@ export default function HomePage() {
             🚀 Begin Intake Survey
           </Link>
 
-          <Link
-            href="/matrix"
-            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
-          >
-            📊 Explore Matrix
-          </Link>
-
-          <Link
-            href="/glossary"
-            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
-          >
-            📚 Browse Glossary
-          </Link>
-          <Link
-            href="/dashboard/"
-            className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 border border-blue-600 hover:bg-blue-50 hover:border-blue-700 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
-          >
-            🔎 Explore Full Dashboard
-          </Link>
         </section>
       </div>
 
-      <footer className="text-center text-sm text-slate-500 mt-12 py-6 border-t border-slate-200">
+      <footer className="text-center text-sm text-slate-700 mt-12 py-6 border-t border-slate-400">
         <p>
           Built independently by <strong>Darian Ross</strong> — IT Support,
           Arkansas DHS.
