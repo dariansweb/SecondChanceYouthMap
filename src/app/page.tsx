@@ -1,8 +1,6 @@
 // 🔥 ChatGPT Solo Mode: Activated
 import { Metadata } from "next";
 import Link from "next/link";
-import DiversionChart from "@/components/dashboard/DiversionChart";
-import RiskToolUsageChart from "@/components/dashboard/RiskToolUsageChart";
 
 export const metadata: Metadata = {
   title: "SecondChanceYouthMap",
@@ -172,6 +170,7 @@ export default function HomePage() {
           >
             🚀 Begin Intake Survey
           </Link>
+
 
         </section>
       </div>
