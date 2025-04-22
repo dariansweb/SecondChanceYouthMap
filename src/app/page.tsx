@@ -57,27 +57,40 @@ export default function HomePage() {
           <ul className="list-disc list-inside text-slate-700 space-y-2">
             <li>
               <strong>🧾 Glossary of Juvenile Justice Terms</strong> — A
-              searchable, categorized library of key acronyms, systems, and
-              program names used across juvenile agencies.
+              searchable, categorized glossary of over 100 terms, acronyms, and
+              policy labels used across the youth justice system — complete with
+              definitions, source links, and tags.
             </li>
             <li>
-              <strong>📊 Matrix of State Practices</strong> — Compare diversion
-              eligibility, risk assessments, education plans, and more, across
-              Arkansas, Texas, Missouri, Louisiana, Oklahoma, Mississippi, and
-              Tennessee.
+              <strong>📊 Matrix Tool</strong> — Visually compare how 7 Southern
+              states handle risk tools, diversion eligibility, legal decision
+              points, and reentry processes. Includes hover-to-expand detail
+              cards and glossary-rich popups.
             </li>
             <li>
-              <strong>📝 Intake Prototype</strong> — A sample survey-style
-              intake form capturing every field a modern system should consider
-              — from education and custody history to risk tools and family
-              supports.
+              <strong>📝 Intake Form Prototype</strong> — A full intake
+              simulation based on cross-state form research. Tracks education
+              flags, custody history, risk instruments, and support systems —
+              all exportable as PDF.
             </li>
             <li>
               <strong>📈 SCYM Insights Dashboard</strong> — Live data
-              visualizations drawn from policy analysis, including diversion
-              trends, risk tool usage, education flags like truancy & IEPs,
-              recommendation types, and confidence scores — all rendered
-              beautifully in real time.
+              visualizations from our state matrix and research — including
+              diversion trends, risk tool consistency, IEP/truancy patterns,
+              intake recommendations, and policy confidence scores.
+            </li>
+            <li>
+              <strong>🗣️ Voices Directory</strong> — Real profiles of the people
+              who guide youth through the system: intake officers, judges,
+              educators, mental health staff, probation officers, advocates,
+              residential teams, and reentry mentors — all linked to the data
+              they influence.
+            </li>
+            <li>
+              <strong>🧭 “Path to Help” Navigation</strong> — A restructured
+              experience to guide professionals, students, and agencies through
+              role-specific insights, system touchpoints, and practical tools
+              for every stage of the youth journey.
             </li>
           </ul>
         </section>

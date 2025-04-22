@@ -12,8 +12,8 @@ A modern toolkit for juvenile justice professionals — **intake**, **comparison
 **SCYM** — *Second Chance Youth Map* — is an open-source decision support platform for juvenile intake, assessment, and education.
 
 It now features **three key tools**:
-1. 📝 **Intake Form** – A dynamic form replicating multi-state best practices
-2. 🧠 **Matrix Tool** – A comparison dashboard across 7 Southern states
+1. 📝 **Intake Form** – A dynamic form replicating multi-state best practices  
+2. 🧠 **Matrix Tool** – A comparison dashboard across 7 Southern states  
 3. 📚 **Glossary** – A live dictionary of terms, programs, and policies used in the system
 
 All designed for clarity, compassion, and true transparency.
@@ -26,33 +26,51 @@ To help caseworkers, policymakers, and IT staff alike understand the **pathways 
 
 Research-driven and visually engaging, this project brings together real-world policy from:
 
-- **Arkansas** – SAVRY risk assessments + 90-day treatment models
-- **Texas** – JCMS tools, diversion-first frameworks
-- **Missouri** – “Missouri Model” therapeutic care
-- **Louisiana** – Family team decision-making
-- **Oklahoma** – Statewide bed and risk data management
-- **Mississippi** – Diversion screening (YASI), informal adjustment stats
-- **Tennessee** – Child welfare integration, family-centered assessments
+- **Arkansas** – SAVRY risk assessments + 90-day treatment models  
+- **Texas** – JCMS tools, diversion-first frameworks  
+- **Missouri** – “Missouri Model” therapeutic care  
+- **Louisiana** – Family team decision-making  
+- **Oklahoma** – Statewide bed and risk data management  
+- **Mississippi** – Diversion screening (YASI), informal adjustment stats  
+- **Tennessee** – Child welfare integration, family-centered assessments  
 
 ---
 
 ## 🧩 Key Features
 
 ### 🔹 **Intake Tool**
-- Step-by-step intake with live logic and state-by-state influence
-- Form data stored in memory via React Context
-- Generates downloadable intake PDF summaries
+- Step-by-step intake with live logic and state-by-state influence  
+- Form data stored in memory via React Context  
+- Generates downloadable intake PDF summaries  
 
 ### 🔹 **Matrix Tool**
-- Interactive cards showing policy differences between states
-- Filters for states, sorting, decision type
-- Color-coded indicators for clarity and accessibility
-- Modal pop-ups for detailed comparison with hover-rich glossary terms
+- Interactive cards showing policy differences between states  
+- Filters for states, sorting, decision type  
+- Color-coded indicators for clarity and accessibility  
+- Modal pop-ups for detailed comparison with hover-rich glossary terms  
 
 ### 🔹 **Glossary of Terms**
-- Over 100 terms, program names, acronyms, and processes
-- Filterable and searchable
-- Includes categories, definitions, source links, and states (if applicable)
+- Over 100 terms, program names, acronyms, and processes  
+- Filterable and searchable  
+- Includes categories, definitions, source links, and states (if applicable)  
+
+---
+
+## 🔊 Voices of the System
+
+In addition to tools, SCYM honors the **people behind the process**.  
+A full `/voices` directory includes real-world profiles for:
+
+- 🛂 Intake Officers  
+- ⚖️ Judges & Defense Attorneys  
+- 🏫 Educators  
+- 🤝 Advocates & Mentors  
+- 🏠 Residential Staff  
+- 💼 Workforce Mentors  
+- 👨‍👩‍👧 Parents & Guardians  
+
+Each voice includes their role in the system, where they appear in the timeline, and links to relevant data and glossary terms.  
+More voices and categories are added regularly as part of the *“Path to Help”* initiative.
 
 ---
 
@@ -60,20 +78,20 @@ Research-driven and visually engaging, this project brings together real-world p
 
 Every corner of this app — from matrix modals to intake inputs — was carefully crafted for:
 
-- ⚡ Accessibility and responsiveness
-- 🌐 Clarity in navigation (persistent header, docs sidebar)
-- 🧾 Typography and layout that respects both desktop and mobile users
-- 🎓 Simplicity for new staff, depth for veteran caseworkers
+- ⚡ Accessibility and responsiveness  
+- 🌐 Clarity in navigation (persistent header, docs sidebar)  
+- 🧾 Typography and layout that respects both desktop and mobile users  
+- 🎓 Simplicity for new staff, depth for veteran caseworkers  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- [Next.js 15](https://nextjs.org/)
-- [Tailwind CSS 4](https://tailwindcss.com/)
-- [React Context API](https://reactjs.org/)
-- [pdf-lib](https://pdf-lib.js.org/)
-- [Vercel](https://vercel.com/)
+- [Next.js 15](https://nextjs.org/)  
+- [Tailwind CSS 4](https://tailwindcss.com/)  
+- [React Context API](https://reactjs.org/)  
+- [pdf-lib](https://pdf-lib.js.org/)  
+- [Vercel](https://vercel.com/)  
 
 ---
 
@@ -99,9 +117,11 @@ This project is [**fully open source** on GitHub](https://github.com/dariansweb/
 
 Let’s build something meaningful together.
 
-- Juvenile justice professionals — feedback wanted!
-- State agencies — this can be adapted to your local needs.
-- Developers/designers — contribute and expand it!
+- Juvenile justice professionals — feedback wanted!  
+- State agencies — this can be adapted to your local needs.  
+- Developers/designers — contribute and expand it!  
+
+DMs open on LinkedIn. Let’s map second chances.
 
 ---
 
