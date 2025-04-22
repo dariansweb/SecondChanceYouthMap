@@ -36,3 +36,16 @@ body {
   background-color: #0a0a0a;
   color: #ededed;
 }
+@keyframes text-glow {
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 1px rgba(59, 130, 246, 0.4));
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 3px rgba(59, 130, 246, 0.7));
+  }
+}
+
+.animate-text-glow {
+  animation: text-glow 3s ease-in-out infinite;
+}
