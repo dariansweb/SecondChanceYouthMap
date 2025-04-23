@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Youth Assigned to Diversion",
+    "conditions": [
+      "Diversion accepted by Prosecutor or Intake",
+      "Eligibility criteria confirmed",
+      "Guardian and youth signed agreement"
+    ],
+    "next": ["intake"]
+  },
+  {
+    "id": "intake",
+    "label": "Complete Diversion Intake",
+    "conditions": [
+      "Case plan developed with youth",
+      "Mental health or education referrals documented",
+      "Restorative justice or community service assigned"
+    ],
+    "next": ["progress"]
+  },
+  {
+    "id": "progress",
+    "label": "Monitor Diversion Progress",
+    "conditions": [
+      "Contact logs maintained",
+      "Milestones recorded",
+      "Incident reports, if any, noted"
+    ],
+    "next": ["completion"]
+  },
+  {
+    "id": "completion",
+    "label": "Close Diversion Case",
+    "conditions": [
+      "Requirements fully met",
+      "Final report submitted",
+      "Youth and guardian acknowledged outcome"
+    ]
+  }
+]

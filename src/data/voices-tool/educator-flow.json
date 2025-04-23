@@ -1,0 +1,51 @@
+[
+  {
+    "id": "start",
+    "label": "Receive Notification of Youth Case",
+    "conditions": [
+      "School notified of justice system involvement",
+      "Youth is active or recently withdrawn from school",
+      "Case manager initiated education support contact"
+    ],
+    "next": ["education-review"]
+  },
+  {
+    "id": "education-review",
+    "label": "Review Education History",
+    "conditions": [
+      "Previous grades and attendance records reviewed",
+      "Special education or IEP status checked",
+      "Behavioral referrals noted"
+    ],
+    "next": ["enrollment-support", "iep-recommendation"]
+  },
+  {
+    "id": "enrollment-support",
+    "label": "Support School Re-Enrollment",
+    "conditions": [
+      "Transcript sent to receiving school",
+      "Enrollment coordinator assigned",
+      "Guardian confirmed transportation plan"
+    ],
+    "next": ["final-log"]
+  },
+  {
+    "id": "iep-recommendation",
+    "label": "Recommend IEP or Educational Modifications",
+    "conditions": [
+      "IEP team meeting scheduled",
+      "Evaluation consent received from guardian",
+      "Behavior or trauma factors considered"
+    ],
+    "next": ["final-log"]
+  },
+  {
+    "id": "final-log",
+    "label": "Log Education Action Steps",
+    "conditions": [
+      "School contact person assigned",
+      "Youth follow-up date set",
+      "Education record updated"
+    ]
+  }
+]

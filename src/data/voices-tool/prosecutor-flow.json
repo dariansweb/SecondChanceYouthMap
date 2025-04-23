@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Case Referral Received",
+    "conditions": [
+      "Intake or Probation submitted referral",
+      "Supporting documents and charge summary available",
+      "Initial review conducted within 48 hours"
+    ],
+    "next": ["charge-review"]
+  },
+  {
+    "id": "charge-review",
+    "label": "Review Charges & Case Details",
+    "conditions": [
+      "Offense severity classified",
+      "Victim input documented",
+      "Repeat offense history checked"
+    ],
+    "next": ["diversion-eval", "petition-draft"]
+  },
+  {
+    "id": "diversion-eval",
+    "label": "Evaluate for Diversion Eligibility",
+    "conditions": [
+      "Low to moderate risk on SAVRY",
+      "Victim agrees to informal resolution",
+      "No open probation or violent history"
+    ],
+    "next": ["petition-draft"]
+  },
+  {
+    "id": "petition-draft",
+    "label": "Draft or Decline Petition",
+    "conditions": [
+      "Petition filed in court or declined with notes",
+      "Defense and Guardian notified",
+      "All paperwork submitted to Intake"
+    ]
+  }
+]

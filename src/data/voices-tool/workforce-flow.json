@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Workforce Readiness Assessment",
+    "conditions": [
+      "Youth is age 16+ or nearing discharge",
+      "Interest in employment, apprenticeship, or vocational program",
+      "Basic skills or barrier screening complete"
+    ],
+    "next": ["workforce-readiness"]
+  },
+  {
+    "id": "workforce-readiness",
+    "label": "Complete Workforce Readiness Checklist",
+    "conditions": [
+      "Resume drafted or updated",
+      "Interview skills practiced",
+      "Documentation (ID, SSN) available"
+    ],
+    "next": ["career-referral"]
+  },
+  {
+    "id": "career-referral",
+    "label": "Career Pathway Referral",
+    "conditions": [
+      "Referral to WIOA, Job Corps, or employer",
+      "Transportation and work attire needs addressed",
+      "Mentor or job coach assigned"
+    ],
+    "next": ["job-support-log"]
+  },
+  {
+    "id": "job-support-log",
+    "label": "Ongoing Job Support",
+    "conditions": [
+      "Follow-up check within 30 days",
+      "Youth placed in job, internship, or program",
+      "Barriers and supports logged"
+    ]
+  }
+]

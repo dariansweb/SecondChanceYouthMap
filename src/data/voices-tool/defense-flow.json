@@ -1,0 +1,50 @@
+[
+  {
+    "id": "start",
+    "label": "Case Assignment and Initial Review",
+    "conditions": [
+      "Referral received from Intake Officer",
+      "Charge sheet and incident report available",
+      "Detention hearing scheduled or complete"
+    ],
+    "next": ["case-review"]
+  },
+  {
+    "id": "case-review",
+    "label": "Review Case and Interview Youth",
+    "conditions": [
+      "Youth met privately with attorney",
+      "Guardian contact attempted or made",
+      "Case complexity assessed"
+    ],
+    "next": ["plea-negotiation", "alt-intervention"]
+  },
+  {
+    "id": "plea-negotiation",
+    "label": "Negotiate Plea with Prosecutor",
+    "conditions": [
+      "Youth admits to key charge elements",
+      "Agreement includes community-based alternative",
+      "Guardian approves recommendation"
+    ],
+    "next": ["final-log"]
+  },
+  {
+    "id": "alt-intervention",
+    "label": "Propose Alternative to Formal Charge",
+    "conditions": [
+      "Diversion or informal adjustment available",
+      "Restorative justice conference scheduled",
+      "Mental health assessment reviewed"
+    ],
+    "next": ["final-log"]
+  },
+  {
+    "id": "final-log",
+    "label": "Document Legal Strategy and Outcome",
+    "conditions": [
+      "Court received defense recommendation",
+      "Final notes logged in youth case file"
+    ]
+  }
+]

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Review Case Summary & Recommendations",
+    "conditions": [
+      "Charge documents and diversion eval available",
+      "Defense and prosecution submitted positions",
+      "Guardian presence confirmed or waived"
+    ],
+    "next": ["case-review"]
+  },
+  {
+    "id": "case-review",
+    "label": "Analyze Case Details & Hear Arguments",
+    "conditions": [
+      "All parties present or represented",
+      "Recommendations reviewed",
+      "Youth understanding confirmed"
+    ],
+    "next": ["decision"]
+  },
+  {
+    "id": "decision",
+    "label": "Render Decision on Disposition",
+    "conditions": [
+      "Judge explains ruling in court",
+      "Youth reaction and statements recorded",
+      "Plan of care or conditions outlined"
+    ],
+    "next": ["disposition-order"]
+  },
+  {
+    "id": "disposition-order",
+    "label": "Issue Disposition Order",
+    "conditions": [
+      "Written order signed and filed",
+      "Caseworkers and providers notified",
+      "Youth and guardian given copy"
+    ]
+  }
+]

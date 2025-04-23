@@ -1,0 +1,61 @@
+[
+  {
+    "id": "start",
+    "label": "Youth Referred to Intake",
+    "conditions": [
+      "Referral received from law enforcement or school",
+      "Youth is between ages 10–17",
+      "No immediate medical or safety crisis present"
+    ],
+    "next": ["risk-assessment"]
+  },
+  {
+    "id": "risk-assessment",
+    "label": "Complete SAVRY / MAYSI-2",
+    "conditions": [
+      "Youth completes initial interview",
+      "SAVRY risk assessment required by jurisdiction",
+      "Mental health screening not previously conducted"
+    ],
+    "next": ["diversion", "petition"]
+  },
+  {
+    "id": "diversion",
+    "label": "Offer Diversion Agreement",
+    "conditions": [
+      "Youth is low-risk on SAVRY",
+      "Nonviolent offense",
+      "No prior adjudication for similar offense",
+      "Guardian consents to informal adjustment"
+    ],
+    "next": ["outcome-logging"]
+  },
+  {
+    "id": "petition",
+    "label": "Refer to Juvenile Court for Petition",
+    "conditions": [
+      "Youth declined diversion option",
+      "Moderate to high risk score",
+      "Repeat offense or school safety concern"
+    ],
+    "next": ["detention-hearing"]
+  },
+  {
+    "id": "outcome-logging",
+    "label": "Log Outcome & Notify Stakeholders",
+    "conditions": [
+      "Agreement signed and stored",
+      "Community service assignment logged",
+      "Diversion Specialist assigned"
+    ]
+  },
+  {
+    "id": "detention-hearing",
+    "label": "Schedule Detention Hearing",
+    "conditions": [
+      "Court accepted petition filing",
+      "Youth not released to guardian",
+      "Detention recommended by intake officer"
+    ]
+  }
+]

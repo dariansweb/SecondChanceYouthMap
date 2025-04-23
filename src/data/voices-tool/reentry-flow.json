@@ -1,0 +1,52 @@
+[
+    {
+      "id": "start",
+      "label": "Reentry Initiation",
+      "conditions": [
+        "Youth scheduled for release within 30 days",
+        "Facility notified Reentry Coordinator",
+        "Guardian contact confirmed"
+      ],
+      "next": ["plan-development"]
+    },
+    {
+      "id": "plan-development",
+      "label": "Develop Reentry Plan",
+      "conditions": [
+        "Home placement reviewed and approved",
+        "Therapy or MH service contact listed",
+        "Case manager assigned for follow-up"
+      ],
+      "next": ["school-referral", "workforce-referral"]
+    },
+    {
+      "id": "school-referral",
+      "label": "Refer Youth to Education",
+      "conditions": [
+        "School district contacted",
+        "Enrollment packet submitted",
+        "IEP or records requested"
+      ],
+      "next": ["final-review"]
+    },
+    {
+      "id": "workforce-referral",
+      "label": "Refer Youth to Workforce Program",
+      "conditions": [
+        "Age 16 or older",
+        "Expressed interest in employment",
+        "Resume or job skills assessment completed"
+      ],
+      "next": ["final-review"]
+    },
+    {
+      "id": "final-review",
+      "label": "Finalize Reentry Plan & Submit to Oversight",
+      "conditions": [
+        "All referrals completed",
+        "Guardian reviewed the plan",
+        "Youth signed agreement of expectations"
+      ]
+    }
+  ]
+  

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "start",
+    "label": "Court Disposition Received",
+    "next": ["probation-intake"]
+  },
+  {
+    "id": "probation-intake",
+    "label": "Complete Probation Intake",
+    "next": ["supervision-plan"]
+  },
+  {
+    "id": "supervision-plan",
+    "label": "Assign Supervision Level & Terms",
+    "conditions": [
+      "Court-ordered probation",
+      "Youth classified as moderate to high risk",
+      "School attendance required",
+      "Substance use monitoring recommended"
+    ],
+    "next": ["compliance-check"]
+  },
+  {
+    "id": "compliance-check",
+    "label": "Begin Check-ins & Track Compliance",
+    "conditions": [
+      "Weekly in-person check-in",
+      "Guardian must verify curfew compliance",
+      "Random drug screening",
+      "Service hours log required"
+    ],
+    "next": ["final-review"]
+  },
+  {
+    "id": "final-review",
+    "label": "Review for Completion or Extension",
+    "conditions": [
+      "Minimum 3 months without violations",
+      "All service referrals completed",
+      "No new law violations",
+      "School attendance over 85%"
+    ]
+  }
+]

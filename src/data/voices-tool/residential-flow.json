@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Youth Arrival at Residential Facility",
+    "conditions": [
+      "Youth admitted to placement from detention or home",
+      "Room assignment complete",
+      "Intake search, belongings inventory, orientation complete"
+    ],
+    "next": ["intake"]
+  },
+  {
+    "id": "intake",
+    "label": "Complete Intake Documentation",
+    "conditions": [
+      "Initial mental health screening conducted",
+      "Guardian notified of placement",
+      "Facility log and photo ID created"
+    ],
+    "next": ["progress-log"]
+  },
+  {
+    "id": "progress-log",
+    "label": "Daily Progress Monitoring",
+    "conditions": [
+      "Behavioral incidents documented",
+      "Level system updated",
+      "Service participation noted"
+    ],
+    "next": ["transition-prep"]
+  },
+  {
+    "id": "transition-prep",
+    "label": "Prepare Youth for Transition",
+    "conditions": [
+      "Discharge date confirmed",
+      "Team meeting held with probation",
+      "Guardian or next placement notified"
+    ]
+  }
+]

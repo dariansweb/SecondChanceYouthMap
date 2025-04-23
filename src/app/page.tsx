@@ -98,6 +98,15 @@ export default function HomePage() {
               role-specific insights, system touchpoints, and practical tools
               for every stage of the youth journey.
             </li>
+            <li>
+              <strong>🚀 Voices Tool Dashboard Rebuild</strong> — A fully
+              updated workflow hub that now includes 15 interactive role
+              profiles (aka “voices”) such as Judge, Intake Officer, Probation,
+              Reentry, and Advocate. Each voice is connected to dynamic forms,
+              conditional logic flows, and a visual dashboard. You can now
+              filter by youth journey phase and view real-time progress stats
+              for each role.
+            </li>
           </ul>
         </section>
 
@@ -163,15 +172,12 @@ export default function HomePage() {
         </section>
 
         <section className="flex flex-col sm:flex-row justify-center gap-4 text-center mt-24">
-
           <Link
             href="/intake"
             className="inline-flex items-center justify-center gap-2 bg-blue-700 text-white hover:bg-blue-800 font-semibold text-lg px-6 py-3 rounded-lg shadow-sm transition duration-200"
           >
             🚀 Begin Intake Survey
           </Link>
-
-
         </section>
       </div>
 

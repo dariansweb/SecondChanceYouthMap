@@ -1,0 +1,93 @@
+[
+  {
+    "title": "Intake Officer",
+    "description": "Manage intake workflows, screening tools, and diversion paths.",
+    "path": "/voices-tool/intake-officer",
+    "category": "Initial Contact & Intake",
+    "phase": "Intake"
+  },
+  {
+    "title": "Prosecutor",
+    "description": "Evaluate petitions, diversion eligibility, and case severity.",
+    "path": "/voices-tool/prosecutor",
+    "category": "Initial Contact & Intake",
+    "phase": "Intake"
+  },
+  {
+    "title": "Defense Attorney",
+    "description": "Advocate for the youth’s legal rights and negotiate alternatives to detention.",
+    "path": "/voices-tool/defense",
+    "category": "Initial Contact & Intake",
+    "phase": "Intake"
+  },
+  {
+    "title": "Judge",
+    "description": "Review risk levels, make disposition decisions, and log outcomes.",
+    "path": "/voices-tool/judges",
+    "category": "Judicial Decision",
+    "phase": "Court"
+  },
+  {
+    "title": "Guardian / Parent",
+    "description": "Sign forms, provide support, and participate in decisions about the youth.",
+    "path": "/voices-tool/guardians",
+    "category": "Judicial Decision",
+    "phase": "Court"
+  },
+  {
+    "title": "Probation Officer",
+    "description": "Supervise youth, assign terms, and track compliance after court decisions.",
+    "path": "/voices-tool/probation-officer",
+    "category": "Supervision & Monitoring",
+    "phase": "Post-Disposition"
+  },
+  {
+    "title": "Diversion Specialist",
+    "description": "Administer informal adjustment agreements and monitor youth compliance.",
+    "path": "/voices-tool/diversion",
+    "category": "Supervision & Monitoring",
+    "phase": "Post-Disposition"
+  },
+  {
+    "title": "Residential Staff",
+    "description": "Handle care, supervision, and programming within placement facilities.",
+    "path": "/voices-tool/residential",
+    "category": "Residential or Detained Placement",
+    "phase": "Post-Disposition"
+  },
+  {
+    "title": "Mental Health Specialist",
+    "description": "Provide mental health evaluations, referrals, and treatment oversight.",
+    "path": "/voices-tool/mental-health",
+    "category": "Support Services & Evaluations",
+    "phase": "Any"
+  },
+  {
+    "title": "Community Advocate",
+    "description": "Represent mentoring programs and local support agencies in the youth’s plan.",
+    "path": "/voices-tool/community-advocates",
+    "category": "Support Services & Evaluations",
+    "phase": "Any"
+  },
+  {
+    "title": "Educator",
+    "description": "Monitor school attendance, IEPs, and connect youth to educational support.",
+    "path": "/voices-tool/educators",
+    "category": "Support Services & Evaluations",
+    "phase": "Any"
+  },
+  {
+    "title": "Reentry Coordinator",
+    "description": "Plan youth transition back to the community and coordinate support services.",
+    "path": "/voices-tool/reentry",
+    "category": "Reentry & Transition",
+    "phase": "Reentry"
+  },
+  {
+    "title": "Workforce Agent",
+    "description": "Link youth to job training, apprenticeships, and career coaching.",
+    "path": "/voices-tool/workforce",
+    "category": "Reentry & Transition",
+    "phase": "Reentry"
+  }
+]

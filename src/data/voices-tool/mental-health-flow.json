@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Receive Referral or Screening Trigger",
+    "conditions": [
+      "Youth flagged during intake or probation",
+      "Prior trauma or behavioral indicators reported",
+      "Guardian consents to mental health evaluation"
+    ],
+    "next": ["screening"]
+  },
+  {
+    "id": "screening",
+    "label": "Conduct Mental Health Screening",
+    "conditions": [
+      "SAVRY or MAYSI-2 tool administered",
+      "Symptoms meet criteria for further assessment",
+      "Youth cooperates during evaluation"
+    ],
+    "next": ["crisis-intervention", "referral"]
+  },
+  {
+    "id": "crisis-intervention",
+    "label": "Initiate Crisis Intervention",
+    "conditions": [
+      "Youth at risk of self-harm or harm to others",
+      "Emergency therapist notified",
+      "Safety plan developed with team"
+    ],
+    "next": ["referral"]
+  },
+  {
+    "id": "referral",
+    "label": "Refer to Mental Health Services",
+    "conditions": [
+      "Diagnosis or symptoms confirmed",
+      "Community provider identified and contacted",
+      "Guardian received treatment plan"
+    ]
+  }
+]

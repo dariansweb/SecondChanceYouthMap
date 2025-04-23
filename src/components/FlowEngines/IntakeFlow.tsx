@@ -42,7 +42,7 @@ export default function IntakeFlow({ jurisdiction }: Props) {
 
   return (
     <div className="mt-6 border rounded p-6 bg-white shadow">
-      <h3 className="text-xl font-semibold mb-2">Current Step:</h3>
+      <h3 className="text-xl font-semibold text-green-700 mb-2">Current Step:</h3>
       <p className="text-lg text-blue-700 mb-4">
         {current?.label || "Loading..."}
       </p>

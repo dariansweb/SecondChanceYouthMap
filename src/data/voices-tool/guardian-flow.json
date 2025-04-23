@@ -1,0 +1,41 @@
+[
+  {
+    "id": "start",
+    "label": "Initial Contact & Consent",
+    "conditions": [
+      "Guardian contact confirmed",
+      "Interpreter offered if needed",
+      "Consent requested for mental health or diversion services"
+    ],
+    "next": ["consent"]
+  },
+  {
+    "id": "consent",
+    "label": "Provide Consent for Services",
+    "conditions": [
+      "Guardian signs consent form",
+      "Understands purpose of screening or diversion",
+      "No known objections recorded"
+    ],
+    "next": ["family-meeting"]
+  },
+  {
+    "id": "family-meeting",
+    "label": "Participate in Family Meeting",
+    "conditions": [
+      "Scheduled within 7 days of intake",
+      "Interpreter present if needed",
+      "Guardian and youth both present"
+    ],
+    "next": ["acknowledgment"]
+  },
+  {
+    "id": "acknowledgment",
+    "label": "Acknowledge Plan of Care",
+    "conditions": [
+      "Guardian signs acknowledgment",
+      "Reentry or diversion plan explained",
+      "Follow-up appointment scheduled"
+    ]
+  }
+]
