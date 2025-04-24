@@ -14,7 +14,7 @@ const moreNavItems = [
   { href: "/matrix", label: "📊 Matrix" },
   { href: "/glossary", label: "📚 Glossary" },
   { href: "/intake", label: "🚀 Intake" },
-  { href: "/voices-tool", label: "🧰 Tools" },
+  { href: "/voices-tool", label: "🧰 Journey" },
 ];
 
 export default function Header() {

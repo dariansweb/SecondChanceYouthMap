@@ -1,5 +1,5 @@
-[
-  {
+{
+  "start": {
     "id": "start",
     "label": "Youth Referred to Intake",
     "conditions": [
@@ -7,9 +7,26 @@
       "Youth is between ages 10–17",
       "No immediate medical or safety crisis present"
     ],
+    "fields": [
+      {
+        "type": "input",
+        "name": "referralSource",
+        "label": "Referral Source"
+      },
+      {
+        "type": "date",
+        "name": "referralDate",
+        "label": "Date Referred"
+      },
+      {
+        "type": "checkbox",
+        "name": "safetyCheckPassed",
+        "label": "No immediate medical/safety crisis"
+      }
+    ],
     "next": ["risk-assessment"]
   },
-  {
+  "risk-assessment": {
     "id": "risk-assessment",
     "label": "Complete SAVRY / MAYSI-2",
     "conditions": [
@@ -17,45 +34,135 @@
       "SAVRY risk assessment required by jurisdiction",
       "Mental health screening not previously conducted"
     ],
+    "fields": [
+      {
+        "type": "select",
+        "name": "riskToolUsed",
+        "label": "Risk Assessment Tool",
+        "options": [
+          { "label": "SAVRY", "value": "savry" },
+          { "label": "MAYSI-2", "value": "maysi" }
+        ]
+      },
+      {
+        "type": "input",
+        "name": "riskScore",
+        "label": "Risk Score"
+      },
+      {
+        "type": "checkbox",
+        "name": "mentalHealthConcern",
+        "label": "Mental health concerns identified"
+      }
+    ],
     "next": ["diversion", "petition"]
   },
-  {
+  "diversion": {
     "id": "diversion",
     "label": "Offer Diversion Agreement",
-    "conditions": [
-      "Youth is low-risk on SAVRY",
-      "Nonviolent offense",
-      "No prior adjudication for similar offense",
-      "Guardian consents to informal adjustment"
+    "fields": [
+      {
+        "type": "select",
+        "name": "agreementType",
+        "label": "Type of Diversion Agreement",
+        "options": [
+          { "label": "Verbal", "value": "verbal" },
+          { "label": "Written", "value": "written" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "diversionNotes",
+        "label": "Notes on Diversion Plan"
+      },
+      {
+        "type": "date",
+        "name": "offeredDate",
+        "label": "Date Diversion Was Offered"
+      }
     ],
     "next": ["outcome-logging"]
   },
-  {
+  "petition": {
     "id": "petition",
     "label": "Refer to Juvenile Court for Petition",
-    "conditions": [
-      "Youth declined diversion option",
-      "Moderate to high risk score",
-      "Repeat offense or school safety concern"
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "petitionReason",
+        "label": "Why is a petition being filed?"
+      },
+      {
+        "type": "date",
+        "name": "petitionDate",
+        "label": "Date of Petition Filing"
+      },
+      {
+        "type": "input",
+        "name": "courtClerk",
+        "label": "Court Clerk Receiving Petition"
+      }
     ],
-    "next": ["detention-hearing"]
+    "next": ["dashboard"]
   },
-  {
+
+  "outcome-logging": {
     "id": "outcome-logging",
     "label": "Log Outcome & Notify Stakeholders",
     "conditions": [
       "Agreement signed and stored",
       "Community service assignment logged",
       "Diversion Specialist assigned"
-    ]
+    ],
+    "fields": [
+      {
+        "type": "select",
+        "name": "outcomeStatus",
+        "label": "Diversion Outcome",
+        "options": [
+          { "label": "Completed Successfully", "value": "success" },
+          { "label": "Non-Compliance", "value": "noncompliance" },
+          { "label": "Referred for Petition", "value": "referred" }
+        ]
+      },
+      {
+        "type": "date",
+        "name": "outcomeLoggedDate",
+        "label": "Date Outcome Logged"
+      },
+      {
+        "type": "textarea",
+        "name": "outcomeNotes",
+        "label": "Outcome Notes"
+      }
+    ],
+    "next": ["dashboard"]
   },
-  {
+  "detention-hearing": {
     "id": "detention-hearing",
     "label": "Schedule Detention Hearing",
     "conditions": [
       "Court accepted petition filing",
       "Youth not released to guardian",
       "Detention recommended by intake officer"
-    ]
+    ],
+    "fields": [
+      {
+        "type": "date",
+        "name": "hearingDate",
+        "label": "Scheduled Hearing Date"
+      },
+      {
+        "type": "input",
+        "name": "judgeName",
+        "label": "Presiding Judge"
+      },
+      {
+        "type": "checkbox",
+        "name": "detainedPending",
+        "label": "Youth detained pending hearing"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

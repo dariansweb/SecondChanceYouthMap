@@ -1,16 +1,20 @@
-// src/app/voices-tool/intake-officer/page.tsx
+// File: src/app/voices-tool/intake-officer/page.tsx
 
 "use client";
 
-import IntakeFlow from "@/components/voices-tool/FlowEngines/IntakeFlow";
+import React from "react";
+import FlowPlayer from "@/components/voices-tool/FormEngine/FlowPlayer";
+import intakeFlow from "@/data/voices-tool/intake-flow.json";
 
 export default function IntakeOfficerPage() {
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold text-blue-700 mb-4">
-        Intake Officer Workflow
-      </h2>
-      <IntakeFlow />
-    </div>
+    <main className="min-h-screen py-10 px-6 bg-gray-50">
+      <div className="max-w-3xl mx-auto bg-white p-8 rounded shadow">
+        <h1 className="text-2xl font-semibold text-gray-800 mb-6">
+          Intake Officer Workflow
+        </h1>
+        <FlowPlayer flow={intakeFlow} startNodeId="start" />
+      </div>
+    </main>
   );
 }

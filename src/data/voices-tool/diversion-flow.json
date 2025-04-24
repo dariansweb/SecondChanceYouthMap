@@ -1,41 +1,68 @@
-[
-  {
-    "id": "start",
-    "label": "Youth Assigned to Diversion",
-    "conditions": [
-      "Diversion accepted by Prosecutor or Intake",
-      "Eligibility criteria confirmed",
-      "Guardian and youth signed agreement"
+{
+  "diversion": {
+    "id": "diversion",
+    "label": "Diversion Agreement Process",
+    "conditions": ["low-risk", "nonviolent"],
+    "fields": [
+      {
+        "type": "select",
+        "name": "agreementType",
+        "label": "Type of Diversion Agreement",
+        "options": [
+          { "label": "Verbal Warning", "value": "verbal" },
+          { "label": "Written Agreement", "value": "written" },
+          { "label": "Community Service", "value": "service" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "diversionNotes",
+        "label": "Notes on Diversion Plan"
+      },
+      {
+        "type": "checkbox",
+        "name": "conditionsMet",
+        "label": "Youth meets eligibility requirements"
+      },
+      {
+        "type": "date",
+        "name": "agreementDate",
+        "label": "Date Agreement Was Offered"
+      },
+      {
+        "type": "input",
+        "name": "officerName",
+        "label": "Staff Member Offering Agreement"
+      }
     ],
-    "next": ["intake"]
+    "next": ["outcome-logging"]
   },
-  {
-    "id": "intake",
-    "label": "Complete Diversion Intake",
-    "conditions": [
-      "Case plan developed with youth",
-      "Mental health or education referrals documented",
-      "Restorative justice or community service assigned"
+
+  "outcome-logging": {
+    "id": "outcome-logging",
+    "label": "Log Diversion Outcome",
+    "fields": [
+      {
+        "type": "select",
+        "name": "outcomeStatus",
+        "label": "Diversion Outcome",
+        "options": [
+          { "label": "Completed Successfully", "value": "complete" },
+          { "label": "Failed to Comply", "value": "failed" },
+          { "label": "Referred for Further Action", "value": "referred" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "outcomeNotes",
+        "label": "Notes on Outcome"
+      },
+      {
+        "type": "date",
+        "name": "outcomeDate",
+        "label": "Date Outcome Was Logged"
+      }
     ],
-    "next": ["progress"]
-  },
-  {
-    "id": "progress",
-    "label": "Monitor Diversion Progress",
-    "conditions": [
-      "Contact logs maintained",
-      "Milestones recorded",
-      "Incident reports, if any, noted"
-    ],
-    "next": ["completion"]
-  },
-  {
-    "id": "completion",
-    "label": "Close Diversion Case",
-    "conditions": [
-      "Requirements fully met",
-      "Final report submitted",
-      "Youth and guardian acknowledged outcome"
-    ]
+    "next": []
   }
-]
+}

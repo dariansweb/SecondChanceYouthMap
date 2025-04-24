@@ -56,19 +56,25 @@ export default function VoicesToolHome() {
   return (
     <div className="p-10">
       <h1 className="text-4xl font-extrabold text-blue-700 mb-4 tracking-tight">
-        Voices Tool Dashboard
+        Voices Journey Tool
       </h1>
       <p className="text-gray-700 text-lg leading-relaxed mb-6 max-w-4xl">
-        This dashboard represents the core of the SCYM framework — a
-        constellation of 15 distinct roles, each shaping a youth’s journey
-        through care, consequence, and community support. From intake to
-        diversion, from courtroom to reentry, every workflow is purpose-built to
-        reflect the real decisions and challenges faced by professionals,
-        advocates, and guardians. <br />
+        The Voices Journey Tool is built for those who guide, redirect, and
+        speak into the lives of youth navigating the <strong>journey</strong>{" "}
+        through the justice system. These are the roles a young person sees,
+        hears, and feels as they move through care, consequence, and recovery.
+        From intake to reentry, from defense to education, every voice becomes
+        part of the youth’s lived experience.
         <br />
-        Select a voice to step into its perspective, or filter by the current
-        phase in a youth’s timeline. Each tool here isn’t just a form — it’s a
-        window into a system, a responsibility, and a chance to change outcomes.
+        <br />
+        This tool presents 15 professional roles as interactive, decision-based
+        workflows — each reflecting the real choices and responsibilities that
+        shape a youth’s journey. Whether you are an advocate, a judge, a mentor,
+        or a service provider, your presence is not just part of the process —
+        it *is* the journey.
+        <br />
+        <br />
+        Step into your role. Trace your impact. Let your voice lead the way.
       </p>
 
       {/* Phase Filter */}

@@ -18,6 +18,10 @@
     --foreground: #ededed;
   }
 }
+/* for troubleshooting */
+/* * {
+  outline: 1px dashed red !important;
+} */
 
 body {
   background: var(--background);

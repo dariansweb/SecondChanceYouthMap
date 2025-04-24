@@ -21,7 +21,20 @@ export default function DiversionFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/diversion-flow.json");
-      setFlowData(res.default);
+      type FlowItem = {
+        id: string;
+        label: string;
+        next?: string[];
+        conditions?: string[];
+      };
+
+      const nodes: Node[] = Object.values(res.default as Record<string, FlowItem>).map((item) => ({
+        id: item.id,
+        label: item.label,
+        next: item.next,
+        conditions: item.conditions,
+      }))
+      setFlowData(nodes);
     };
     loadFlow();
   }, []);

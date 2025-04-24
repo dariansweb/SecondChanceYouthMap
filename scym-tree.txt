@@ -1,0 +1,268 @@
+── eslint.config.mjs
+├── LICENSE.TXT
+├── next.config.ts
+├── next-env.d.ts
+├── package.json
+├── package-lock.json
+├── postcss.config.mjs
+├── public
+│   ├── data
+│   │   ├── dev-data-1.json
+│   │   └── dev-data-2.json
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── README.md
+├── src
+│   ├── app
+│   │   ├── about
+│   │   │   └── page.tsx
+│   │   ├── _app.tsx
+│   │   ├── dashboard
+│   │   │   ├── charts
+│   │   │   │   ├── comparison
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── confidence
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── diversion
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── education
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── layout.tsx
+│   │   │   │   ├── recommendations
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── resources
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── risk-tools
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── sources
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── timeline
+│   │   │   │       └── page.tsx
+│   │   │   ├── DiversionChart.tsx
+│   │   │   ├── index.tsx
+│   │   │   └── page.tsx
+│   │   ├── docs
+│   │   │   ├── custody-diversion-paths
+│   │   │   │   └── page.tsx
+│   │   │   ├── education-support
+│   │   │   │   └── page.tsx
+│   │   │   ├── intake-workflow
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── reference.md
+│   │   │   ├── layout.tsx
+│   │   │   ├── legal-forms
+│   │   │   │   └── page.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── references
+│   │   │   │   └── page.tsx
+│   │   │   ├── risk-assessments
+│   │   │   │   └── page.tsx
+│   │   │   └── [slug]
+│   │   │       └── page.js
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── glossary
+│   │   │   └── page.tsx
+│   │   ├── intake
+│   │   │   └── page.tsx
+│   │   ├── layout.tsx
+│   │   ├── matrix
+│   │   │   ├── layout.tsx
+│   │   │   └── page.tsx
+│   │   ├── page.tsx
+│   │   ├── voices
+│   │   │   ├── community-advocates
+│   │   │   │   └── page.tsx
+│   │   │   ├── defenders
+│   │   │   │   └── page.tsx
+│   │   │   ├── diversion
+│   │   │   │   └── page.tsx
+│   │   │   ├── educators
+│   │   │   │   └── page.tsx
+│   │   │   ├── guardians
+│   │   │   │   └── page.tsx
+│   │   │   ├── intake-officers
+│   │   │   │   └── page.tsx
+│   │   │   ├── judges
+│   │   │   │   └── page.tsx
+│   │   │   ├── layout.tsx
+│   │   │   ├── mental-health
+│   │   │   │   └── page.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── probation-officers
+│   │   │   │   └── page.tsx
+│   │   │   ├── reentry
+│   │   │   │   └── page.tsx
+│   │   │   ├── residential
+│   │   │   │   └── page.tsx
+│   │   │   └── workforce
+│   │   │       └── page.tsx
+│   │   └── voices-tool
+│   │       ├── community-advocates
+│   │       │   └── page.tsx
+│   │       ├── defense
+│   │       │   └── page.tsx
+│   │       ├── diversion
+│   │       │   └── page.tsx
+│   │       ├── educators
+│   │       │   └── page.tsx
+│   │       ├── guardians
+│   │       │   └── page.tsx
+│   │       ├── intake-officer
+│   │       │   └── page.tsx
+│   │       ├── judges
+│   │       │   └── page.tsx
+│   │       ├── layout.tsx
+│   │       ├── mental-health
+│   │       │   └── page.tsx
+│   │       ├── page.tsx
+│   │       ├── probation-officer
+│   │       │   └── page.tsx
+│   │       ├── prosecutor
+│   │       │   └── page.tsx
+│   │       ├── reentry
+│   │       │   └── page.tsx
+│   │       ├── residential
+│   │       │   └── page.tsx
+│   │       └── workforce
+│   │           └── page.tsx
+│   ├── components
+│   │   ├── dashboard
+│   │   │   ├── ConfidenceChart.tsx
+│   │   │   ├── ConfidenceTrendChart.tsx
+│   │   │   ├── DiversionChart.tsx
+│   │   │   ├── EducationNeedsChart.tsx
+│   │   │   ├── RecommendationPieChart.tsx
+│   │   │   ├── RiskToolHeatmap.tsx
+│   │   │   ├── RiskToolUsageChart.tsx
+│   │   │   ├── StateConfidenceChart.tsx
+│   │   │   └── TopSourcesChart.tsx
+│   │   ├── DocsSidebar.tsx
+│   │   ├── FlowEngines
+│   │   │   ├── IntakeFlow.tsx
+│   │   │   └── ProbationFlow.tsx
+│   │   ├── GlossaryCard.tsx
+│   │   ├── GlossaryRichText.tsx
+│   │   ├── GlossaryToolTip.tsx
+│   │   ├── Header.tsx
+│   │   ├── layout
+│   │   │   ├── ChartArticleLayout.tsx
+│   │   │   ├── ChartDashboardLayout.tsx
+│   │   │   └── ImpactLayout.tsx
+│   │   ├── MatrixCard.tsx
+│   │   ├── MatrixFilterPanel.tsx
+│   │   ├── MatrixGrid.tsx
+│   │   ├── MatrixModal.tsx
+│   │   ├── modals
+│   │   │   ├── ModalExplanation.tsx
+│   │   │   └── TopSourcesModal.tsx
+│   │   ├── voices
+│   │   │   └── VoiceCard.tsx
+│   │   └── voices-tool
+│   │       ├── FlowEngines
+│   │       │   ├── CommunityAdvocateFlow.tsx
+│   │       │   ├── DefenseFlow.tsx
+│   │       │   ├── DiversionFlow.tsx
+│   │       │   ├── EducatorFlow.tsx
+│   │       │   ├── GuardianFlow.tsx
+│   │       │   ├── IntakeFlow.tsx
+│   │       │   ├── JudgeFlow.tsx
+│   │       │   ├── MentalHealthFlow.tsx
+│   │       │   ├── ProbationFlow.tsx
+│   │       │   ├── ProsecutorFlow.tsx
+│   │       │   ├── ReentryFlow.tsx
+│   │       │   ├── ResidentialFlow.tsx
+│   │       │   └── WorkforceFlow.tsx
+│   │       ├── Forms
+│   │       │   ├── AcknowledgmentForm.tsx
+│   │       │   ├── AdvocateEngagementForm.tsx
+│   │       │   ├── AlternativeInterventionForm.tsx
+│   │       │   ├── CareerReferralForm.tsx
+│   │       │   ├── CaseSummaryReviewForm.tsx
+│   │       │   ├── ChargeReviewForm.tsx
+│   │       │   ├── ComplianceCheck.tsx
+│   │       │   ├── ConsentForm.tsx
+│   │       │   ├── CrisisInterventionForm.tsx
+│   │       │   ├── DecisionForm.tsx
+│   │       │   ├── DefenseCaseReviewForm.tsx
+│   │       │   ├── DispositionOrderForm.tsx
+│   │       │   ├── DiversionAgreement.tsx
+│   │       │   ├── DiversionCompletionForm.tsx
+│   │       │   ├── DiversionEvaluationForm.tsx
+│   │       │   ├── DiversionIntakeForm.tsx
+│   │       │   ├── DiversionProgressForm.tsx
+│   │       │   ├── EducationReviewForm.tsx
+│   │       │   ├── EnrollmentSupportForm.tsx
+│   │       │   ├── FamilyMeetingForm.tsx
+│   │       │   ├── IEPRecommendationForm.tsx
+│   │       │   ├── IntakeForm.tsx
+│   │       │   ├── JobSupportLogForm.tsx
+│   │       │   ├── MentalHealthScreeningForm.tsx
+│   │       │   ├── MentorshipReferralForm.tsx
+│   │       │   ├── PetitionDraftForm.tsx
+│   │       │   ├── PetitionForm.tsx
+│   │       │   ├── PleaNegotiationForm.tsx
+│   │       │   ├── ProbationIntakeForm.tsx
+│   │       │   ├── ProgressLogForm.tsx
+│   │       │   ├── ReentryPlanForm.tsx
+│   │       │   ├── ReferralForm.tsx
+│   │       │   ├── ResidentialIntakeForm.tsx
+│   │       │   ├── SchoolReferralForm.tsx
+│   │       │   ├── SupervisionPlan.tsx
+│   │       │   ├── SupportLogForm.tsx
+│   │       │   ├── TransitionPrepForm.tsx
+│   │       │   ├── WorkforceReadinessForm.tsx
+│   │       │   └── WorkforceReferralForm.tsx
+│   │       └── RoleCards
+│   │           └── RoleCard.tsx
+│   ├── content
+│   │   └── docs
+│   │       ├── custody-diversion-paths.md
+│   │       ├── education-support.md
+│   │       ├── intake-workflow.md
+│   │       ├── intro.md
+│   │       ├── legal-forms.md
+│   │       ├── references.md
+│   │       ├── risk-assessments.html
+│   │       └── risk-assessments.md
+│   ├── context
+│   │   ├── FormContext.tsx
+│   │   ├── GlossaryContext.tsx
+│   │   └── voices-tool
+│   │       └── VoicesContext.tsx
+│   ├── data
+│   │   ├── dashboardMetrics.ts
+│   │   ├── full-research.txt
+│   │   ├── full-research-voices.txt
+│   │   ├── glossary.json
+│   │   ├── heat-map-data.json
+│   │   ├── matrix-data.json
+│   │   ├── topSourcesData.ts
+│   │   ├── voices-framework-tool.md
+│   │   ├── voices-tool
+│   │   │   ├── community-advocate-flow.json
+│   │   │   ├── defense-flow.json
+│   │   │   ├── diversion-flow.json
+│   │   │   ├── educator-flow.json
+│   │   │   ├── guardian-flow.json
+│   │   │   ├── intake-flow.json
+│   │   │   ├── judge-flow.json
+│   │   │   ├── mental-health-flow.json
+│   │   │   ├── probation-flow.json
+│   │   │   ├── prosecutor-flow.json
+│   │   │   ├── reentry-flow.json
+│   │   │   ├── residential-flow.json
+│   │   │   ├── roles.json
+│   │   │   └── workforce-flow.json
+│   │   └── youth-intake-record.pdf
+│   └── lib
+│       ├── loadGlossary.tsx
+│       ├── loadMatrixData.ts
+│       └── parseMarkdown.tsx
+├── tailwind.config.js
+└── tsconfig.json
+
+72 directories, 195 files

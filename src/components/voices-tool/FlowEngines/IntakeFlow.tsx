@@ -23,7 +23,7 @@ export default function IntakeFlow() {
     const loadFlow = async () => {
       try {
         const res = await import("@/data/voices-tool/intake-flow.json");
-        setFlowData(res.default);
+        setFlowData(Object.values(res.default));
       } catch (error) {
         console.error("Error loading intake flow:", error);
       }
@@ -62,16 +62,17 @@ export default function IntakeFlow() {
       </p>
 
       {current?.conditions && current.conditions.length > 0 && (
-  <>
-    <h4 className="text-sm font-semibold text-gray-700 mb-1">Conditions:</h4>
-    <ul className="mb-4 list-disc list-inside text-sm text-gray-600">
-      {current.conditions.map((cond, idx) => (
-        <li key={idx}>{cond}</li>
-      ))}
-    </ul>
-  </>
-)}
-
+        <>
+          <h4 className="text-sm font-semibold text-gray-700 mb-1">
+            Conditions:
+          </h4>
+          <ul className="mb-4 list-disc list-inside text-sm text-gray-600">
+            {current.conditions.map((cond, idx) => (
+              <li key={idx}>{cond}</li>
+            ))}
+          </ul>
+        </>
+      )}
 
       {renderForm()}
 
