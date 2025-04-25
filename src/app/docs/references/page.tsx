@@ -31,7 +31,7 @@ export default function ReferencesPage() {
                 },
                 {
                   label: "Texas Juvenile Justice Department",
-                  link: "https://tjjd.texas.gov",
+                  link: "https://www.tjjd.texas.gov/",
                   note: "JCMS data management and referral system",
                 },
                 {
@@ -94,7 +94,7 @@ export default function ReferencesPage() {
                 },
                 {
                   label: "Every Student Succeeds Act (ESSA)",
-                  link: "https://www.ed.gov/essa",
+                  link: "https://www.ed.gov/laws-and-policy/laws-preschool-grade-12-education/every-student-succeeds-act-essahttps://www.ed.gov/laws-and-policy/laws-preschool-grade-12-education/every-student-succeeds-act-essa",
                 },
               ].map((item, index) => (
                 <li key={index} className="pl-3 relative">
