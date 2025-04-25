@@ -60,7 +60,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-semibold text-blue-700 mb-4">
             📚 What&apos;s New?
           </h2>
-          <ul className="list-disc list-inside text-slate-700 space-y-2">
+          <ul className="list-disc list-inside list-none text-slate-700 space-y-2">
             <li>
               <strong>🧾 Glossary of Juvenile Justice Terms</strong> — A
               searchable, categorized glossary of over 100 terms, acronyms, and
