@@ -56,7 +56,7 @@ export default function VoicesToolHome() {
   return (
     <div className="p-10">
       <h1 className="text-4xl font-extrabold text-blue-700 mb-4 tracking-tight">
-        Voices Journey Tool
+        Voices Journey
       </h1>
       <p className="text-gray-700 text-lg leading-relaxed mb-6 max-w-4xl">
         The Voices Journey Tool is built for those who guide, redirect, and
@@ -71,7 +71,7 @@ export default function VoicesToolHome() {
         workflows — each reflecting the real choices and responsibilities that
         shape a youth’s journey. Whether you are an advocate, a judge, a mentor,
         or a service provider, your presence is not just part of the process —
-        it *is* the journey.
+        <strong>it is the voice of you that guide their journey.</strong>
         <br />
         <br />
         Step into your role. Trace your impact. Let your voice lead the way.
