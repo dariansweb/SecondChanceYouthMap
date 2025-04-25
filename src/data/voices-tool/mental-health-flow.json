@@ -1,41 +1,156 @@
-[
-  {
-    "id": "start",
-    "label": "Receive Referral or Screening Trigger",
-    "conditions": [
-      "Youth flagged during intake or probation",
-      "Prior trauma or behavioral indicators reported",
-      "Guardian consents to mental health evaluation"
+{
+  "evaluation-referral": {
+    "id": "evaluation-referral",
+    "label": "Referral for Mental Health Evaluation",
+    "fields": [
+      {
+        "type": "date",
+        "name": "referralDate",
+        "label": "Date of Referral"
+      },
+      {
+        "type": "select",
+        "name": "referralSource",
+        "label": "Referral Source",
+        "options": [
+          { "label": "Court Ordered", "value": "court" },
+          { "label": "Probation Officer", "value": "probation" },
+          { "label": "Guardian Request", "value": "guardian" },
+          { "label": "Other", "value": "other" }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "name": "youthConsentObtained",
+        "label": "Youth provided informed consent"
+      },
+      {
+        "type": "checkbox",
+        "name": "guardianConsentObtained",
+        "label": "Guardian provided informed consent"
+      }
     ],
-    "next": ["screening"]
+    "next": ["evaluation-summary"]
   },
-  {
-    "id": "screening",
-    "label": "Conduct Mental Health Screening",
-    "conditions": [
-      "SAVRY or MAYSI-2 tool administered",
-      "Symptoms meet criteria for further assessment",
-      "Youth cooperates during evaluation"
+  "evaluation-summary": {
+    "id": "evaluation-summary",
+    "label": "Evaluation Summary",
+    "fields": [
+      {
+        "type": "date",
+        "name": "evaluationDate",
+        "label": "Date of Evaluation"
+      },
+      {
+        "type": "textarea",
+        "name": "presentingIssues",
+        "label": "Summary of Presenting Issues"
+      },
+      {
+        "type": "select",
+        "name": "clinicalImpression",
+        "label": "Preliminary Clinical Impression",
+        "options": [
+          { "label": "Depression/Anxiety", "value": "depression" },
+          { "label": "Trauma-Related", "value": "trauma" },
+          { "label": "Substance Use", "value": "substance" },
+          { "label": "Neurodevelopmental", "value": "neuro" },
+          { "label": "Other / Not Specified", "value": "other" }
+        ]
+      }
     ],
-    "next": ["crisis-intervention", "referral"]
+    "next": ["risk-needs"]
   },
-  {
-    "id": "crisis-intervention",
-    "label": "Initiate Crisis Intervention",
-    "conditions": [
-      "Youth at risk of self-harm or harm to others",
-      "Emergency therapist notified",
-      "Safety plan developed with team"
+  "risk-needs": {
+    "id": "risk-needs",
+    "label": "Identified Risks & Needs",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "riskSelfHarm",
+        "label": "Risk of self-harm or suicidal ideation"
+      },
+      {
+        "type": "checkbox",
+        "name": "riskAggression",
+        "label": "Risk of aggressive behavior or outbursts"
+      },
+      {
+        "type": "checkbox",
+        "name": "needOngoingTherapy",
+        "label": "Needs ongoing individual therapy"
+      },
+      {
+        "type": "checkbox",
+        "name": "needMedicationReview",
+        "label": "Needs psychiatric/medication review"
+      },
+      {
+        "type": "textarea",
+        "name": "additionalRisksNeeds",
+        "label": "Additional Observations or Concerns"
+      }
     ],
-    "next": ["referral"]
+    "next": ["service-plan"]
   },
-  {
-    "id": "referral",
-    "label": "Refer to Mental Health Services",
-    "conditions": [
-      "Diagnosis or symptoms confirmed",
-      "Community provider identified and contacted",
-      "Guardian received treatment plan"
-    ]
+  "service-plan": {
+    "id": "service-plan",
+    "label": "Mental Health Service Plan",
+    "fields": [
+      {
+        "type": "select",
+        "name": "serviceType",
+        "label": "Primary Service Recommended",
+        "options": [
+          { "label": "Individual Counseling", "value": "counseling" },
+          { "label": "Family Therapy", "value": "family" },
+          { "label": "Substance Abuse Program", "value": "substance" },
+          { "label": "Outpatient Psychiatry", "value": "psychiatry" }
+        ]
+      },
+      {
+        "type": "date",
+        "name": "followUpDate",
+        "label": "Planned First Follow-Up Date"
+      },
+      {
+        "type": "checkbox",
+        "name": "guardianAgreedToPlan",
+        "label": "Guardian agreed to service plan"
+      },
+      {
+        "type": "checkbox",
+        "name": "youthAgreedToPlan",
+        "label": "Youth agreed to service plan"
+      }
+    ],
+    "next": ["monitoring-feedback"]
+  },
+  "monitoring-feedback": {
+    "id": "monitoring-feedback",
+    "label": "Monitoring & Feedback",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "serviceParticipation",
+        "label": "Notes on Youth Participation"
+      },
+      {
+        "type": "checkbox",
+        "name": "progressObserved",
+        "label": "Positive behavioral/emotional progress observed"
+      },
+      {
+        "type": "checkbox",
+        "name": "furtherReviewNeeded",
+        "label": "Needs further clinical review"
+      },
+      {
+        "type": "date",
+        "name": "nextReviewDate",
+        "label": "Next Evaluation or Check-In Date"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

@@ -21,7 +21,20 @@ export default function JudgeFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/judge-flow.json");
-      setFlowData(res.default);
+      type FlowItem = {
+        id: string;
+        label: string;
+        next?: string[];
+        conditions?: string[];
+      };
+
+      const transformedData = Object.values(res.default).map((item: FlowItem) => ({
+        id: item.id,
+        label: item.label,
+        next: item.next,
+        conditions: item.conditions,
+      }));
+      setFlowData(transformedData);
     };
     loadFlow();
   }, []);

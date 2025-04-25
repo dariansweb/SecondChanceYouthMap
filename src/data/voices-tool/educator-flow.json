@@ -1,51 +1,128 @@
-[
-  {
-    "id": "start",
-    "label": "Receive Notification of Youth Case",
-    "conditions": [
-      "School notified of justice system involvement",
-      "Youth is active or recently withdrawn from school",
-      "Case manager initiated education support contact"
+{
+  "school-contact": {
+    "id": "school-contact",
+    "label": "School Contact Verification",
+    "fields": [
+      {
+        "type": "input",
+        "name": "schoolName",
+        "label": "School Name"
+      },
+      {
+        "type": "input",
+        "name": "contactPerson",
+        "label": "Educator or Counselor Name"
+      },
+      {
+        "type": "input",
+        "name": "contactEmail",
+        "label": "Contact Email"
+      },
+      {
+        "type": "checkbox",
+        "name": "contactEstablished",
+        "label": "Contact with youth confirmed"
+      }
     ],
-    "next": ["education-review"]
+    "next": ["attendance-review"]
   },
-  {
-    "id": "education-review",
-    "label": "Review Education History",
-    "conditions": [
-      "Previous grades and attendance records reviewed",
-      "Special education or IEP status checked",
-      "Behavioral referrals noted"
+  "attendance-review": {
+    "id": "attendance-review",
+    "label": "Attendance Review",
+    "fields": [
+      {
+        "type": "input",
+        "name": "absencesLast30Days",
+        "label": "Number of absences in last 30 days"
+      },
+      {
+        "type": "checkbox",
+        "name": "hasChronicAbsenteeism",
+        "label": "Chronic absenteeism flagged"
+      },
+      {
+        "type": "textarea",
+        "name": "attendanceNotes",
+        "label": "Context or explanation for absences"
+      }
     ],
-    "next": ["enrollment-support", "iep-recommendation"]
+    "next": ["academic-performance"]
   },
-  {
-    "id": "enrollment-support",
-    "label": "Support School Re-Enrollment",
-    "conditions": [
-      "Transcript sent to receiving school",
-      "Enrollment coordinator assigned",
-      "Guardian confirmed transportation plan"
+  "academic-performance": {
+    "id": "academic-performance",
+    "label": "Academic Performance",
+    "fields": [
+      {
+        "type": "select",
+        "name": "performanceLevel",
+        "label": "Overall Academic Performance",
+        "options": [
+          { "label": "Excellent", "value": "excellent" },
+          { "label": "Satisfactory", "value": "satisfactory" },
+          { "label": "Needs Improvement", "value": "needs-help" },
+          { "label": "Failing", "value": "failing" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "academicChallenges",
+        "label": "Known Learning Challenges or IEP Notes"
+      },
+      {
+        "type": "checkbox",
+        "name": "tutoringRecommended",
+        "label": "Tutoring or academic support recommended"
+      }
     ],
-    "next": ["final-log"]
+    "next": ["behavioral-insight"]
   },
-  {
-    "id": "iep-recommendation",
-    "label": "Recommend IEP or Educational Modifications",
-    "conditions": [
-      "IEP team meeting scheduled",
-      "Evaluation consent received from guardian",
-      "Behavior or trauma factors considered"
+  "behavioral-insight": {
+    "id": "behavioral-insight",
+    "label": "Behavioral Observations",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "schoolBehaviorNotes",
+        "label": "Behavior in classroom or school setting"
+      },
+      {
+        "type": "checkbox",
+        "name": "disciplineReferrals",
+        "label": "Disciplinary referrals in last 60 days"
+      },
+      {
+        "type": "checkbox",
+        "name": "peerConflictObserved",
+        "label": "Peer conflict observed or reported"
+      }
     ],
-    "next": ["final-log"]
+    "next": ["education-summary"]
   },
-  {
-    "id": "final-log",
-    "label": "Log Education Action Steps",
-    "conditions": [
-      "School contact person assigned",
-      "Youth follow-up date set",
-      "Education record updated"
-    ]
+  "education-summary": {
+    "id": "education-summary",
+    "label": "Education Summary & Recommendations",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "overallSummary",
+        "label": "Educator's Overall Summary"
+      },
+      {
+        "type": "checkbox",
+        "name": "recommendContinuedMonitoring",
+        "label": "Recommend continued academic monitoring"
+      },
+      {
+        "type": "checkbox",
+        "name": "recommendSchoolSupport",
+        "label": "Recommend school-based intervention or services"
+      },
+      {
+        "type": "date",
+        "name": "formCompletionDate",
+        "label": "Date of Form Completion"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

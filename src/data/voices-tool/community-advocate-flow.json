@@ -1,41 +1,132 @@
-[
-  {
-    "id": "start",
-    "label": "Youth Referred to Community Advocate",
-    "conditions": [
-      "Referral from Intake, Probation, or Court",
-      "Youth consents to community-based support",
-      "Guardian or case manager provides contact info"
+{
+  "referral-connection": {
+    "id": "referral-connection",
+    "label": "Youth Connection & Referral",
+    "fields": [
+      {
+        "type": "input",
+        "name": "referralSource",
+        "label": "Referral Source (organization or contact name)"
+      },
+      {
+        "type": "date",
+        "name": "referralDate",
+        "label": "Date of Youth Referral"
+      },
+      {
+        "type": "textarea",
+        "name": "referralContext",
+        "label": "Context of Referral (brief summary)"
+      },
+      {
+        "type": "checkbox",
+        "name": "youthContacted",
+        "label": "Initial contact with youth successfully made"
+      }
     ],
-    "next": ["engagement"]
+    "next": ["initial-needs"]
   },
-  {
-    "id": "engagement",
-    "label": "Meet with Youth or Family",
-    "conditions": [
-      "Initial contact attempt completed",
-      "Needs assessment conducted",
-      "Comfort or safety issues noted"
+  "initial-needs": {
+    "id": "initial-needs",
+    "label": "Initial Needs Assessment",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "basicNeeds",
+        "label": "Basic needs assistance required (food, housing, clothes)"
+      },
+      {
+        "type": "checkbox",
+        "name": "emotionalSupport",
+        "label": "Youth expressed need for emotional or social support"
+      },
+      {
+        "type": "checkbox",
+        "name": "familyChallenges",
+        "label": "Family/guardian challenges identified"
+      },
+      {
+        "type": "textarea",
+        "name": "additionalConcerns",
+        "label": "Additional concerns shared during intake"
+      }
     ],
-    "next": ["mentorship-referral", "support-log"]
+    "next": ["mentorship-plan"]
   },
-  {
-    "id": "mentorship-referral",
-    "label": "Refer to Mentorship or Cultural Program",
-    "conditions": [
-      "Program matched to youth’s identity or needs",
-      "Transportation or access coordinated",
-      "Youth and mentor introduced"
+  "mentorship-plan": {
+    "id": "mentorship-plan",
+    "label": "Mentorship & Engagement Plan",
+    "fields": [
+      {
+        "type": "select",
+        "name": "mentorMatchLevel",
+        "label": "Level of Mentorship Match",
+        "options": [
+          { "label": "One-on-One Mentor Assigned", "value": "one-on-one" },
+          { "label": "Group Mentorship / Circles", "value": "group" },
+          { "label": "Check-In Only / Light Touch", "value": "light" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "engagementGoals",
+        "label": "Goals of Youth Engagement"
+      },
+      {
+        "type": "date",
+        "name": "planStartDate",
+        "label": "Mentorship Plan Start Date"
+      }
     ],
-    "next": ["support-log"]
+    "next": ["resource-navigation"]
   },
-  {
-    "id": "support-log",
-    "label": "Ongoing Support and Check-Ins",
-    "conditions": [
-      "Weekly contact attempted",
-      "Progress or dropout risk noted",
-      "Advocate logs support services provided"
-    ]
+  "resource-navigation": {
+    "id": "resource-navigation",
+    "label": "Resource Navigation",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "connectedToHealth",
+        "label": "Connected to health/mental health services"
+      },
+      {
+        "type": "checkbox",
+        "name": "connectedToRec",
+        "label": "Connected to recreational or extracurricular opportunities"
+      },
+      {
+        "type": "checkbox",
+        "name": "connectedToEmployment",
+        "label": "Referred to youth employment programs"
+      },
+      {
+        "type": "textarea",
+        "name": "otherNavigationNotes",
+        "label": "Other connections made / follow-up notes"
+      }
+    ],
+    "next": ["check-in-feedback"]
+  },
+  "check-in-feedback": {
+    "id": "check-in-feedback",
+    "label": "Ongoing Check-Ins & Feedback",
+    "fields": [
+      {
+        "type": "date",
+        "name": "lastCheckInDate",
+        "label": "Date of Last Check-In"
+      },
+      {
+        "type": "textarea",
+        "name": "youthUpdate",
+        "label": "Update on Youth Progress or Challenges"
+      },
+      {
+        "type": "checkbox",
+        "name": "followUpNeeded",
+        "label": "More follow-up or services are needed"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

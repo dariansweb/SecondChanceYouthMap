@@ -21,7 +21,8 @@ export default function ProsecutorFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/prosecutor-flow.json");
-      setFlowData(res.default);
+      const transformedData = Object.values(res.default) as Node[];
+      setFlowData(transformedData);
     };
     loadFlow();
   }, []);

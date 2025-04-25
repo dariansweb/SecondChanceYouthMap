@@ -1,41 +1,133 @@
-[
-  {
-    "id": "start",
-    "label": "Case Referral Received",
-    "conditions": [
-      "Intake or Probation submitted referral",
-      "Supporting documents and charge summary available",
-      "Initial review conducted within 48 hours"
+{
+  "case-review": {
+    "id": "case-review",
+    "label": "Case Intake & Review",
+    "fields": [
+      {
+        "type": "input",
+        "name": "prosecutorName",
+        "label": "Assigned Prosecutor"
+      },
+      {
+        "type": "date",
+        "name": "reviewDate",
+        "label": "Date of Case Review"
+      },
+      {
+        "type": "textarea",
+        "name": "summaryNarrative",
+        "label": "Summary of Case Narrative"
+      },
+      {
+        "type": "checkbox",
+        "name": "policeReportReviewed",
+        "label": "Police report reviewed"
+      }
     ],
-    "next": ["charge-review"]
+    "next": ["charges"]
   },
-  {
-    "id": "charge-review",
-    "label": "Review Charges & Case Details",
-    "conditions": [
-      "Offense severity classified",
-      "Victim input documented",
-      "Repeat offense history checked"
+  "charges": {
+    "id": "charges",
+    "label": "Offense & Statute Details",
+    "fields": [
+      {
+        "type": "input",
+        "name": "offenseTitle",
+        "label": "Title of Alleged Offense"
+      },
+      {
+        "type": "input",
+        "name": "statuteCode",
+        "label": "Statute Code Violated"
+      },
+      {
+        "type": "textarea",
+        "name": "evidenceSummary",
+        "label": "Summary of Supporting Evidence"
+      },
+      {
+        "type": "checkbox",
+        "name": "additionalChargesPossible",
+        "label": "Possible additional charges under review"
+      }
     ],
-    "next": ["diversion-eval", "petition-draft"]
+    "next": ["filing-decision"]
   },
-  {
-    "id": "diversion-eval",
-    "label": "Evaluate for Diversion Eligibility",
-    "conditions": [
-      "Low to moderate risk on SAVRY",
-      "Victim agrees to informal resolution",
-      "No open probation or violent history"
+  "filing-decision": {
+    "id": "filing-decision",
+    "label": "Filing Decision",
+    "fields": [
+      {
+        "type": "select",
+        "name": "filingOutcome",
+        "label": "Decision on Filing Charges",
+        "options": [
+          { "label": "File Petition", "value": "file" },
+          { "label": "Decline to File", "value": "decline" },
+          { "label": "Refer for Diversion", "value": "diversion" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "rationale",
+        "label": "Rationale for Decision"
+      },
+      {
+        "type": "checkbox",
+        "name": "guardianInformed",
+        "label": "Guardian informed of decision"
+      }
     ],
-    "next": ["petition-draft"]
+    "next": ["plea-negotiation"]
   },
-  {
-    "id": "petition-draft",
-    "label": "Draft or Decline Petition",
-    "conditions": [
-      "Petition filed in court or declined with notes",
-      "Defense and Guardian notified",
-      "All paperwork submitted to Intake"
-    ]
+  "plea-negotiation": {
+    "id": "plea-negotiation",
+    "label": "Plea Negotiation",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "initialOffer",
+        "label": "Initial Plea Offer Terms"
+      },
+      {
+        "type": "textarea",
+        "name": "defenseResponse",
+        "label": "Defense Attorney Response"
+      },
+      {
+        "type": "checkbox",
+        "name": "agreementReached",
+        "label": "Agreement reached with defense"
+      }
+    ],
+    "next": ["disposition-recommendation"]
+  },
+  "disposition-recommendation": {
+    "id": "disposition-recommendation",
+    "label": "Disposition Recommendation",
+    "fields": [
+      {
+        "type": "select",
+        "name": "recommendedOutcome",
+        "label": "Recommended Outcome",
+        "options": [
+          { "label": "Diversion", "value": "diversion" },
+          { "label": "Probation", "value": "probation" },
+          { "label": "Detention", "value": "detention" },
+          { "label": "Dismissal", "value": "dismissal" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "dispositionRationale",
+        "label": "Explanation for Disposition Recommendation"
+      },
+      {
+        "type": "date",
+        "name": "recommendationDate",
+        "label": "Date Recommendation Made"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

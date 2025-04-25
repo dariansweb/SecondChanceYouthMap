@@ -21,7 +21,8 @@ export default function ResidentialFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/residential-flow.json");
-      setFlowData(res.default);
+      const transformedData = Object.values(res.default) as Node[];
+      setFlowData(transformedData);
     };
     loadFlow();
   }, []);

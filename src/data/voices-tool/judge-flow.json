@@ -1,41 +1,138 @@
-[
-  {
-    "id": "start",
-    "label": "Review Case Summary & Recommendations",
-    "conditions": [
-      "Charge documents and diversion eval available",
-      "Defense and prosecution submitted positions",
-      "Guardian presence confirmed or waived"
-    ],
-    "next": ["case-review"]
-  },
-  {
+{
+  "case-review": {
     "id": "case-review",
-    "label": "Analyze Case Details & Hear Arguments",
-    "conditions": [
-      "All parties present or represented",
-      "Recommendations reviewed",
-      "Youth understanding confirmed"
+    "label": "Review Case File",
+    "fields": [
+      {
+        "type": "input",
+        "name": "caseNumber",
+        "label": "Case Number"
+      },
+      {
+        "type": "input",
+        "name": "youthName",
+        "label": "Youth's Full Name"
+      },
+      {
+        "type": "textarea",
+        "name": "summaryOfFacts",
+        "label": "Summary of Alleged Facts"
+      },
+      {
+        "type": "select",
+        "name": "representationType",
+        "label": "Representation",
+        "options": [
+          { "label": "Public Defender", "value": "public" },
+          { "label": "Private Attorney", "value": "private" },
+          { "label": "Guardian Ad Litem", "value": "gal" }
+        ]
+      }
     ],
-    "next": ["decision"]
+    "next": ["hearing-decision"]
   },
-  {
-    "id": "decision",
-    "label": "Render Decision on Disposition",
-    "conditions": [
-      "Judge explains ruling in court",
-      "Youth reaction and statements recorded",
-      "Plan of care or conditions outlined"
+  "hearing-decision": {
+    "id": "hearing-decision",
+    "label": "Hearing Decision",
+    "fields": [
+      {
+        "type": "date",
+        "name": "hearingDate",
+        "label": "Date of Hearing"
+      },
+      {
+        "type": "select",
+        "name": "pleaDecision",
+        "label": "Youth's Plea",
+        "options": [
+          { "label": "Admit", "value": "admit" },
+          { "label": "Deny", "value": "deny" },
+          { "label": "No Contest", "value": "nocontest" }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "name": "foundDelinquent",
+        "label": "Youth found delinquent"
+      },
+      {
+        "type": "textarea",
+        "name": "benchNotes",
+        "label": "Bench Notes"
+      }
     ],
-    "next": ["disposition-order"]
+    "next": ["disposition"]
   },
-  {
-    "id": "disposition-order",
-    "label": "Issue Disposition Order",
-    "conditions": [
-      "Written order signed and filed",
-      "Caseworkers and providers notified",
-      "Youth and guardian given copy"
-    ]
+  "disposition": {
+    "id": "disposition",
+    "label": "Disposition Sentencing",
+    "fields": [
+      {
+        "type": "select",
+        "name": "dispositionType",
+        "label": "Disposition Type",
+        "options": [
+          { "label": "Probation", "value": "probation" },
+          { "label": "Diversion", "value": "diversion" },
+          { "label": "Detention", "value": "detention" },
+          { "label": "Dismissed", "value": "dismissed" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "sentencingDetails",
+        "label": "Sentencing Details"
+      },
+      {
+        "type": "date",
+        "name": "dispositionDate",
+        "label": "Date of Disposition"
+      }
+    ],
+    "next": ["recommendations"]
+  },
+  "recommendations": {
+    "id": "recommendations",
+    "label": "Judicial Recommendations",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "recommendTreatment",
+        "label": "Recommend mental health or substance use treatment"
+      },
+      {
+        "type": "checkbox",
+        "name": "recommendRestitution",
+        "label": "Recommend restitution to victim(s)"
+      },
+      {
+        "type": "checkbox",
+        "name": "recommendFamilyCounseling",
+        "label": "Recommend family counseling"
+      },
+      {
+        "type": "textarea",
+        "name": "customRecommendations",
+        "label": "Other Recommendations"
+      }
+    ],
+    "next": ["judicial-logging"]
+  },
+  "judicial-logging": {
+    "id": "judicial-logging",
+    "label": "Final Logging & Summary",
+    "fields": [
+      {
+        "type": "date",
+        "name": "logDate",
+        "label": "Date of Log Entry"
+      },
+      {
+        "type": "textarea",
+        "name": "finalJudicialSummary",
+        "label": "Summary of Final Judicial Comments"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

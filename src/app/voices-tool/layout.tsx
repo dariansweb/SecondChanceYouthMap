@@ -1,8 +1,9 @@
-// src/app/voices-tool/layout.tsx
+// File: src/app/voices-tool/layout.tsx
 
 "use client";
 
 import { VoicesContextProvider } from "@/context/voices-tool/VoicesContext";
+import { FlowStateProvider } from "@/context/voices-tool/FlowStateContext";
 
 export default function VoicesToolLayout({
   children,
@@ -10,8 +11,10 @@ export default function VoicesToolLayout({
   children: React.ReactNode;
 }) {
   return (
-    <VoicesContextProvider>
-      <div className="min-h-screen bg-gray-50">{children}</div>
-    </VoicesContextProvider>
+    <FlowStateProvider>
+      <VoicesContextProvider>
+        <div className="min-h-screen bg-gray-50">{children}</div>
+      </VoicesContextProvider>
+    </FlowStateProvider>
   );
 }

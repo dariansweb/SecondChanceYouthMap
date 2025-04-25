@@ -1,41 +1,146 @@
-[
-  {
-    "id": "start",
-    "label": "Youth Arrival at Residential Facility",
-    "conditions": [
-      "Youth admitted to placement from detention or home",
-      "Room assignment complete",
-      "Intake search, belongings inventory, orientation complete"
+{
+  "intake-orientation": {
+    "id": "intake-orientation",
+    "label": "Youth Intake & Orientation",
+    "fields": [
+      {
+        "type": "date",
+        "name": "admissionDate",
+        "label": "Date of Admission to Facility"
+      },
+      {
+        "type": "input",
+        "name": "intakeStaff",
+        "label": "Staff Completing Intake"
+      },
+      {
+        "type": "checkbox",
+        "name": "orientationCompleted",
+        "label": "Orientation to facility completed"
+      },
+      {
+        "type": "textarea",
+        "name": "initialNotes",
+        "label": "Initial Observations / Behavior at Intake"
+      }
     ],
-    "next": ["intake"]
+    "next": ["daily-schedule"]
   },
-  {
-    "id": "intake",
-    "label": "Complete Intake Documentation",
-    "conditions": [
-      "Initial mental health screening conducted",
-      "Guardian notified of placement",
-      "Facility log and photo ID created"
+  "daily-schedule": {
+    "id": "daily-schedule",
+    "label": "Daily Schedule Assignment",
+    "fields": [
+      {
+        "type": "select",
+        "name": "scheduleType",
+        "label": "Schedule Type Assigned",
+        "options": [
+          { "label": "Level 1 - Basic Monitoring", "value": "level1" },
+          { "label": "Level 2 - Medium Structure", "value": "level2" },
+          {
+            "label": "Level 3 - High Structure / Restriction",
+            "value": "level3"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "name": "schoolAttendanceIncluded",
+        "label": "School attendance built into schedule"
+      },
+      {
+        "type": "checkbox",
+        "name": "therapySessionsIncluded",
+        "label": "Individual/group therapy included"
+      },
+      {
+        "type": "textarea",
+        "name": "scheduleNotes",
+        "label": "Custom Notes or Adjustments"
+      }
     ],
-    "next": ["progress-log"]
+    "next": ["incident-tracking"]
   },
-  {
-    "id": "progress-log",
-    "label": "Daily Progress Monitoring",
-    "conditions": [
-      "Behavioral incidents documented",
-      "Level system updated",
-      "Service participation noted"
+  "incident-tracking": {
+    "id": "incident-tracking",
+    "label": "Behavioral Incident Reporting",
+    "fields": [
+      {
+        "type": "date",
+        "name": "incidentDate",
+        "label": "Date of Incident"
+      },
+      {
+        "type": "select",
+        "name": "incidentType",
+        "label": "Incident Type",
+        "options": [
+          { "label": "Verbal Altercation", "value": "verbal" },
+          { "label": "Physical Altercation", "value": "physical" },
+          { "label": "Noncompliance", "value": "noncompliance" },
+          { "label": "Self-Harm Concern", "value": "selfharm" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "incidentDetails",
+        "label": "Incident Description"
+      },
+      {
+        "type": "checkbox",
+        "name": "staffInterventionLogged",
+        "label": "Staff intervention recorded and reviewed"
+      }
     ],
-    "next": ["transition-prep"]
+    "next": ["progress-monitoring"]
   },
-  {
-    "id": "transition-prep",
-    "label": "Prepare Youth for Transition",
-    "conditions": [
-      "Discharge date confirmed",
-      "Team meeting held with probation",
-      "Guardian or next placement notified"
-    ]
+  "progress-monitoring": {
+    "id": "progress-monitoring",
+    "label": "Youth Progress Monitoring",
+    "fields": [
+      {
+        "type": "select",
+        "name": "progressLevel",
+        "label": "Behavioral Progress Rating",
+        "options": [
+          { "label": "Significant Progress", "value": "high" },
+          { "label": "Moderate Progress", "value": "moderate" },
+          { "label": "Minimal Progress", "value": "low" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "staffComments",
+        "label": "Staff Observations & Comments"
+      },
+      {
+        "type": "date",
+        "name": "lastReviewDate",
+        "label": "Last Progress Review Date"
+      }
+    ],
+    "next": ["discharge-planning"]
+  },
+  "discharge-planning": {
+    "id": "discharge-planning",
+    "label": "Discharge Planning & Exit",
+    "fields": [
+      {
+        "type": "date",
+        "name": "plannedDischargeDate",
+        "label": "Planned Discharge Date"
+      },
+      {
+        "type": "checkbox",
+        "name": "servicesLinked",
+        "label": "Aftercare services and referrals established"
+      },
+      {
+        "type": "textarea",
+        "name": "dischargeNotes",
+        "label": "Notes on Exit Plan and Transition"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

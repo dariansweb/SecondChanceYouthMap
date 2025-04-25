@@ -21,7 +21,8 @@ export default function ReentryFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/reentry-flow.json");
-      setFlowData(res.default);
+      const flowArray = Object.values(res.default) as Node[];
+      setFlowData(flowArray);
     };
     loadFlow();
   }, []);

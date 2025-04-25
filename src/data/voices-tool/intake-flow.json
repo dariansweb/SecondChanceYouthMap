@@ -2,57 +2,53 @@
   "start": {
     "id": "start",
     "label": "Youth Referred to Intake",
-    "conditions": [
-      "Referral received from law enforcement or school",
-      "Youth is between ages 10–17",
-      "No immediate medical or safety crisis present"
-    ],
     "fields": [
       {
         "type": "input",
         "name": "referralSource",
-        "label": "Referral Source"
+        "label": "Referral Source (e.g. Police, School, Guardian)"
       },
       {
         "type": "date",
         "name": "referralDate",
-        "label": "Date Referred"
+        "label": "Date of Referral"
       },
       {
         "type": "checkbox",
-        "name": "safetyCheckPassed",
-        "label": "No immediate medical/safety crisis"
+        "name": "safetyCleared",
+        "label": "No immediate safety or medical crisis"
       }
     ],
     "next": ["risk-assessment"]
   },
   "risk-assessment": {
     "id": "risk-assessment",
-    "label": "Complete SAVRY / MAYSI-2",
-    "conditions": [
-      "Youth completes initial interview",
-      "SAVRY risk assessment required by jurisdiction",
-      "Mental health screening not previously conducted"
-    ],
+    "label": "Complete Risk and Mental Health Assessment",
     "fields": [
       {
         "type": "select",
-        "name": "riskToolUsed",
-        "label": "Risk Assessment Tool",
+        "name": "assessmentTool",
+        "label": "Risk Assessment Tool Used",
         "options": [
           { "label": "SAVRY", "value": "savry" },
-          { "label": "MAYSI-2", "value": "maysi" }
+          { "label": "MAYSI-2", "value": "maysi" },
+          { "label": "Other", "value": "other" }
         ]
       },
       {
         "type": "input",
         "name": "riskScore",
-        "label": "Risk Score"
+        "label": "Risk Score / Tier"
       },
       {
         "type": "checkbox",
         "name": "mentalHealthConcern",
-        "label": "Mental health concerns identified"
+        "label": "Signs of mental health concern"
+      },
+      {
+        "type": "textarea",
+        "name": "notes",
+        "label": "Assessment Notes"
       }
     ],
     "next": ["diversion", "petition"]
@@ -63,77 +59,77 @@
     "fields": [
       {
         "type": "select",
-        "name": "agreementType",
-        "label": "Type of Diversion Agreement",
+        "name": "diversionType",
+        "label": "Diversion Type",
         "options": [
-          { "label": "Verbal", "value": "verbal" },
-          { "label": "Written", "value": "written" }
+          { "label": "Verbal Agreement", "value": "verbal" },
+          { "label": "Written Contract", "value": "written" },
+          { "label": "Community Service", "value": "service" }
         ]
       },
       {
-        "type": "textarea",
-        "name": "diversionNotes",
-        "label": "Notes on Diversion Plan"
+        "type": "date",
+        "name": "diversionStartDate",
+        "label": "Start Date of Diversion"
       },
       {
-        "type": "date",
-        "name": "offeredDate",
-        "label": "Date Diversion Was Offered"
+        "type": "textarea",
+        "name": "diversionDetails",
+        "label": "Diversion Plan Summary"
+      },
+      {
+        "type": "checkbox",
+        "name": "guardianConsent",
+        "label": "Guardian consent obtained"
       }
     ],
     "next": ["outcome-logging"]
   },
   "petition": {
     "id": "petition",
-    "label": "Refer to Juvenile Court for Petition",
+    "label": "Refer for Petition Filing",
     "fields": [
       {
         "type": "textarea",
         "name": "petitionReason",
-        "label": "Why is a petition being filed?"
+        "label": "Reason for Filing Petition"
       },
       {
         "type": "date",
         "name": "petitionDate",
-        "label": "Date of Petition Filing"
+        "label": "Date Petition Was Filed"
       },
       {
         "type": "input",
         "name": "courtClerk",
-        "label": "Court Clerk Receiving Petition"
+        "label": "Court Clerk Name"
       }
     ],
-    "next": ["dashboard"]
+    "next": ["detention-hearing"]
   },
-
   "outcome-logging": {
     "id": "outcome-logging",
-    "label": "Log Outcome & Notify Stakeholders",
-    "conditions": [
-      "Agreement signed and stored",
-      "Community service assignment logged",
-      "Diversion Specialist assigned"
-    ],
+    "label": "Log Outcome & Notifications",
     "fields": [
       {
         "type": "select",
-        "name": "outcomeStatus",
-        "label": "Diversion Outcome",
+        "name": "outcomeResult",
+        "label": "Outcome of Diversion",
         "options": [
-          { "label": "Completed Successfully", "value": "success" },
+          { "label": "Successfully Completed", "value": "complete" },
           { "label": "Non-Compliance", "value": "noncompliance" },
           { "label": "Referred for Petition", "value": "referred" }
         ]
       },
       {
         "type": "date",
-        "name": "outcomeLoggedDate",
-        "label": "Date Outcome Logged"
+        "name": "outcomeDate",
+        "label": "Outcome Completion Date"
       },
       {
         "type": "textarea",
-        "name": "outcomeNotes",
-        "label": "Outcome Notes"
+        "name": "notificationNotes",
+        "label": "Notes or Comments"
       }
     ],
     "next": ["dashboard"]
@@ -141,21 +137,16 @@
   "detention-hearing": {
     "id": "detention-hearing",
     "label": "Schedule Detention Hearing",
-    "conditions": [
-      "Court accepted petition filing",
-      "Youth not released to guardian",
-      "Detention recommended by intake officer"
-    ],
     "fields": [
       {
         "type": "date",
         "name": "hearingDate",
-        "label": "Scheduled Hearing Date"
+        "label": "Hearing Date"
       },
       {
         "type": "input",
         "name": "judgeName",
-        "label": "Presiding Judge"
+        "label": "Judge Presiding"
       },
       {
         "type": "checkbox",

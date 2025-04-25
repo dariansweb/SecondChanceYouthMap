@@ -22,7 +22,8 @@ export default function ProbationFlow() {
     const loadFlow = async () => {
       try {
         const res = await import("@/data/voices-tool/probation-flow.json");
-        setFlowData(res.default);
+        const formattedData = Object.values(res.default) as Node[];
+        setFlowData(formattedData);
       } catch (error) {
         console.error("Error loading probation flow:", error);
       }

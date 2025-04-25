@@ -1,41 +1,127 @@
-[
-  {
-    "id": "start",
-    "label": "Initial Contact & Consent",
-    "conditions": [
-      "Guardian contact confirmed",
-      "Interpreter offered if needed",
-      "Consent requested for mental health or diversion services"
+{
+  "guardian-notification": {
+    "id": "guardian-notification",
+    "label": "Guardian Notification",
+    "fields": [
+      {
+        "type": "input",
+        "name": "guardianName",
+        "label": "Guardian's Full Name"
+      },
+      {
+        "type": "date",
+        "name": "notificationDate",
+        "label": "Date Notified of Youth Involvement"
+      },
+      {
+        "type": "checkbox",
+        "name": "informedOfRights",
+        "label": "Guardian was informed of youth's rights and case process"
+      },
+      {
+        "type": "textarea",
+        "name": "initialReaction",
+        "label": "Guardian's Initial Reaction (optional)"
+      }
     ],
-    "next": ["consent"]
+    "next": ["guardian-feedback"]
   },
-  {
-    "id": "consent",
-    "label": "Provide Consent for Services",
-    "conditions": [
-      "Guardian signs consent form",
-      "Understands purpose of screening or diversion",
-      "No known objections recorded"
+  "guardian-feedback": {
+    "id": "guardian-feedback",
+    "label": "Guardian Feedback and Insight",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "youthBehaviorConcerns",
+        "label": "Concerns about youth behavior at home or in school"
+      },
+      {
+        "type": "checkbox",
+        "name": "schoolCommunication",
+        "label": "Guardian has regular communication with school"
+      },
+      {
+        "type": "select",
+        "name": "levelOfInvolvement",
+        "label": "Current Level of Involvement with Youth",
+        "options": [
+          { "label": "Very Involved", "value": "very" },
+          { "label": "Somewhat Involved", "value": "somewhat" },
+          { "label": "Not Very Involved", "value": "low" }
+        ]
+      }
     ],
-    "next": ["family-meeting"]
+    "next": ["service-consent"]
   },
-  {
-    "id": "family-meeting",
-    "label": "Participate in Family Meeting",
-    "conditions": [
-      "Scheduled within 7 days of intake",
-      "Interpreter present if needed",
-      "Guardian and youth both present"
+  "service-consent": {
+    "id": "service-consent",
+    "label": "Consent to Services",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "consentCounseling",
+        "label": "Consents to youth receiving counseling"
+      },
+      {
+        "type": "checkbox",
+        "name": "consentCaseMgmt",
+        "label": "Consents to youth case management services"
+      },
+      {
+        "type": "checkbox",
+        "name": "consentDataSharing",
+        "label": "Allows sharing of non-confidential info with school & service providers"
+      },
+      {
+        "type": "textarea",
+        "name": "consentConditions",
+        "label": "Any conditions or notes regarding consent"
+      }
     ],
-    "next": ["acknowledgment"]
+    "next": ["household-evaluation"]
   },
-  {
-    "id": "acknowledgment",
-    "label": "Acknowledge Plan of Care",
-    "conditions": [
-      "Guardian signs acknowledgment",
-      "Reentry or diversion plan explained",
-      "Follow-up appointment scheduled"
-    ]
+  "household-evaluation": {
+    "id": "household-evaluation",
+    "label": "Household Environment & Needs",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "hasStableHousing",
+        "label": "Youth has stable housing"
+      },
+      {
+        "type": "checkbox",
+        "name": "foodInsecurity",
+        "label": "Household faces food insecurity"
+      },
+      {
+        "type": "checkbox",
+        "name": "transportationChallenges",
+        "label": "Family lacks reliable transportation"
+      },
+      {
+        "type": "textarea",
+        "name": "additionalNeeds",
+        "label": "Other household needs or challenges"
+      }
+    ],
+    "next": ["guardian-comments"]
+  },
+  "guardian-comments": {
+    "id": "guardian-comments",
+    "label": "Final Guardian Comments",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "finalComments",
+        "label": "Guardian's Final Comments or Concerns"
+      },
+      {
+        "type": "date",
+        "name": "formCompletedDate",
+        "label": "Date Form Was Completed"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

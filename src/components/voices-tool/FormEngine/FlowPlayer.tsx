@@ -3,10 +3,11 @@
 "use client";
 
 import React, { useState } from "react";
+import { useFlowState } from "@/context/voices-tool/FlowStateContext";
+import { useFormState } from "@/context/voices-tool/FormStateContext";
 import { useRouter } from "next/navigation";
 import FormRenderer from "./FormRenderer";
 import FormSummary from "./FormSummary";
-import { FormStateProvider } from "@/context/voices-tool/FormStateContext";
 
 interface FieldConfig {
   type: string;
@@ -36,6 +37,9 @@ interface FlowPlayerProps {
 const FlowPlayer: React.FC<FlowPlayerProps> = ({ flow, startNodeId }) => {
   const [currentNodeId, setCurrentNodeId] = useState(startNodeId);
   const [history, setHistory] = useState<string[]>([]);
+  const { formData } = useFormState();
+  const { markFlowCompleted } = useFlowState();
+
   const currentNode = flow[currentNodeId];
   const router = useRouter();
 
@@ -48,7 +52,7 @@ const FlowPlayer: React.FC<FlowPlayerProps> = ({ flow, startNodeId }) => {
 
   const handleNext = (nextId: string) => {
     if (nextId === "dashboard") {
-      router.push("/dashboard");
+      router.push("/voices-tool");
       return;
     }
 
@@ -59,58 +63,66 @@ const FlowPlayer: React.FC<FlowPlayerProps> = ({ flow, startNodeId }) => {
   };
 
   return (
-    <FormStateProvider>
-      <div className="space-y-6">
-        <FormRenderer node={currentNode} />
+    <div className="space-y-6">
+      <FormRenderer node={currentNode} />
 
-        <div className="flex flex-col sm:flex-row sm:justify-between gap-4 pt-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between gap-4 pt-4">
+        <button
+          onClick={handleBack}
+          disabled={history.length === 0}
+          className={`px-4 py-2 rounded shadow transition-all ${
+            history.length === 0
+              ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+              : "bg-gray-600 text-white hover:bg-gray-700"
+          }`}
+        >
+          Back
+        </button>
+
+        {(currentNode.next ?? []).length > 1 ? (
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
+            {(currentNode.next ?? []).map((nextId) => (
+              <button
+                key={nextId}
+                onClick={() => handleNext(nextId)}
+                className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-all w-full sm:w-auto"
+              >
+                {flow[nextId]?.label
+                  ? `Continue to: ${flow[nextId].label}`
+                  : `Next: ${nextId}`}
+              </button>
+            ))}
+          </div>
+        ) : currentNode.next?.length === 1 ? (
+          (() => {
+            const nextId = currentNode.next?.[0] ?? "";
+            return (
+              <button
+                onClick={() => handleNext(nextId)}
+                className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-all"
+              >
+                {nextId === "dashboard"
+                  ? "🎉 Finish & Return to Registry"
+                  : "Next"}
+              </button>
+            );
+          })()
+        ) : (
           <button
-            onClick={handleBack}
-            disabled={history.length === 0}
-            className={`px-4 py-2 rounded shadow transition-all ${
-              history.length === 0
-                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                : "bg-gray-600 text-white hover:bg-gray-700"
-            }`}
+            onClick={() => {
+              markFlowCompleted(startNodeId, formData);
+              router.push(`/voices-tool/summary/${startNodeId}`);
+            }}
+            className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700"
           >
-            Back
+            ✅ Complete
           </button>
-
-          {(currentNode.next ?? []).length > 1 ? (
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4">
-              {(currentNode.next ?? []).map((nextId) => (
-                <button
-                  key={nextId}
-                  onClick={() => handleNext(nextId)}
-                  className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-all w-full sm:w-auto"
-                >
-                  {flow[nextId]?.label
-                    ? `Continue to: ${flow[nextId].label}`
-                    : `Next: ${nextId}`}
-                </button>
-              ))}
-            </div>
-          ) : currentNode.next?.length === 1 ? (
-            <button
-              onClick={() => handleNext(currentNode.next?.[0] ?? "")}
-              className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-all"
-            >
-              Next
-            </button>
-          ) : (
-            <button
-              disabled
-              className="bg-green-600 text-white px-4 py-2 rounded shadow cursor-default"
-            >
-              ✅ Complete
-            </button>
-          )}
-        </div>
-
-        {/* Render summary at end of flow */}
-        {!currentNode.next?.length && <FormSummary flow={flow} />}
+        )}
       </div>
-    </FormStateProvider>
+
+      {/* Render summary at end of flow */}
+      {!currentNode.next?.length && <FormSummary flow={flow} />}
+    </div>
   );
 };
 

@@ -21,7 +21,8 @@ export default function EducatorFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/educator-flow.json");
-      setFlowData(res.default);
+      const formattedData: Node[] = Object.values(res.default);
+      setFlowData(formattedData);
     };
     loadFlow();
   }, []);

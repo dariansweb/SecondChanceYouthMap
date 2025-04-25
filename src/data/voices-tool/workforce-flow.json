@@ -1,41 +1,138 @@
-[
-  {
-    "id": "start",
-    "label": "Workforce Readiness Assessment",
-    "conditions": [
-      "Youth is age 16+ or nearing discharge",
-      "Interest in employment, apprenticeship, or vocational program",
-      "Basic skills or barrier screening complete"
+{
+  "career-readiness-intake": {
+    "id": "career-readiness-intake",
+    "label": "Career Readiness Intake",
+    "fields": [
+      {
+        "type": "date",
+        "name": "intakeDate",
+        "label": "Date of Workforce Intake"
+      },
+      {
+        "type": "checkbox",
+        "name": "hasWorkPermit",
+        "label": "Youth has a valid work permit"
+      },
+      {
+        "type": "select",
+        "name": "readinessLevel",
+        "label": "Initial Career Readiness Level",
+        "options": [
+          { "label": "Highly Ready", "value": "high" },
+          { "label": "Needs Training", "value": "medium" },
+          { "label": "Pre-Employment Stage", "value": "low" }
+        ]
+      }
     ],
-    "next": ["workforce-readiness"]
+    "next": ["job-skills-assessment"]
   },
-  {
-    "id": "workforce-readiness",
-    "label": "Complete Workforce Readiness Checklist",
-    "conditions": [
-      "Resume drafted or updated",
-      "Interview skills practiced",
-      "Documentation (ID, SSN) available"
+  "job-skills-assessment": {
+    "id": "job-skills-assessment",
+    "label": "Job Skills Assessment",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "hasResume",
+        "label": "Youth has a working resume"
+      },
+      {
+        "type": "checkbox",
+        "name": "interviewSkillsTrained",
+        "label": "Youth has completed interview preparation"
+      },
+      {
+        "type": "checkbox",
+        "name": "needsSoftSkills",
+        "label": "Soft skills coaching is needed"
+      },
+      {
+        "type": "textarea",
+        "name": "careerInterests",
+        "label": "Youth Career Interests"
+      }
     ],
-    "next": ["career-referral"]
+    "next": ["work-program-enrollment"]
   },
-  {
-    "id": "career-referral",
-    "label": "Career Pathway Referral",
-    "conditions": [
-      "Referral to WIOA, Job Corps, or employer",
-      "Transportation and work attire needs addressed",
-      "Mentor or job coach assigned"
+  "work-program-enrollment": {
+    "id": "work-program-enrollment",
+    "label": "Program or Job Enrollment",
+    "fields": [
+      {
+        "type": "select",
+        "name": "enrollmentType",
+        "label": "Enrollment Type",
+        "options": [
+          { "label": "Internship", "value": "internship" },
+          { "label": "Apprenticeship", "value": "apprenticeship" },
+          { "label": "Part-Time Job", "value": "part-time" },
+          { "label": "GED/Vocational Program", "value": "education" }
+        ]
+      },
+      {
+        "type": "input",
+        "name": "employerName",
+        "label": "Employer or Program Name"
+      },
+      {
+        "type": "date",
+        "name": "startDate",
+        "label": "Start Date"
+      }
     ],
-    "next": ["job-support-log"]
+    "next": ["progress-checkin"]
   },
-  {
-    "id": "job-support-log",
-    "label": "Ongoing Job Support",
-    "conditions": [
-      "Follow-up check within 30 days",
-      "Youth placed in job, internship, or program",
-      "Barriers and supports logged"
-    ]
+  "progress-checkin": {
+    "id": "progress-checkin",
+    "label": "Progress Check-In",
+    "fields": [
+      {
+        "type": "date",
+        "name": "checkInDate",
+        "label": "Date of Check-In"
+      },
+      {
+        "type": "checkbox",
+        "name": "activelyEngaged",
+        "label": "Youth is actively engaged in program"
+      },
+      {
+        "type": "checkbox",
+        "name": "needsReassignment",
+        "label": "Reassignment or new placement needed"
+      },
+      {
+        "type": "textarea",
+        "name": "checkInNotes",
+        "label": "Notes from Check-In"
+      }
+    ],
+    "next": ["closure-summary"]
+  },
+  "closure-summary": {
+    "id": "closure-summary",
+    "label": "Closure Summary & Outcomes",
+    "fields": [
+      {
+        "type": "select",
+        "name": "closureReason",
+        "label": "Reason for Closure",
+        "options": [
+          { "label": "Program Completed", "value": "completed" },
+          { "label": "Referred Out", "value": "referred" },
+          { "label": "Dropped Out", "value": "dropped" }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "name": "employmentSecured",
+        "label": "Youth secured employment"
+      },
+      {
+        "type": "textarea",
+        "name": "closureRemarks",
+        "label": "Final Notes or Recommendations"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

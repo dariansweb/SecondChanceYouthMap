@@ -1,5 +1,7 @@
 // File: src/context/voices-tool/FormStateContext.tsx
 
+'use client'
+
 import React, { createContext, useState, ReactNode, useContext } from "react";
 
 interface FormData {

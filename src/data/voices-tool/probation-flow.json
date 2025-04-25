@@ -1,44 +1,127 @@
-[
-  {
-    "id": "start",
-    "label": "Court Disposition Received",
-    "next": ["probation-intake"]
-  },
-  {
-    "id": "probation-intake",
-    "label": "Complete Probation Intake",
-    "next": ["supervision-plan"]
-  },
-  {
-    "id": "supervision-plan",
-    "label": "Assign Supervision Level & Terms",
-    "conditions": [
-      "Court-ordered probation",
-      "Youth classified as moderate to high risk",
-      "School attendance required",
-      "Substance use monitoring recommended"
+{
+  "case-assignment": {
+    "id": "case-assignment",
+    "label": "Probation Case Assignment",
+    "fields": [
+      {
+        "type": "input",
+        "name": "officerName",
+        "label": "Assigned Officer"
+      },
+      {
+        "type": "date",
+        "name": "assignmentDate",
+        "label": "Date of Case Assignment"
+      },
+      {
+        "type": "input",
+        "name": "caseId",
+        "label": "Case File ID"
+      }
     ],
-    "next": ["compliance-check"]
+    "next": ["monthly-checkin"]
   },
-  {
-    "id": "compliance-check",
-    "label": "Begin Check-ins & Track Compliance",
-    "conditions": [
-      "Weekly in-person check-in",
-      "Guardian must verify curfew compliance",
-      "Random drug screening",
-      "Service hours log required"
+  "monthly-checkin": {
+    "id": "monthly-checkin",
+    "label": "Monthly Youth Check-In",
+    "fields": [
+      {
+        "type": "date",
+        "name": "checkinDate",
+        "label": "Check-In Date"
+      },
+      {
+        "type": "textarea",
+        "name": "youthStatusUpdate",
+        "label": "Youth's Reported Status"
+      },
+      {
+        "type": "checkbox",
+        "name": "attendedSchool",
+        "label": "Youth is attending school regularly"
+      },
+      {
+        "type": "checkbox",
+        "name": "noNewCharges",
+        "label": "No new criminal charges reported"
+      }
     ],
-    "next": ["final-review"]
+    "next": ["home-visit"]
   },
-  {
-    "id": "final-review",
-    "label": "Review for Completion or Extension",
-    "conditions": [
-      "Minimum 3 months without violations",
-      "All service referrals completed",
-      "No new law violations",
-      "School attendance over 85%"
-    ]
+  "home-visit": {
+    "id": "home-visit",
+    "label": "Home Visit & Environment Check",
+    "fields": [
+      {
+        "type": "date",
+        "name": "visitDate",
+        "label": "Date of Home Visit"
+      },
+      {
+        "type": "textarea",
+        "name": "homeEnvironmentNotes",
+        "label": "Observations of Home Environment"
+      },
+      {
+        "type": "checkbox",
+        "name": "guardianPresent",
+        "label": "Guardian was present during visit"
+      },
+      {
+        "type": "checkbox",
+        "name": "safetyConcerns",
+        "label": "Any safety concerns present"
+      }
+    ],
+    "next": ["compliance-review"]
+  },
+  "compliance-review": {
+    "id": "compliance-review",
+    "label": "Compliance Review",
+    "fields": [
+      {
+        "type": "select",
+        "name": "complianceStatus",
+        "label": "Current Compliance Level",
+        "options": [
+          { "label": "Compliant", "value": "compliant" },
+          { "label": "Partially Compliant", "value": "partial" },
+          { "label": "Non-Compliant", "value": "noncompliant" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "complianceNotes",
+        "label": "Compliance Review Notes"
+      }
+    ],
+    "next": ["disposition"]
+  },
+  "disposition": {
+    "id": "disposition",
+    "label": "Final Disposition or Referral",
+    "fields": [
+      {
+        "type": "select",
+        "name": "caseOutcome",
+        "label": "Outcome of Probation",
+        "options": [
+          { "label": "Case Closed - Successful", "value": "closed-success" },
+          { "label": "Referred for Further Action", "value": "referral" },
+          { "label": "Extended Monitoring", "value": "extended" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "finalNotes",
+        "label": "Final Notes or Referral Explanation"
+      },
+      {
+        "type": "date",
+        "name": "outcomeDate",
+        "label": "Date of Disposition"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

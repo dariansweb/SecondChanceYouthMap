@@ -1,16 +1,23 @@
-// src/app/voices-tool/educators/page.tsx
+// File: src/app/voices-tool/educators/page.tsx
 
 "use client";
 
-import EducatorFlow from "@/components/voices-tool/FlowEngines/EducatorFlow";
+import React from "react";
+import FlowPlayer from "@/components/voices-tool/FormEngine/FlowPlayer";
+import educatorFlow from "@/data/voices-tool/educator-flow.json";
+import { FormStateProvider } from "@/context/voices-tool/FormStateContext";
 
-export default function EducatorPage() {
+export default function EducatorsPage() {
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold text-blue-700 mb-4">
-        Educator Workflow
-      </h2>
-      <EducatorFlow />
-    </div>
+    <FormStateProvider>
+      <main className="relative min-h-screen bg-gradient-to-tr from-slate-100 to-slate-200 flex items-center justify-center p-6 sm:p-12">
+        <div className="w-full max-w-4xl bg-white/80 backdrop-blur-sm shadow-2xl rounded-2xl border border-slate-200 p-10 sm:p-14 transition-all duration-300">
+          <h1 className="text-4xl font-extrabold text-blue-800 tracking-tight mb-2">
+            Educator Academic & Behavioral Review
+          </h1>
+          <FlowPlayer flow={educatorFlow} startNodeId="school-contact" />
+        </div>
+      </main>
+    </FormStateProvider>
   );
 }

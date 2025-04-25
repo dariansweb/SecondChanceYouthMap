@@ -1,50 +1,128 @@
-[
-  {
-    "id": "start",
-    "label": "Case Assignment and Initial Review",
-    "conditions": [
-      "Referral received from Intake Officer",
-      "Charge sheet and incident report available",
-      "Detention hearing scheduled or complete"
+{
+  "representation-intake": {
+    "id": "representation-intake",
+    "label": "Attorney Representation Intake",
+    "fields": [
+      {
+        "type": "input",
+        "name": "attorneyName",
+        "label": "Defense Attorney Name"
+      },
+      {
+        "type": "date",
+        "name": "engagementDate",
+        "label": "Date of Engagement"
+      },
+      {
+        "type": "checkbox",
+        "name": "meetsWithYouth",
+        "label": "Attorney has met directly with the youth"
+      },
+      {
+        "type": "checkbox",
+        "name": "guardianContacted",
+        "label": "Guardian has been contacted regarding representation"
+      }
     ],
     "next": ["case-review"]
   },
-  {
+  "case-review": {
     "id": "case-review",
-    "label": "Review Case and Interview Youth",
-    "conditions": [
-      "Youth met privately with attorney",
-      "Guardian contact attempted or made",
-      "Case complexity assessed"
+    "label": "Defense Case Review",
+    "fields": [
+      {
+        "type": "textarea",
+        "name": "youthVersion",
+        "label": "Youth’s Version of Events"
+      },
+      {
+        "type": "checkbox",
+        "name": "confidentialityExplained",
+        "label": "Attorney has explained confidentiality to youth"
+      },
+      {
+        "type": "checkbox",
+        "name": "policeReportReviewed",
+        "label": "Police report reviewed"
+      },
+      {
+        "type": "textarea",
+        "name": "evidenceConcerns",
+        "label": "Concerns or Issues with Evidence"
+      }
     ],
-    "next": ["plea-negotiation", "alt-intervention"]
+    "next": ["defense-strategy"]
   },
-  {
-    "id": "plea-negotiation",
-    "label": "Negotiate Plea with Prosecutor",
-    "conditions": [
-      "Youth admits to key charge elements",
-      "Agreement includes community-based alternative",
-      "Guardian approves recommendation"
+  "defense-strategy": {
+    "id": "defense-strategy",
+    "label": "Defense Strategy Planning",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "diversionExplored",
+        "label": "Diversion explored as an option"
+      },
+      {
+        "type": "checkbox",
+        "name": "pleaDealConsidered",
+        "label": "Plea deal discussed with youth"
+      },
+      {
+        "type": "textarea",
+        "name": "defenseRecommendations",
+        "label": "Attorney's Strategic Notes"
+      }
     ],
-    "next": ["final-log"]
+    "next": ["court-prep"]
   },
-  {
-    "id": "alt-intervention",
-    "label": "Propose Alternative to Formal Charge",
-    "conditions": [
-      "Diversion or informal adjustment available",
-      "Restorative justice conference scheduled",
-      "Mental health assessment reviewed"
+  "court-prep": {
+    "id": "court-prep",
+    "label": "Court Preparation",
+    "fields": [
+      {
+        "type": "checkbox",
+        "name": "witnessPrep",
+        "label": "Witness prep completed (if applicable)"
+      },
+      {
+        "type": "checkbox",
+        "name": "evidenceFiled",
+        "label": "All necessary evidence submitted"
+      },
+      {
+        "type": "textarea",
+        "name": "anticipatedChallenges",
+        "label": "Anticipated Challenges or Motions"
+      }
     ],
-    "next": ["final-log"]
+    "next": ["case-outcome"]
   },
-  {
-    "id": "final-log",
-    "label": "Document Legal Strategy and Outcome",
-    "conditions": [
-      "Court received defense recommendation",
-      "Final notes logged in youth case file"
-    ]
+  "case-outcome": {
+    "id": "case-outcome",
+    "label": "Case Outcome & Closing Notes",
+    "fields": [
+      {
+        "type": "select",
+        "name": "outcome",
+        "label": "Final Case Outcome",
+        "options": [
+          { "label": "Charges Dropped", "value": "dropped" },
+          { "label": "Plea Agreement", "value": "plea" },
+          { "label": "Dismissed", "value": "dismissed" },
+          { "label": "Adjudicated", "value": "adjudicated" }
+        ]
+      },
+      {
+        "type": "textarea",
+        "name": "closingRemarks",
+        "label": "Final Defense Statement / Remarks"
+      },
+      {
+        "type": "date",
+        "name": "closingDate",
+        "label": "Date of Case Closure"
+      }
+    ],
+    "next": ["dashboard"]
   }
-]
+}

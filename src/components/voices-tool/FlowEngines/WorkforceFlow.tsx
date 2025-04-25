@@ -21,7 +21,8 @@ export default function WorkforceFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/workforce-flow.json");
-      setFlowData(res.default);
+      const formattedData = Object.values(res.default) as Node[];
+      setFlowData(formattedData);
     };
     loadFlow();
   }, []);

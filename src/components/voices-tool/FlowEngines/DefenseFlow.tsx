@@ -21,7 +21,8 @@ export default function DefenseFlow() {
   useEffect(() => {
     const loadFlow = async () => {
       const res = await import("@/data/voices-tool/defense-flow.json");
-      setFlowData(res.default);
+      const nodes: Node[] = Object.values(res.default);
+      setFlowData(nodes);
     };
     loadFlow();
   }, []);

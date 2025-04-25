@@ -23,7 +23,8 @@ export default function CommunityAdvocateFlow() {
       const res = await import(
         "@/data/voices-tool/community-advocate-flow.json"
       );
-      setFlowData(res.default);
+      const nodes = Object.values(res.default) as Node[];
+      setFlowData(nodes);
     };
     loadFlow();
   }, []);
