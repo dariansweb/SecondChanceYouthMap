@@ -8,6 +8,7 @@ interface InputFieldProps {
   type?: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onJuvenileChange?: (name: string, value: string) => void;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -16,6 +17,7 @@ const InputField: React.FC<InputFieldProps> = ({
   type = "text",
   value,
   onChange,
+  onJuvenileChange,
 }) => {
   return (
     <div className="mb-4">
@@ -30,7 +32,10 @@ const InputField: React.FC<InputFieldProps> = ({
         name={name}
         type={type}
         value={value}
-        onChange={onChange}
+        onChange={(e) => {
+          onChange(e); 
+          onJuvenileChange?.(e.target.name, e.target.value);
+        }}
         autoComplete="off"
         className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
       />

@@ -8,6 +8,8 @@ import CheckboxField from "./fields/CheckboxField";
 import DateField from "./fields/DateField";
 import ConditionalGroup from "./fields/ConditionalGroup";
 import { FormStateContext } from "@/context/voices-tool/FormStateContext";
+import { useJuvenileIntakeRecord } from "@/context/voices-tool/JuvenileIntakeContext";
+import { resolvePrefill } from "@/components/voices-tool/FormEngine/utils/prefillHelpers";
 
 interface FieldConfig {
   type: string;
@@ -16,6 +18,7 @@ interface FieldConfig {
   options?: { label: string; value: string }[];
   rows?: number;
   showIf?: string;
+  source?: string; // Added the 'source' property
 }
 
 interface NodeConfig {
@@ -29,23 +32,34 @@ const FormRenderer: React.FC<{ node: NodeConfig }> = ({ node }) => {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
+    field: FieldConfig
   ) => {
     const { name, type, value } = e.target;
     const checked =
       type === "checkbox" && (e.target as HTMLInputElement).checked;
+
+    const finalValue = type === "checkbox" ? checked : value;
+
     setFormData((prev) => ({
       ...prev,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: finalValue,
     }));
+
+    if (field.source === "juvenile") {
+      updateJuvenileRecord({ [name]: finalValue });
+    }
   };
+
+  const { juvenileRecord, updateJuvenileRecord } = useJuvenileIntakeRecord();
 
   return (
     <div className="form-renderer">
       <h2 className="form-title">{node.label}</h2>
 
       {node.fields.map((field) => {
-        const value = formData[field.name];
+        const prefilledValue =
+          resolvePrefill(field, juvenileRecord) ?? formData[field.name];
         const isVisible = field.showIf ? Boolean(formData[field.showIf]) : true;
 
         return (
@@ -55,42 +69,47 @@ const FormRenderer: React.FC<{ node: NodeConfig }> = ({ node }) => {
                 case "input":
                   return (
                     <InputField
+                      key={field.name}
                       {...field}
-                      value={String(value ?? "")}
-                      onChange={handleChange}
+                      value={String(prefilledValue ?? "")}
+                      onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "select":
                   return (
                     <SelectField
+                      key={field.name}
                       {...field}
                       options={field.options ?? []}
-                      value={String(value ?? "")}
-                      onChange={handleChange}
+                      value={String(prefilledValue ?? "")}
+                      onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "textarea":
                   return (
                     <TextareaField
+                      key={field.name}
                       {...field}
-                      value={String(value ?? "")}
-                      onChange={handleChange}
+                      value={String(prefilledValue ?? "")}
+                      onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "checkbox":
                   return (
                     <CheckboxField
+                      key={field.name}
                       {...field}
-                      checked={!!value}
-                      onChange={handleChange}
+                      checked={!!prefilledValue}
+                      onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "date":
                   return (
                     <DateField
+                      key={field.name}
                       {...field}
-                      value={String(value ?? "")}
-                      onChange={handleChange}
+                      value={String(prefilledValue ?? "")}
+                      onChange={(e) => handleChange(e, field)}
                     />
                   );
                 default:

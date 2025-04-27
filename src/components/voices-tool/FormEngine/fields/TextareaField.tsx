@@ -1,21 +1,21 @@
-// File: src/components/voices-tool/FormEngine/fields/TextareaField.tsx
-
 import React from "react";
 
 interface TextareaFieldProps {
   label: string;
   name: string;
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   rows?: number;
+  onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onJuvenileChange?: (name: string, value: string) => void; // NEW
 }
 
 const TextareaField: React.FC<TextareaFieldProps> = ({
   label,
   name,
   value,
-  onChange,
   rows = 4,
+  onChange,
+  onJuvenileChange,
 }) => {
   return (
     <div className="mb-4">
@@ -28,9 +28,12 @@ const TextareaField: React.FC<TextareaFieldProps> = ({
       <textarea
         id={name}
         name={name}
-        rows={rows}
         value={value}
-        onChange={onChange}
+        onChange={(e) => {
+          onChange(e);
+          onJuvenileChange?.(e.target.name, e.target.value);
+        }}
+        rows={rows}
         className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
       />
     </div>

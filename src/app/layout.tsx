@@ -5,7 +5,8 @@ import { Inter, Crimson_Pro } from "next/font/google";
 import { GlossaryProvider } from "@/context/GlossaryContext";
 import { FlowStateProvider } from "@/context/voices-tool/FlowStateContext";
 import { FormStateProvider } from "@/context/voices-tool/FormStateContext";
-import { FormProvider } from "@/context/FormContext"; // 🔁 legacy context
+import { FormProvider } from "@/context/FormContext";
+import { JuvenileIntakeProvider } from "@/context/voices-tool/JuvenileIntakeContext";
 import Header from "@/components/Header";
 import "./globals.css";
 
@@ -40,10 +41,12 @@ export default function RootLayout({
         <FormProvider>
           <FlowStateProvider>
             <FormStateProvider>
-              <GlossaryProvider>
-                <Header />
-                {children}
-              </GlossaryProvider>
+              <JuvenileIntakeProvider>
+                <GlossaryProvider>
+                  <Header />
+                  {children}
+                </GlossaryProvider>
+              </JuvenileIntakeProvider>
             </FormStateProvider>
           </FlowStateProvider>
         </FormProvider>

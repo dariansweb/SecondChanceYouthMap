@@ -1,0 +1,588 @@
+[
+  {
+    "step": "Youth Information",
+    "label": "Youth Information",
+    "fields": [
+      {
+        "name": "firstName",
+        "type": "input",
+        "label": "First Name",
+        "source": "juvenile"
+      },
+      {
+        "name": "lastName",
+        "type": "input",
+        "label": "Last Name",
+        "source": "juvenile"
+      },
+      {
+        "name": "pronouns",
+        "type": "input",
+        "label": "Preferred Pronouns",
+        "source": "juvenile"
+      },
+      {
+        "name": "dob",
+        "type": "date",
+        "label": "Date of Birth",
+        "source": "juvenile"
+      },
+      {
+        "name": "gender",
+        "type": "select",
+        "label": "Gender Identity",
+        "options": [
+          { "label": "Male", "value": "male" },
+          { "label": "Female", "value": "female" },
+          { "label": "Non-binary", "value": "nonbinary" },
+          { "label": "Other", "value": "other" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "raceEthnicity",
+        "type": "select",
+        "label": "Race / Ethnicity",
+        "options": [
+          { "label": "Black / African American", "value": "black" },
+          { "label": "White", "value": "white" },
+          { "label": "Hispanic / Latino", "value": "hispanic" },
+          { "label": "Native American", "value": "native" },
+          { "label": "Asian / Pacific Islander", "value": "asian" },
+          { "label": "Mixed", "value": "mixed" },
+          { "label": "Other", "value": "other" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "gradeLevel",
+        "type": "select",
+        "label": "Grade Level",
+        "options": [
+          { "label": "Kindergarten", "value": "0" },
+          { "label": "Grade 1", "value": "1" },
+          { "label": "Grade 2", "value": "2" },
+          { "label": "Grade 3", "value": "3" },
+          { "label": "Grade 4", "value": "4" },
+          { "label": "Grade 5", "value": "5" },
+          { "label": "Grade 6", "value": "6" },
+          { "label": "Grade 7", "value": "7" },
+          { "label": "Grade 8", "value": "8" },
+          { "label": "Grade 9", "value": "9" },
+          { "label": "Grade 10", "value": "10" },
+          { "label": "Grade 11", "value": "11" },
+          { "label": "Grade 12", "value": "12" },
+          { "label": "GED Program", "value": "ged" },
+          { "label": "Other", "value": "other" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "step": "Offense & Risk",
+        "label": "Offense & Risk",
+        "fields": [
+          {
+            "name": "referralType",
+            "type": "select",
+            "label": "Referral Type",
+            "options": [
+              { "label": "Arrest", "value": "arrest" },
+              { "label": "Citation", "value": "citation" },
+              { "label": "School Referral", "value": "school-referral" },
+              {
+                "label": "Probation Violation",
+                "value": "probation-violation"
+              },
+              { "label": "Self Report", "value": "self-report" }
+            ],
+            "source": "juvenile"
+          },
+          {
+            "name": "offense",
+            "type": "text",
+            "label": "Primary Offense",
+            "source": "juvenile"
+          },
+          {
+            "name": "offenseDate",
+            "type": "date",
+            "label": "Offense Date",
+            "source": "juvenile"
+          },
+          {
+            "name": "severity",
+            "type": "select",
+            "label": "Severity",
+            "options": [
+              { "label": "Low", "value": "low" },
+              { "label": "Moderate", "value": "moderate" },
+              { "label": "High", "value": "high" },
+              { "label": "Violent / Felony-Level", "value": "violent" }
+            ],
+            "source": "juvenile"
+          },
+          {
+            "name": "riskScore",
+            "type": "input",
+            "label": "Risk Score (0-100)",
+            "source": "juvenile"
+          },
+          {
+            "name": "riskToolUsed",
+            "type": "select",
+            "label": "Risk Assessment Tool Used",
+            "options": [
+              { "label": "SAVRY", "value": "SAVRY" },
+              { "label": "RAI", "value": "RAI" },
+              { "label": "YASI", "value": "YASI" },
+              { "label": "Other", "value": "Other" }
+            ],
+            "source": "juvenile"
+          }
+        ]
+      },
+      {
+        "name": "guardianName",
+        "type": "text",
+        "label": "Legal Guardian Name",
+        "source": "juvenile"
+      },
+      {
+        "name": "guardianRelationship",
+        "type": "text",
+        "label": "Relationship to Youth",
+        "source": "juvenile"
+      },
+      {
+        "name": "county",
+        "type": "text",
+        "label": "County of Jurisdiction",
+        "source": "juvenile"
+      },
+      {
+        "name": "birthplace",
+        "type": "text",
+        "label": "Birthplace (City, State)",
+        "source": "juvenile"
+      },
+      {
+        "name": "language",
+        "type": "text",
+        "label": "Primary Language",
+        "source": "juvenile"
+      },
+      {
+        "name": "citizenship",
+        "type": "select",
+        "label": "Citizenship Status",
+        "options": [
+          { "label": "U.S. Citizen", "value": "us" },
+          { "label": "Permanent Resident", "value": "permanent" },
+          { "label": "Undocumented", "value": "undocumented" },
+          { "label": "Other", "value": "other" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "hasIEP",
+        "type": "select",
+        "label": "Has IEP / Special Education Plan?",
+        "options": [
+          { "label": "Yes", "value": "yes" },
+          { "label": "No", "value": "no" },
+          { "label": "Unsure", "value": "unsure" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "intakeDate",
+        "type": "date",
+        "label": "Intake Date",
+        "source": "juvenile"
+      }
+    ]
+  },
+  {
+    "step": "Offense & Risk",
+    "label": "Offense & Risk",
+    "fields": [
+      {
+        "name": "referralType",
+        "type": "select",
+        "label": "Referral Type",
+        "options": [
+          { "label": "Arrest", "value": "arrest" },
+          { "label": "Citation", "value": "citation" },
+          { "label": "School Referral", "value": "school-referral" },
+          { "label": "Probation Violation", "value": "probation-violation" },
+          { "label": "Self Report", "value": "self-report" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "offense",
+        "type": "input",
+        "label": "Primary Offense",
+        "source": "juvenile"
+      },
+      {
+        "name": "offenseDate",
+        "type": "date",
+        "label": "Offense Date",
+        "source": "juvenile"
+      },
+      {
+        "name": "severity",
+        "type": "select",
+        "label": "Severity",
+        "options": [
+          { "label": "Low", "value": "low" },
+          { "label": "Moderate", "value": "moderate" },
+          { "label": "High", "value": "high" },
+          { "label": "Violent / Felony-Level", "value": "violent" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "riskScore",
+        "type": "input",
+        "label": "Risk Score (0-100)",
+        "source": "juvenile"
+      },
+      {
+        "name": "riskToolUsed",
+        "type": "select",
+        "label": "Risk Assessment Tool Used",
+        "options": [
+          { "label": "SAVRY", "value": "SAVRY" },
+          { "label": "RAI", "value": "RAI" },
+          { "label": "YASI", "value": "YASI" },
+          { "label": "Other", "value": "Other" }
+        ],
+        "source": "juvenile"
+      }
+    ]
+  },
+  {
+    "step": "Contacts & Stakeholders",
+    "label": "Contacts & Stakeholders",
+    "fields": [
+      {
+        "name": "contacts",
+        "type": "input",
+        "label": "Contact Name",
+        "source": "juvenile"
+      },
+      {
+        "name": "phone",
+        "type": "input",
+        "label": "Phone Number",
+        "source": "juvenile"
+      },
+      {
+        "name": "email",
+        "type": "input",
+        "label": "Email Address",
+        "source": "juvenile"
+      },
+      {
+        "name": "organization",
+        "type": "input",
+        "label": "Organization / Agency",
+        "source": "juvenile"
+      },
+      {
+        "name": "region",
+        "type": "input",
+        "label": "Region / County",
+        "source": "juvenile"
+      },
+      {
+        "name": "notes",
+        "type": "textarea",
+        "label": "Notes / Involvement",
+        "source": "juvenile"
+      },
+      {
+        "name": "tags",
+        "type": "select",
+        "label": "Tags / Flags",
+        "options": [
+          { "label": "Court", "value": "court" },
+          { "label": "School", "value": "school" },
+          { "label": "Residential Provider", "value": "residential" },
+          { "label": "Guardian", "value": "guardian" },
+          { "label": "Legal Representative", "value": "legal" },
+          { "label": "Medical / Mental Health", "value": "medical" },
+          { "label": "Caseworker", "value": "caseworker" }
+        ],
+        "source": "juvenile"
+      }
+    ]
+  },
+  {
+    "step": "Education Information",
+    "label": "Education Information",
+    "fields": [
+      {
+        "name": "schoolStatus",
+        "type": "select",
+        "label": "Current School Status",
+        "options": [
+          { "label": "Enrolled", "value": "enrolled" },
+          { "label": "Suspended", "value": "suspended" },
+          { "label": "Expelled", "value": "expelled" },
+          { "label": "Withdrawn", "value": "withdrawn" },
+          { "label": "Unknown", "value": "unknown" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "gradeLevel",
+        "type": "select",
+        "label": "Grade Level",
+        "options": [
+          { "label": "Kindergarten", "value": "0" },
+          { "label": "Grade 1", "value": "1" },
+          { "label": "Grade 2", "value": "2" },
+          { "label": "Grade 3", "value": "3" },
+          { "label": "Grade 4", "value": "4" },
+          { "label": "Grade 5", "value": "5" },
+          { "label": "Grade 6", "value": "6" },
+          { "label": "Grade 7", "value": "7" },
+          { "label": "Grade 8", "value": "8" },
+          { "label": "Grade 9", "value": "9" },
+          { "label": "Grade 10", "value": "10" },
+          { "label": "Grade 11", "value": "11" },
+          { "label": "Grade 12", "value": "12" },
+          { "label": "GED Program", "value": "ged" },
+          { "label": "Other", "value": "other" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "hasIEP504",
+        "type": "select",
+        "label": "Has an IEP or 504 Plan?",
+        "options": [
+          { "label": "Yes, IEP", "value": "iep" },
+          { "label": "Yes, 504 Plan", "value": "504" },
+          { "label": "Both", "value": "both" },
+          { "label": "No", "value": "no" },
+          { "label": "Unknown", "value": "unknown" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "estimatedCredits",
+        "type": "input",
+        "label": "Estimated Credits Earned",
+        "source": "juvenile"
+      },
+      {
+        "name": "truancyNotes",
+        "type": "textarea",
+        "label": "Truancy or Attendance Concerns",
+        "source": "juvenile",
+        "rows": 3
+      },
+      {
+        "name": "learningStyleNotes",
+        "type": "textarea",
+        "label": "Learning Style / Support Needs",
+        "source": "juvenile",
+        "rows": 3
+      },
+      {
+        "name": "suspensionNotes",
+        "type": "textarea",
+        "label": "Suspension / Discipline Records",
+        "source": "juvenile",
+        "rows": 3
+      },
+      {
+        "name": "schoolContact",
+        "type": "input",
+        "label": "School Contact Person",
+        "source": "juvenile"
+      },
+      {
+        "name": "specialPrograms",
+        "type": "input",
+        "label": "Special Program Participation",
+        "source": "juvenile"
+      }
+    ]
+  },
+  {
+    "step": "Decision Path & Recommendations",
+    "label": "Decision Path & Recommendations",
+    "fields": [
+      {
+        "name": "recommendation",
+        "type": "select",
+        "label": "Recommended Decision Path",
+        "options": [
+          { "label": "Diversion Program", "value": "diversion" },
+          { "label": "Community Probation", "value": "probation" },
+          { "label": "State Custody / Commitment", "value": "state-custody" },
+          {
+            "label": "Short-Term Detention (Up to 90 Days)",
+            "value": "detention"
+          },
+          { "label": "Undecided / Awaiting Evaluation", "value": "undecided" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "recommendationReason",
+        "type": "textarea",
+        "label": "Justification for Recommendation",
+        "source": "juvenile",
+        "rows": 4
+      },
+      {
+        "name": "restitution",
+        "type": "select",
+        "label": "Is Victim Restitution Needed?",
+        "options": [
+          { "label": "Yes", "value": "yes" },
+          { "label": "No", "value": "no" },
+          { "label": "Unknown", "value": "unknown" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "courtDate",
+        "type": "date",
+        "label": "Next Court Date (if applicable)",
+        "source": "juvenile"
+      },
+      {
+        "name": "recommendationNotes",
+        "type": "textarea",
+        "label": "Notes or Conditions to Include",
+        "source": "juvenile",
+        "rows": 3
+      },
+      {
+        "name": "evals.psychological",
+        "type": "checkbox",
+        "label": "Psychological Evaluation Needed",
+        "source": "juvenile"
+      },
+      {
+        "name": "evals.substance",
+        "type": "checkbox",
+        "label": "Substance Use Screening Needed",
+        "source": "juvenile"
+      },
+      {
+        "name": "evals.family",
+        "type": "checkbox",
+        "label": "Family Risk Assessment Needed",
+        "source": "juvenile"
+      },
+      {
+        "name": "placementRegion",
+        "type": "select",
+        "label": "Preferred Placement Region",
+        "options": [
+          { "label": "Central", "value": "central" },
+          { "label": "Northwest", "value": "northwest" },
+          { "label": "Northeast", "value": "northeast" },
+          { "label": "Southwest", "value": "southwest" },
+          { "label": "Southeast", "value": "southeast" },
+          { "label": "Unknown", "value": "unknown" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "willingToComply",
+        "type": "select",
+        "label": "Youth Willing to Comply with Conditions?",
+        "options": [
+          { "label": "Yes", "value": "yes" },
+          { "label": "No", "value": "no" },
+          { "label": "Unknown", "value": "unknown" }
+        ],
+        "source": "juvenile"
+      }
+    ]
+  },
+  {
+    "step": "Probation / Mental Health",
+    "label": "Probation / Mental Health",
+    "fields": [
+      {
+        "name": "probationOfficerName",
+        "type": "input",
+        "label": "Assigned Probation Officer Name",
+        "source": "juvenile"
+      },
+      {
+        "name": "mentalHealthNeeds",
+        "type": "textarea",
+        "label": "Mental Health Needs / Concerns",
+        "source": "juvenile",
+        "rows": 4
+      }
+    ]
+  },
+  {
+    "step": "Case & Placement",
+    "label": "Case & Placement",
+    "fields": [
+      {
+        "name": "diversionEligible",
+        "type": "checkbox",
+        "label": "Eligible for Diversion?",
+        "source": "juvenile"
+      },
+      {
+        "name": "diversionProgramName",
+        "type": "input",
+        "label": "Diversion Program Name (if applicable)",
+        "source": "juvenile"
+      },
+      {
+        "name": "courtDates",
+        "type": "input",
+        "label": "Upcoming Court Dates",
+        "source": "juvenile"
+      },
+      {
+        "name": "placementStatus",
+        "type": "select",
+        "label": "Current Placement Status",
+        "options": [
+          { "label": "At Home", "value": "home" },
+          { "label": "Shelter", "value": "shelter" },
+          { "label": "Detention Center", "value": "detention" },
+          { "label": "Residential Facility", "value": "residential" },
+          { "label": "Unknown", "value": "unknown" }
+        ],
+        "source": "juvenile"
+      },
+      {
+        "name": "notes",
+        "type": "textarea",
+        "label": "Additional Case Notes",
+        "source": "juvenile",
+        "rows": 4
+      }
+    ]
+  },
+  {
+    "step": "Review & Submit",
+    "label": "Final Review & Submit",
+    "fields": [
+      {
+        "name": "finalReview",
+        "type": "custom",
+        "label": "Review Summary Display",
+        "source": "juvenile"
+      }
+    ]
+  }
+]

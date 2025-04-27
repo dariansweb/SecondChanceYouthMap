@@ -1,26 +1,21 @@
-// File: src/components/voices-tool/FormEngine/fields/SelectField.tsx
-
 import React from "react";
-
-interface Option {
-  label: string;
-  value: string;
-}
 
 interface SelectFieldProps {
   label: string;
   name: string;
+  options: { label: string; value: string }[];
   value: string;
-  options: Option[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onJuvenileChange?: (name: string, value: string) => void; // NEW
 }
 
 const SelectField: React.FC<SelectFieldProps> = ({
   label,
   name,
-  value,
   options,
+  value,
   onChange,
+  onJuvenileChange,
 }) => {
   return (
     <div className="mb-4">
@@ -34,12 +29,12 @@ const SelectField: React.FC<SelectFieldProps> = ({
         id={name}
         name={name}
         value={value}
-        onChange={onChange}
+        onChange={(e) => {
+          onChange(e);
+          onJuvenileChange?.(e.target.name, e.target.value);
+        }}
         className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
       >
-        <option value="" disabled>
-          — Select an option —
-        </option>
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}
