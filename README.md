@@ -11,10 +11,14 @@ A modern toolkit for juvenile justice professionals — **intake**, **comparison
 
 **SCYM** — *Second Chance Youth Map* — is an open-source decision support platform for juvenile intake, assessment, and education.
 
-It now features **three key tools**:
+It now features **seven key tools**:
 1. 📝 **Intake Form** – A dynamic form replicating multi-state best practices  
 2. 🧠 **Matrix Tool** – A comparison dashboard across 7 Southern states  
 3. 📚 **Glossary** – A live dictionary of terms, programs, and policies used in the system
+4. 📝 **Intake Prototype** - A full intake simulation based on cross-state form research. Tracks education flags, custody history, risk instruments, and support systems — all exportable as PDF.
+5. 📈 **Insights Dashboard** - Live data visualizations from our state matrix and research — including diversion trends, risk tool consistency, IEP/truancy patterns,  intake recommendations, and policy confidence scores.
+6. 🗣️ **Voices Directory**  -Real profiles of the people who guide youth through the system: intake officers, judges, educators, mental health staff, probation officers, advocates, residential teams, and reentry mentors — all linked to the data they influence.
+7. 🧭 **Path to Help” Navigation** - A restructured experience to guide professionals, students, and agencies through role-specific insights, system touchpoints, and practical tools for every stage of the youth journey.
 
 All designed for clarity, compassion, and true transparency.
 
@@ -38,18 +42,19 @@ Research-driven and visually engaging, this project brings together real-world p
 
 ## 🧩 Key Features
 
-### 🔹 **Intake Tool**
+### 🔹 Intake Tool
 - Step-by-step intake with live logic and state-by-state influence  
 - Form data stored in memory via React Context  
+- **NEW**: Dynamic prefill from completed flows  
 - Generates downloadable intake PDF summaries  
 
-### 🔹 **Matrix Tool**
+### 🔹 Matrix Tool
 - Interactive cards showing policy differences between states  
 - Filters for states, sorting, decision type  
 - Color-coded indicators for clarity and accessibility  
 - Modal pop-ups for detailed comparison with hover-rich glossary terms  
 
-### 🔹 **Glossary of Terms**
+### 🔹 Glossary of Terms
 - Over 100 terms, program names, acronyms, and processes  
 - Filterable and searchable  
 - Includes categories, definitions, source links, and states (if applicable)  
@@ -92,6 +97,17 @@ Every corner of this app — from matrix modals to intake inputs — was careful
 - [React Context API](https://reactjs.org/)  
 - [pdf-lib](https://pdf-lib.js.org/)  
 - [Vercel](https://vercel.com/)  
+
+---
+
+## 🧠 Behind the Scenes (Architecture)
+
+- `mapFlowDataToJuvenile.ts` ➔ Maps incoming flow form data dynamically into the master intake fields
+- `flowToJuvenileMapping.ts` ➔ Defines precise field-to-field mappings
+- Dynamic JSON forms ➔ Flexible form steps, fields, and conditions without needing rebuilds
+- Local Storage and Context Memory ➔ Intelligent prefill across multiple users and flows
+
+This system ensures **future flows and forms can easily be added** with little to no extra React coding — just update the JSON and mapping file!
 
 ---
 
