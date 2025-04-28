@@ -1,3 +1,7 @@
+// File: src/components/voices-tool/FormEngine/fields/DateField.tsx
+
+"use client";
+
 import React from "react";
 
 interface DateFieldProps {
@@ -5,7 +9,8 @@ interface DateFieldProps {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onJuvenileChange?: (name: string, value: string) => void; // NEW
+  onJuvenileChange?: (name: string, value: string) => void;
+  highlighted?: boolean; // NEW
 }
 
 const DateField: React.FC<DateFieldProps> = ({
@@ -14,6 +19,7 @@ const DateField: React.FC<DateFieldProps> = ({
   value,
   onChange,
   onJuvenileChange,
+  highlighted = false,
 }) => {
   return (
     <div className="mb-4">
@@ -32,7 +38,11 @@ const DateField: React.FC<DateFieldProps> = ({
           onChange(e);
           onJuvenileChange?.(e.target.name, e.target.value);
         }}
-        className="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 text-gray-900 focus:ring-blue-500 focus:border-blue-500"
+        className={`block w-full border rounded-md shadow-sm py-2 px-3 text-gray-900 ${
+          highlighted
+            ? "bg-yellow-100 border-yellow-400 focus:ring-yellow-500 animate-pulse"
+            : "border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+        }`}
       />
     </div>
   );

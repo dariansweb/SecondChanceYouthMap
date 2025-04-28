@@ -18,7 +18,8 @@ interface FieldConfig {
   options?: { label: string; value: string }[];
   rows?: number;
   showIf?: string;
-  source?: string; // Added the 'source' property
+  source?: string;
+  highlighted?: boolean;
 }
 
 interface NodeConfig {
@@ -53,6 +54,9 @@ const FormRenderer: React.FC<{ node: NodeConfig }> = ({ node }) => {
 
   const { juvenileRecord, updateJuvenileRecord } = useJuvenileIntakeRecord();
 
+  // Define prefilledFields as an empty Set or populate it as needed.
+  const prefilledFields = new Set<string>();
+
   return (
     <div className="form-renderer">
       <h2 className="form-title">{node.label}</h2>
@@ -62,6 +66,8 @@ const FormRenderer: React.FC<{ node: NodeConfig }> = ({ node }) => {
           resolvePrefill(field, juvenileRecord) ?? formData[field.name];
         const isVisible = field.showIf ? Boolean(formData[field.showIf]) : true;
 
+        const isHighlighted = prefilledFields.has(field.name); // 👈 New: detect prefilled fields
+
         return (
           <ConditionalGroup key={field.name} show={isVisible}>
             {(() => {
@@ -69,46 +75,46 @@ const FormRenderer: React.FC<{ node: NodeConfig }> = ({ node }) => {
                 case "input":
                   return (
                     <InputField
-                      key={field.name}
                       {...field}
                       value={String(prefilledValue ?? "")}
+                      highlighted={isHighlighted} // 👈 New: pass highlight flag
                       onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "select":
                   return (
                     <SelectField
-                      key={field.name}
                       {...field}
                       options={field.options ?? []}
                       value={String(prefilledValue ?? "")}
+                      highlighted={isHighlighted} // 👈 New: pass highlight
                       onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "textarea":
                   return (
                     <TextareaField
-                      key={field.name}
                       {...field}
                       value={String(prefilledValue ?? "")}
+                      highlighted={isHighlighted} // 👈 New: pass highlight
                       onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "checkbox":
                   return (
                     <CheckboxField
-                      key={field.name}
                       {...field}
                       checked={!!prefilledValue}
+                      highlighted={isHighlighted} // 👈 New: pass highlight
                       onChange={(e) => handleChange(e, field)}
                     />
                   );
                 case "date":
                   return (
                     <DateField
-                      key={field.name}
                       {...field}
                       value={String(prefilledValue ?? "")}
+                      highlighted={isHighlighted} // 👈 New: pass highlight
                       onChange={(e) => handleChange(e, field)}
                     />
                   );

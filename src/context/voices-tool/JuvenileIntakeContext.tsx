@@ -6,6 +6,9 @@ import { JuvenileIntakeRecord } from "@/components/voices-tool/FormEngine/utils/
 interface JuvenileIntakeContextType {
   juvenileRecord: JuvenileIntakeRecord;
   updateJuvenileRecord: (updates: Partial<JuvenileIntakeRecord>) => void;
+  prefilledFields: Set<string>;
+  markFieldPrefilled: (fieldName: string) => void;
+  clearPrefilledFields: () => void;
 }
 
 const JuvenileIntakeContext = createContext<
@@ -18,14 +21,39 @@ export const JuvenileIntakeProvider: React.FC<{
   const [juvenileRecord, setJuvenileRecord] = useState<JuvenileIntakeRecord>(
     {}
   );
+  const [prefilledFields, setPrefilledFields] = useState<Set<string>>(
+    new Set()
+  );
 
   const updateJuvenileRecord = (updates: Partial<JuvenileIntakeRecord>) => {
-    setJuvenileRecord((prev) => ({ ...prev, ...updates }));
+    setJuvenileRecord((prev) => ({
+      ...prev,
+      ...updates,
+    }));
+
+    // 🔥 Automatically mark fields as prefilled when updating
+    Object.keys(updates).forEach((fieldName) => {
+      setPrefilledFields((prev) => new Set(prev).add(fieldName));
+    });
+  };
+
+  const markFieldPrefilled = (fieldName: string) => {
+    setPrefilledFields((prev) => new Set(prev).add(fieldName));
+  };
+
+  const clearPrefilledFields = () => {
+    setPrefilledFields(new Set());
   };
 
   return (
     <JuvenileIntakeContext.Provider
-      value={{ juvenileRecord, updateJuvenileRecord }}
+      value={{
+        juvenileRecord,
+        updateJuvenileRecord,
+        prefilledFields,
+        markFieldPrefilled,
+        clearPrefilledFields,
+      }}
     >
       {children}
     </JuvenileIntakeContext.Provider>

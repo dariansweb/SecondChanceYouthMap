@@ -5,6 +5,8 @@
 import React, { useState } from "react";
 import { useFlowState } from "@/context/voices-tool/FlowStateContext";
 import { useFormState } from "@/context/voices-tool/FormStateContext";
+// import { useJuvenileIntakeRecord } from "@/context/voices-tool/JuvenileIntakeContext"; // NEW!
+// import { mapFlowDataToJuvenile } from "@/components/voices-tool/FormEngine/utils/mapFlowDataToJuvenile"; // NEW!
 import { useRouter } from "next/navigation";
 import FormRenderer from "./FormRenderer";
 import FormSummary from "./FormSummary";
@@ -39,9 +41,10 @@ const FlowPlayer: React.FC<FlowPlayerProps> = ({ flow, startNodeId }) => {
   const [history, setHistory] = useState<string[]>([]);
   const { formData } = useFormState();
   const { markFlowCompleted } = useFlowState();
+  // const { updateJuvenileRecord } = useJuvenileIntakeRecord(); // 👈 Context hook
+  const router = useRouter();
 
   const currentNode = flow[currentNodeId];
-  const router = useRouter();
 
   const handleBack = () => {
     if (history.length === 0) return;
@@ -61,6 +64,31 @@ const FlowPlayer: React.FC<FlowPlayerProps> = ({ flow, startNodeId }) => {
       setCurrentNodeId(nextId);
     }
   };
+
+  // const handleComplete = () => {
+  //   // 🧠 Auto-map from this Flow's formData to Juvenile fields
+  //   const mappedUpdates = mapFlowDataToJuvenile(formData, startNodeId);
+
+  //   console.log("🐍 Mapped Flow -> Juvenile:", mappedUpdates);
+
+  //   updateJuvenileRecord(mappedUpdates); // Save it into Intake Context!
+
+  //   markFlowCompleted(startNodeId, formData); // Still mark flow complete
+
+  //   router.push(`/voices-tool/summary/${startNodeId}`); // Redirect to Summary
+  // };
+  // Helper to save a flow's form data
+  function saveFlowData(flowId: string, formData: Record<string, unknown>) {
+    try {
+      const saved = localStorage.getItem("voicesToolFlowData");
+      const allFlows = saved ? JSON.parse(saved) : {};
+      allFlows[flowId] = formData;
+      localStorage.setItem("voicesToolFlowData", JSON.stringify(allFlows));
+      console.log(`[saveFlowData] Saved flow data for: ${flowId}`);
+    } catch (error) {
+      console.error("[saveFlowData] Error saving flow data:", error);
+    }
+  }
 
   return (
     <div className="space-y-6">
@@ -96,31 +124,41 @@ const FlowPlayer: React.FC<FlowPlayerProps> = ({ flow, startNodeId }) => {
         ) : currentNode.next?.length === 1 ? (
           (() => {
             const nextId = currentNode.next?.[0] ?? "";
-            return (
+            return nextId === "dashboard" ? (
+              <button
+                onClick={() => {
+                  saveFlowData(startNodeId, formData); // Save the answers first!
+                  markFlowCompleted(startNodeId, formData);
+                  router.push(`/voices-tool/summary/${startNodeId}`);
+                }}
+                className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition-all"
+              >
+                ✅ Complete & View Summary
+              </button>
+            ) : (
               <button
                 onClick={() => handleNext(nextId)}
                 className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700 transition-all"
               >
-                {nextId === "dashboard"
-                  ? "🎉 Finish & Return to Registry"
-                  : "Next"}
+                Next ➡
               </button>
             );
           })()
         ) : (
           <button
             onClick={() => {
-              markFlowCompleted(startNodeId, formData);
-              router.push(`/voices-tool/summary/${startNodeId}`);
+              saveFlowData(startNodeId, formData); // 💾 Save this flow into localStorage!
+              markFlowCompleted(startNodeId, formData); // ✅ Mark flow as completed
+              router.push(`/voices-tool/summary/${startNodeId}`); // ➡ Go to flow summary
             }}
-            className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700"
+            className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700 transition-all"
           >
-            ✅ Complete
+            ✅ Complete & Save
           </button>
         )}
       </div>
 
-      {/* Render summary at end of flow */}
+      {/* Render form summary at very end */}
       {!currentNode.next?.length && <FormSummary flow={flow} />}
     </div>
   );

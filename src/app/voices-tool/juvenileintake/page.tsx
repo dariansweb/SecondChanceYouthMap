@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormRenderer from "@/components/voices-tool/FormEngine/FormRenderer";
 import juvenileIntakeFlow from "@/data/voices-tool/juvenile-intake-flow.json";
 import PrefillModal from "@/components/voices-tool/FormEngine/PrefillModal";
 import { mapFlowDataToJuvenile } from "@/components/voices-tool/FormEngine/utils/mapFlowDataToJuvenile";
 import { useJuvenileIntakeRecord } from "@/context/voices-tool/JuvenileIntakeContext";
+import { useFlowState } from "@/context/voices-tool/FlowStateContext";
+import { loadFlowData } from "@/components/voices-tool/FormEngine/utils/FlowMemory"; // 👈 Add this at top
 
 // Define or import the FieldConfig type
 type FieldConfig = {
@@ -26,50 +28,72 @@ type NodeConfig = {
 
 export default function JuvenileIntakePage() {
   const [selectedStepIndex, setSelectedStepIndex] = useState(0);
-  const currentStep = juvenileIntakeFlow[selectedStepIndex] as NodeConfig;
   const [prefillModalOpen, setPrefillModalOpen] = useState(false);
-  const { juvenileRecord, updateJuvenileRecord } = useJuvenileIntakeRecord();
 
-  const availableFlows = [
-    {
-      flowId: "intake-officer-flow",
-      label: "Intake Officer",
-      summary: "Initial intake interview and details.",
-    },
-    {
-      flowId: "probation-officer-flow",
-      label: "Probation Officer",
-      summary: "Probation case notes and updates.",
-    },
-    {
-      flowId: "prosecutor-flow",
-      label: "Prosecutor",
-      summary: "Charges, restitution, and court status.",
-    },
-    // ⚡ add more mock flows here if needed
-  ];
+  const { juvenileRecord, updateJuvenileRecord } = useJuvenileIntakeRecord();
+  const { completedFlows } = useFlowState();
+
+  const currentStep = juvenileIntakeFlow[selectedStepIndex] as NodeConfig;
+
+  useEffect(() => {
+    try {
+      const storedFlows = localStorage.getItem("voicesToolFlowData");
+
+      if (!storedFlows) return;
+
+      const parsed = JSON.parse(storedFlows);
+      const mergedUpdates: Record<string, unknown> = { ...juvenileRecord };
+
+      Object.entries(parsed).forEach(([flowId, flowData]) => {
+        const mappedUpdates = mapFlowDataToJuvenile(
+          flowData as Record<
+            string,
+            string | number | boolean | null | undefined
+          >,
+          flowId
+        );
+
+        for (const [key, value] of Object.entries(mappedUpdates)) {
+          if (
+            mergedUpdates[key] === undefined ||
+            mergedUpdates[key] === "" ||
+            mergedUpdates[key] === null
+          ) {
+            mergedUpdates[key] = value;
+          }
+        }
+      });
+
+      console.log(
+        "[JuvenileIntake] Applying smart merged flow updates:",
+        mergedUpdates
+      );
+      updateJuvenileRecord(mergedUpdates);
+    } catch (err) {
+      console.error("[JuvenileIntake] Failed to load flow data:", err);
+    }
+  }, [juvenileRecord, updateJuvenileRecord]);
+
+  const availableFlows = Object.keys(completedFlows).map((flowId) => ({
+    flowId,
+    label: flowId.replace(/-/g, " ").replace(/\b\w/g, (l) => l.toUpperCase()), // Prettify
+    summary: "Completed Flow", // (Optional: add real summaries later)
+  }));
 
   const handlePrefillSelect = (flowId: string) => {
-    console.log(`Prefilling from flow: ${flowId}`);
+    console.log(`Attempting prefill from completed flow: ${flowId}`);
 
-    // TODO: Replace this with real flow data lookup
-    const mockFlowData = {
-      firstName: "Jane",
-      lastName: "Doe",
-      dob: "2007-09-10",
-      county: "Pulaski",
-      offense: "Theft",
-      referralType: "arrest",
-      intakeDate: "2024-05-01",
-      guardianName: "Sarah Doe",
-      school: "Central High School",
-      riskScore: 45,
-      riskToolUsed: "SAVRY",
-      recommendation: "diversion",
-      recommendationReason: "Low risk, family support present.",
-    };
+    const flowData = loadFlowData(flowId);
 
-    const mappedUpdates = mapFlowDataToJuvenile(mockFlowData, flowId);
+    if (!flowData) {
+      alert("No saved data found for this flow yet. Complete the flow first!");
+      return;
+    }
+
+    const mappedUpdates = mapFlowDataToJuvenile(
+      flowData as Record<string, string | number | boolean | null | undefined>,
+      flowId
+    );
 
     console.log("Mapped Updates:", mappedUpdates);
 
@@ -89,7 +113,9 @@ export default function JuvenileIntakePage() {
         </button>
       </div>
 
-      <h1 className="text-3xl font-bold mb-8">Juvenile Intake Form</h1>
+      <h1 className="text-3xl text-blue-700 font-bold mb-8">
+        Juvenile Intake Form
+      </h1>
 
       {/* Stepper Navigation */}
       <div className="flex flex-wrap gap-2 mb-6">
@@ -110,7 +136,7 @@ export default function JuvenileIntakePage() {
 
       {/* Render the form step */}
       {currentStep && (
-        <div className="bg-white p-6 rounded shadow">
+        <div className="bg-slate-100 text-blue-500 p-6 rounded shadow">
           <FormRenderer key={selectedStepIndex} node={currentStep} />
         </div>
       )}

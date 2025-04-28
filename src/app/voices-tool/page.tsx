@@ -4,6 +4,7 @@
 
 import { useEffect, useState } from "react";
 import RoleCard from "@/components/voices-tool/RoleCards/RoleCard";
+import Link from "next/link";
 
 type Role = {
   title: string;
@@ -76,7 +77,6 @@ export default function VoicesToolHome() {
         <br />
         Step into your role. Trace your impact. Let your voice lead the way.
       </p>
-
       {/* Phase Filter */}
       <div className="mb-8 flex flex-wrap gap-4">
         {phaseFilters.map((phase) => (
@@ -92,6 +92,13 @@ export default function VoicesToolHome() {
             {phase}
           </button>
         ))}
+                <Link
+          href="/voices-tool/flow-completions"
+          className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded shadow transition-all"
+        >
+          View Completed Flows
+        </Link>
+
       </div>
 
       {/* Grouped Roles */}
