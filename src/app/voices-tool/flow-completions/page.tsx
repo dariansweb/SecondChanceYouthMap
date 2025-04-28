@@ -12,9 +12,15 @@ export default function CompletedFlowsPage() {
   }, []);
 
   if (!isMounted) {
-    return null; // 🛡️ Prevent hydration mismatch
+    return (
+      <div className="p-8 max-w-5xl mx-auto text-center">
+        <h1 className="text-3xl font-bold mb-8 text-blue-700">
+          📝 Completed Flows
+        </h1>
+        <p className="text-gray-500">Loading your completed flows...</p>
+      </div>
+    );
   }
-
   const flowIds = completedFlows || [];
 
   return (
@@ -33,10 +39,7 @@ export default function CompletedFlowsPage() {
               className="bg-white p-6 rounded-lg shadow-md flex flex-col gap-2"
             >
               <h2 className="text-2xl font-semibold text-blue-700">{flowId}</h2>
-              <p className="text-sm text-gray-500">
-                {0}{" "}
-                fields captured
-              </p>
+              <p className="text-sm text-gray-500">{0} fields captured</p>
 
               {/* Expandable details could go here later */}
             </div>
